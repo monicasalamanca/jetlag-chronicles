@@ -4,6 +4,8 @@
  * Unset means off, so local dev and tests are unaffected.
  */
 
+import { safeEqual } from "@/lib/secret";
+
 export type GateConfig =
   | { kind: "off" }
   | { kind: "on"; user: string; password: string }
@@ -18,16 +20,6 @@ export function gateConfig(env: { SITE_USER?: string; SITE_PASSWORD?: string }):
   return { kind: "on", user, password };
 }
 
-/** Constant-time string comparison, so response timing doesn't leak how much of a guess was right. */
-function safeEqual(a: string, b: string): boolean {
-  const left = new TextEncoder().encode(a);
-  const right = new TextEncoder().encode(b);
-  let diff = left.length ^ right.length;
-  for (let i = 0; i < Math.max(left.length, right.length); i++) {
-    diff |= (left[i] ?? 0) ^ (right[i] ?? 0);
-  }
-  return diff === 0;
-}
 
 /** True when the Authorization header carries the configured Basic credentials. */
 export function isAuthorized(header: string | null, user: string, password: string): boolean {
