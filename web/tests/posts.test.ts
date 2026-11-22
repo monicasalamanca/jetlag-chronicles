@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { allStoriesQuery, storyPath, storyQuery } from "@/lib/posts";
+import { allStoriesQuery, moreStoriesQuery, storyEyebrow, storyParent, storyPath, storyQuery } from "@/lib/posts";
 
 const thailand = { name: "Thailand", slug: "thailand" };
 
@@ -40,5 +40,42 @@ describe("Strapi queries", () => {
     expect(q.getAll("filters[section][$in][0]")).toEqual(["place"]);
     expect(q.getAll("filters[section][$in][1]")).toEqual(["life_abroad"]);
     expect(q.get("pagination[page]")).toBe("2");
+  });
+
+  it("loads the cover, the author and the author's photo with the story", () => {
+    const q = storyQuery("thailand", "30-thailand-scams");
+    expect(q.get("populate[coverPhoto][fields][0]")).toBe("url");
+    expect(q.get("populate[author][fields][2]")).toBe("type");
+    expect(q.get("populate[author][populate][photo][fields][0]")).toBe("url");
+  });
+
+  it("asks for 3 newer-first stories from the same country, excluding this one", () => {
+    const q = moreStoriesQuery({ documentId: "abc", section: "place", country: { name: "Thailand", slug: "thailand" } });
+    expect(q.get("filters[country][slug][$eq]")).toBe("thailand");
+    expect(q.get("filters[documentId][$ne]")).toBe("abc");
+    expect(q.get("fields[0]")).toBe("title");
+    expect(q.get("sort[0]")).toBe("publishedDate:desc");
+    expect(q.get("pagination[pageSize]")).toBe("3");
+  });
+
+  it("uses other Life Abroad stories for a Life Abroad post", () => {
+    const q = moreStoriesQuery({ documentId: "abc", section: "life_abroad", country: null });
+    expect(q.get("filters[section][$eq]")).toBe("life_abroad");
+    expect(q.has("filters[country][slug][$eq]")).toBe(false);
+  });
+});
+
+describe("story parent and eyebrow", () => {
+  const thailand = { name: "Thailand", slug: "thailand" };
+
+  it("a place story belongs to its country", () => {
+    expect(storyParent({ section: "place", country: thailand })).toEqual({ label: "Thailand", href: "/thailand" });
+    expect(storyEyebrow({ section: "place", country: thailand, city: "Bangkok" })).toBe("Thailand · Bangkok");
+    expect(storyEyebrow({ section: "place", country: thailand, city: null })).toBe("Thailand");
+  });
+
+  it("a Life Abroad story belongs to /lifestyle", () => {
+    expect(storyParent({ section: "life_abroad", country: null })).toEqual({ label: "Life Abroad", href: "/lifestyle" });
+    expect(storyEyebrow({ section: "life_abroad", country: null, city: "Bangkok" })).toBe("Life Abroad");
   });
 });

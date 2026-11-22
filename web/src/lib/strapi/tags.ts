@@ -8,6 +8,7 @@ export const ALL_TAG = "strapi";
 const MODEL_TAGS: Record<string, string> = {
   post: "posts",
   country: "countries",
+  author: "authors",
 };
 
 export function modelTag(model: string): string {

@@ -32,3 +32,9 @@ export const contactEmail = { user: "info", domain: "thejetlagchronicles.com" } 
 
 /** Our Travel Toolkit is built but hidden (plan §6.4) until TOOLKIT_LIVE=true. */
 export const toolkitLive = process.env.TOOLKIT_LIVE === "true";
+
+/** The two people behind the team author "Moni & Dunny" (JSON-LD Person entries, plan §10). */
+export const teamPeople = [
+  { name: "Moni", url: `${siteUrl}/about` },
+  { name: "Dunny", url: `${siteUrl}/about` },
+] as const;

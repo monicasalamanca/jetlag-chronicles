@@ -12,3 +12,10 @@ export default function cloudinaryLoader({ src, width, quality }: { src: string;
   const tail = src.slice(at + UPLOAD.length);
   return `${head}${transform}/${tail}`;
 }
+
+/** Cloudinary recipe for the 1200×630 share image (plan §10): crop to the subject, JPEG. Other URLs unchanged. */
+export function shareImageUrl(src: string): string {
+  const at = src.indexOf(UPLOAD);
+  if (!src.startsWith("https://res.cloudinary.com/") || at === -1) return src;
+  return `${src.slice(0, at + UPLOAD.length)}c_fill,g_auto,w_1200,h_630,f_jpg,q_auto/${src.slice(at + UPLOAD.length)}`;
+}

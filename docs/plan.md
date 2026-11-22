@@ -74,6 +74,8 @@ All 33 are credited to **"Moni & Dunny"**. Original publish dates are kept.
 | summary | text | required, ≤ 200 chars; used as intro + fallback meta description |
 | coverPhoto | media (image) | required |
 | coverAlt | text | **required** |
+| coverCaption | text | optional; shown under the cover |
+| coverCredit | text | optional; shown as "Photo: …" only when filled in (required in practice for guest photos) |
 | body | Markdown (richtext) | required. Images in body need alt text (build check fails otherwise) |
 | country | relation → Country | required when section = place; optional for reader-story |
 | city | text | optional (future city filter) |
@@ -150,6 +152,8 @@ Not carried over from bio-hive: content-collections/MDX, claims linter, `/en/` p
 **Images:** Cloudinary custom image loader (`f_auto,q_auto,w_…`). Vercel image optimization **off** (Hobby limit 5K transforms/month; also keeps us portable).
 
 **Markdown:** rendered server-side, sanitized; headings get ids for the TOC; images become captioned figures; external links get `rel` per §10.
+A photo on its own line becomes a figure; its Markdown title is the caption, with an optional credit after a bar: `![Alt text](url "Caption | Photo: Dunny")`. Right-aligned table columns (`|---:|`) are number columns.
+**Publish rules** (Strapi, `cms/src/post-rules.ts`): a post can't be published without an author, a place story without a country, or a body photo without alt text. The web build fails too if a body photo has no alt.
 
 **Portability:** no Vercel-only features (Edge Config, KV, Vercel password protection). Must run on Cloudflare via the OpenNext adapter.
 

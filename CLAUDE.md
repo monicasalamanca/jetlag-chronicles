@@ -10,9 +10,12 @@ Non-monetized travel-story blog by Moni & Dunny (thejetlagchronicles.com). Rebui
 
 ```
 cms/   Strapi 5 (npm). Content types in src/api/<type>/content-types/<type>/schema.json. Public API is read-only (find/findOne).
+  src/post-rules.ts        what a post needs before Strapi lets it publish (wired in src/index.ts)
 web/   Next.js 16 App Router (pnpm). Based on the-bio-hive setup.
   src/app/[place]/[slug]   every story: /<country>/<slug> and /lifestyle/<slug>
-  src/lib/posts.ts         pure URL + Strapi query rules (tested)
+  src/lib/posts.ts         Post/Author types, URL rules, Strapi queries (pure, tested)
+  src/lib/markdown.ts      story Markdown → sanitized HTML + TOC headings, reading time, figures, link rel
+  src/lib/seo.ts           per-page metadata and JSON-LD
   src/lib/content.ts       server-only data loading (Strapi, cached + tagged for webhook revalidation)
   src/lib/strapi/client.ts the only place that calls Strapi
   src/components/          presentational, data comes in as props (tested with renderToStaticMarkup)
