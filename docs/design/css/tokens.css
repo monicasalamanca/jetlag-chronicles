@@ -1,0 +1,211 @@
+/* ==========================================================================
+   The Jet Lag Chronicles: design tokens  (v1, round 1 draft)
+   Light values on :root. Dark values under prefers-color-scheme (no toggle).
+   Components may only use these tokens. Never hard-code a colour, size,
+   space, radius, shadow or font.
+
+   Breakpoints (mobile-first, min-width only; queries cannot read custom
+   properties, so use the literal values). Components switch layout with
+   @container ctx (min-width: ...) against the page shell, which equals the
+   viewport on the real site and lets a demo show phone and desktop side by side:
+     sm 30rem (480px) · md 48rem (768px) · lg 64rem (1024px) · xl 80rem (1280px)
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* ---- Colour: light ---- */
+  --color-page: #FBFAF7;
+  --color-surface: #FFFFFF;
+  --color-surface-sunken: #F3F0E8;
+  --color-surface-tint: #EDF4F9;
+  --color-border: #ECE6DA;
+  --color-border-strong: #7D8794;
+  --color-text: #2E3A4B;
+  --color-text-muted: #566171;
+  --color-text-subtle: #626C7A;
+  --color-link: #0A64A4;
+  --color-link-hover: #074E82;
+  --color-link-visited: #6A3F93;
+  --color-route: #0C90E9;
+  --color-focus: #0A64A4;
+  --color-guest: #96411F;
+  --color-guest-surface: #F9EEE8;
+  --color-selection: #CFE5F6;
+  --color-on-scrim: #FFFFFF;
+  --color-scrim: rgb(18 22 28 / 0.64);
+  --logo-ink: #2E3A4B;
+  --logo-accent: #0C90E9;
+
+  /* ---- Type: families (self-hosted woff2; the only two families) ---- */
+  --font-serif: "Source Serif 4", "Source Serif 4 Fallback", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3", "Source Sans 3 Fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* ---- Type: sizes (fluid, 320px to 1280px) ---- */
+  --text-h1: clamp(2rem, 1.55rem + 2.2vw, 3.25rem);          /* 32 to 52 */
+  --text-h2: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);            /* 24 to 32 */
+  --text-h3: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);       /* 20 to 24 */
+  --text-h4: 1.125rem;                                       /* 18 */
+  --text-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem); /* 18 to 21 */
+  --text-body: clamp(1.0625rem, 1.03rem + 0.15vw, 1.125rem); /* 17 to 18 */
+  --text-small: 0.9375rem;                                   /* 15 */
+  --text-caption: 0.875rem;                                  /* 14 */
+  --text-byline: 0.9375rem;                                  /* 15 */
+  --text-breadcrumb: 0.875rem;                               /* 14 */
+  --text-eyebrow: 0.8125rem;                                 /* 13, uppercase */
+  --text-nav: 1rem;                                          /* 16 */
+  --text-card-title: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem); /* 19 to 22 */
+  --text-card-title-compact: 1.0625rem;                      /* 17 */
+
+  /* ---- Type: line heights ---- */
+  --leading-tight: 1.08;   /* h1 */
+  --leading-snug: 1.2;     /* h2, h3, card titles */
+  --leading-heading: 1.3;  /* h4, compact titles */
+  --leading-lead: 1.5;
+  --leading-body: 1.7;
+  --leading-ui: 1.45;      /* small, caption, byline, breadcrumb */
+
+  /* ---- Type: weights, tracking ---- */
+  --weight-regular: 400;
+  --weight-semibold: 600;
+  --tracking-display: -0.015em;
+  --tracking-heading: -0.01em;
+  --tracking-eyebrow: 0.14em;
+  --underline-thickness: 0.075em;
+  --underline-thickness-hover: 0.125em;
+  --underline-offset: 0.2em;
+
+  /* ---- Type: measure (max line length) ---- */
+  --measure-prose: 66ch;   /* story body */
+  --measure-lead: 52ch;    /* lead / summary */
+  --measure-intro: 46ch;   /* section intros */
+  --measure-title: 22ch;   /* h1 balance width */
+
+  /* ---- Space (4px scale) ---- */
+  --space-1: 0.25rem;  /*   4 */
+  --space-2: 0.5rem;   /*   8 */
+  --space-3: 0.75rem;  /*  12 */
+  --space-4: 1rem;     /*  16 */
+  --space-5: 1.5rem;   /*  24 */
+  --space-6: 2rem;     /*  32 */
+  --space-7: 3rem;     /*  48 */
+  --space-8: 4rem;     /*  64 */
+  --space-9: 6rem;     /*  96 */
+  --space-10: 8rem;    /* 128 */
+
+  /* ---- Layout ---- */
+  --gutter-base: 1rem;         /* 16 at 320 */
+  --gutter-md: 1.5rem;         /* 24 from md */
+  --gutter-lg: 2rem;           /* 32 from lg */
+  --gutter: var(--gutter-base);/* current side gutter; .shell widens it per container size */
+  --container-max: 72rem;      /* 1152: header, grids, footer */
+  --container-figure: 56rem;   /* 896: full-width photos in a story */
+  --header-height: 4rem;       /* 64 */
+  --header-height-md: 4.5rem;  /* 72 from md */
+  --target-min: 2.75rem;       /* 44: aim for this */
+  --target-floor: 1.5rem;      /* 24: WCAG 2.2 floor, never smaller */
+
+  --container-text: 44rem;     /* 704: title block, intros, forms of text */
+  --size-icon: 1.25rem;        /* 20: inline SVG icons */
+  --size-icon-sm: 0.875rem;    /* 14: chevrons, external-link marks */
+  --size-thumb: 5.5rem;        /* 88: compact card thumbnail */
+  --size-avatar: 4.5rem;       /* 72: author photo */
+  --size-logo-mobile: 8.75rem; /* 140: full logo, header, phone */
+  --size-logo: 10.5rem;        /* 168: full logo, header, md and up */
+  --size-ring-footer: 2.5rem;  /* 40: ring mark in the footer */
+
+  /* ---- Radius ---- */
+  --radius-sm: 0.125rem;       /* 2: route dash, label chips */
+  --radius-card: 0.25rem;      /* 4: photos, cards, callout, table wrapper */
+  --radius-round: 50%;         /* author photo */
+
+  /* ---- Borders and focus ---- */
+  --border-width: 1px;
+  --border-width-thick: 2px;
+  --border-hairline: 1px solid var(--color-border);
+  --border-strong: 1px solid var(--color-border-strong);
+  --focus-width: 3px;
+  --focus-offset: 3px;
+
+  /* ---- Shadow: almost none, on purpose ---- */
+  --shadow-none: none;
+  --shadow-overlay: 0 14px 28px -18px rgb(46 58 75 / 0.35), 0 1px 2px rgb(46 58 75 / 0.10);                      /* mobile menu panel only */
+
+  /* ---- Photo aspect ratios (Cloudinary c_fill,g_auto) ---- */
+  --ratio-hero: 4 / 3;              /* story cover, country hero, section hero. Becomes 2 / 1 from md */
+  --ratio-hero-wide: 2 / 1;
+  --ratio-card: 4 / 3;              /* standard card */
+  --ratio-featured: 3 / 2;          /* featured card. Becomes 2 / 1 from md */
+  --ratio-featured-wide: 2 / 1;
+  --ratio-compact: 1 / 1;           /* compact card thumbnail */
+  --ratio-country: 4 / 5;           /* country card */
+  --ratio-author: 1 / 1;            /* author photo */
+  --ratio-og: 1200 / 630;           /* social share image */
+
+  /* ---- Route divider (the logo dash: segments 1 : 7 : 18) ---- */
+  --route-thickness: 0.3125rem;     /* 5 */
+  --route-gap: 0.5625rem;           /* 9 = 1.8 x thickness, as in the logo */
+  --route-width: 14rem;             /* 224 */
+
+  /* ---- Motion (optional, always cancelled by prefers-reduced-motion) ---- */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --ease-out: cubic-bezier(0.2, 0.6, 0.2, 1);
+
+  /* ---- Stacking ---- */
+  --z-header: 10;
+  --z-menu: 20;
+  --z-skip: 100;
+
+  /* ---- Breakpoints (reference only; use the literal in @media) ---- */
+  --bp-sm: 30rem;
+  --bp-md: 48rem;
+  --bp-lg: 64rem;
+  --bp-xl: 80rem;
+}
+
+/* ---- Colour: dark (follows the device setting) ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-page: #12161C;
+    --color-surface: #1A2028;
+    --color-surface-sunken: #0E1217;
+    --color-surface-tint: #15222F;
+    --color-border: #2B333E;
+    --color-border-strong: #6B7686;
+    --color-text: #E8EBF0;
+    --color-text-muted: #AEB8C5;
+    --color-text-subtle: #9AA5B3;
+    --color-link: #7CC2F5;
+    --color-link-hover: #A8D8F8;
+    --color-link-visited: #C4A6EB;
+    --color-route: #2EA3F2;
+    --color-focus: #7CC2F5;
+    --color-guest: #F2A988;
+    --color-guest-surface: #2B1F1A;
+    --color-selection: #24496B;
+    --color-on-scrim: #FFFFFF;
+    --color-scrim: rgb(18 22 28 / 0.64);
+    --logo-ink: #E8EBF0;
+    --logo-accent: #2EA3F2;
+    --shadow-overlay: 0 14px 28px -14px rgb(0 0 0 / 0.65), 0 1px 2px rgb(0 0 0 / 0.40);
+  }
+}
+
+/* ---- Base rules every page inherits ---- */
+::selection { background: var(--color-selection); color: var(--color-text); }
+
+:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

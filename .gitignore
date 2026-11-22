@@ -2,4 +2,7 @@
 node_modules/
 .env
 .env.*
+
+# Claude Design PNG exports (42 MB). Kept locally; the HTML mockups in docs/design/pages show the same designs.
+docs/design/screenshots/
 !.env.example

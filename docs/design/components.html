@@ -1,0 +1,934 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Components — The Jet Lag Chronicles design system</title>
+<link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css/tokens.css"><link rel="stylesheet" href="css/story.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/preview.css"><style>
+:root{--p:#FBFAF7;--ink:#2E3A4B;--mut:#566171;--ln:#ECE6DA;--lk:#0A64A4}
+*{box-sizing:border-box}body{margin:0;background:var(--p);color:var(--ink);font:400 1rem/1.6 "Source Sans 3",system-ui,sans-serif}
+.doc{max-width:1180px;margin:0 auto;padding:32px 20px 80px}
+.doc h1,.doc h2,.doc h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.2}
+.doc h1{font-size:2.4rem;margin:0 0 .4em}.doc h2{font-size:1.7rem;margin:0 0 .3em}.doc h3{font-size:1.1rem;margin:1.2em 0 .3em;font-family:"Source Sans 3",sans-serif}
+.doc>p a,.doc nav.toc-doc a{color:var(--lk)}.doc nav.toc-doc{columns:2;gap:2rem;margin:1.5rem 0 3rem;padding:0;list-style:none}.doc nav.toc-doc li{margin:.2em 0}
+.sec{border-top:1px solid var(--ln);padding-top:2.5rem;margin-top:3rem}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin:1rem 0 1.5rem}
+.specs ul{margin:0;padding-left:1.1rem}.specs li{margin:.25em 0}
+.tokens{font-size:.9rem;color:var(--mut)}
+.demo-row{display:flex;flex-wrap:wrap;gap:20px;margin:16px 0}.demo-stack{display:grid;gap:20px;margin:16px 0}
+.demo-cell{min-width:0;max-width:100%}.demo-label{font-size:.8rem;font-weight:600;color:var(--mut);margin:0 0 6px}
+.demo{border:1px solid #c9c4b8;border-radius:8px;overflow:hidden;background:var(--color-page);max-width:100%}.demo-cell{overflow-x:auto}
+pre{background:#F3F0E8;border:1px solid var(--ln);border-radius:8px;padding:14px;overflow:auto;font:400 .82rem/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:340px}
+details.code{margin:.8rem 0}details.code summary{cursor:pointer;font-weight:600;padding:8px 0}
+.note{background:#EDF4F9;border:1px solid #cfe0ec;border-radius:8px;padding:12px 16px}
+</style></head>
+<body><svg class="sr-only" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+<symbol id="tjc-logo" viewBox="0 0 322.5 92.25"><defs><g/><clipPath id="351e431f24"><path d="M 10.121094 9.886719 L 82.28125 9.886719 L 82.28125 82.050781 L 10.121094 82.050781 Z M 10.121094 9.886719 " clip-rule="nonzero"/></clipPath><clipPath id="79f2f9e187"><path d="M 46.183594 9.886719 L 46.496094 9.886719 C 66.414062 9.886719 82.558594 26.035156 82.558594 45.953125 C 82.558594 65.867188 66.414062 82.015625 46.496094 82.015625 L 46.183594 82.015625 C 26.265625 82.015625 10.121094 65.867188 10.121094 45.953125 C 10.121094 26.035156 26.265625 9.886719 46.183594 9.886719 Z M 46.183594 9.886719 " clip-rule="nonzero"/></clipPath><clipPath id="63756d411c"><path d="M 28.503906 22.011719 L 64.214844 22.011719 L 64.214844 69.625 L 28.503906 69.625 Z M 28.503906 22.011719 " clip-rule="nonzero"/></clipPath><clipPath id="7440633a4e"><rect x="0" width="226" y="0" height="52"/></clipPath><clipPath id="de8058c8f4"><path d="M 173.480469 76.484375 L 311.882812 76.484375 L 311.882812 82.015625 L 173.480469 82.015625 Z M 173.480469 76.484375 " clip-rule="nonzero"/></clipPath><clipPath id="ca8408905a"><path d="M 0.480469 0.484375 L 138.882812 0.484375 L 138.882812 6.015625 L 0.480469 6.015625 Z M 0.480469 0.484375 " clip-rule="nonzero"/></clipPath><clipPath id="7b387cea8f"><rect x="0" width="139" y="0" height="7"/></clipPath><clipPath id="c139577ef9"><path d="M 109.636719 76.480469 L 163.648438 76.480469 L 163.648438 82.015625 L 109.636719 82.015625 Z M 109.636719 76.480469 " clip-rule="nonzero"/></clipPath><clipPath id="5d6c7f59fe"><path d="M 0.636719 0.480469 L 54.648438 0.480469 L 54.648438 6.015625 L 0.636719 6.015625 Z M 0.636719 0.480469 " clip-rule="nonzero"/></clipPath><clipPath id="ac5b1acdf1"><rect x="0" width="55" y="0" height="7"/></clipPath><clipPath id="10ab4d4dd8"><path d="M 91.746094 76.480469 L 99.800781 76.480469 L 99.800781 82.011719 L 91.746094 82.011719 Z M 91.746094 76.480469 " clip-rule="nonzero"/></clipPath><clipPath id="5f36893ccd"><path d="M 0.746094 0.480469 L 8.800781 0.480469 L 8.800781 6.011719 L 0.746094 6.011719 Z M 0.746094 0.480469 " clip-rule="nonzero"/></clipPath><clipPath id="01e0aa897a"><rect x="0" width="9" y="0" height="7"/></clipPath></defs><g clip-path="url(#351e431f24)"><g clip-path="url(#79f2f9e187)"><path stroke-linecap="butt" transform="matrix(0.743952, 0, 0, 0.743952, 10.118691, 9.886967)" fill="none" stroke-linejoin="miter" d="M 48.477485 -0.000333924 L 48.897539 -0.000333924 C 75.670744 -0.000333924 97.371794 21.705967 97.371794 48.479172 C 97.371794 75.247126 75.670744 96.953427 48.897539 96.953427 L 48.477485 96.953427 C 21.70428 96.953427 0.00322934 75.247126 0.00322934 48.479172 C 0.00322934 21.705967 21.70428 -0.000333924 48.477485 -0.000333924 Z M 48.477485 -0.000333924 " style="stroke:var(--logo-ink)" stroke-width="14" stroke-opacity="1" stroke-miterlimit="4"/></g></g><g clip-path="url(#63756d411c)"><path style="fill:var(--logo-accent)" d="M 46.335938 48.1875 C 41.160156 48.1875 36.964844 43.988281 36.964844 38.8125 C 36.964844 33.636719 41.160156 29.441406 46.335938 29.441406 C 51.511719 29.441406 55.707031 33.636719 55.707031 38.8125 C 55.707031 43.988281 51.511719 48.1875 46.335938 48.1875 Z M 46.335938 22.003906 C 36.492188 22.003906 28.507812 29.988281 28.507812 39.832031 C 28.507812 53.074219 46.335938 69.882812 46.335938 69.882812 C 46.335938 69.882812 64.164062 53.074219 64.164062 39.832031 C 64.164062 29.988281 56.183594 22.003906 46.335938 22.003906 " fill-opacity="1" fill-rule="nonzero"/></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(87.762521, 38.362703)"><g><path d="M 8.984375 0 L 8.984375 -23.265625 L 1.109375 -23.265625 L 1.109375 -28.734375 L 23.390625 -28.734375 L 23.390625 -23.265625 L 15.515625 -23.265625 L 15.515625 0 Z M 8.984375 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(112.257549, 38.362703)"><g><path d="M 3.390625 0 L 3.390625 -28.734375 L 9.875 -28.734375 L 9.875 -17.671875 L 19.78125 -17.671875 L 19.78125 -28.734375 L 26.3125 -28.734375 L 26.3125 0 L 19.78125 0 L 19.78125 -11.984375 L 9.875 -11.984375 L 9.875 0 Z M 3.390625 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(141.951156, 38.362703)"><g><path d="M 3.390625 0 L 3.390625 -28.734375 L 21.375 -28.734375 L 21.375 -23.265625 L 9.875 -23.265625 L 9.875 -17.5 L 19.65625 -17.5 L 19.65625 -12.078125 L 9.875 -12.078125 L 9.875 -5.46875 L 21.8125 -5.46875 L 21.8125 0 Z M 3.390625 0 "/></g></g></g><g style="fill:var(--logo-accent)" fill-opacity="1"><g transform="translate(166.098295, 38.362703)"><g><path d="M 9.953125 0.53125 C 7.753906 0.53125 5.910156 0.101562 4.421875 -0.75 C 2.941406 -1.601562 1.703125 -2.910156 0.703125 -4.671875 L 5.109375 -7.9375 C 5.640625 -6.96875 6.253906 -6.242188 6.953125 -5.765625 C 7.660156 -5.296875 8.382812 -5.0625 9.125 -5.0625 C 10.300781 -5.0625 11.1875 -5.421875 11.78125 -6.140625 C 12.382812 -6.859375 12.6875 -8.175781 12.6875 -10.09375 L 12.6875 -28.734375 L 19.171875 -28.734375 L 19.171875 -9.5625 C 19.171875 -8.175781 18.984375 -6.867188 18.609375 -5.640625 C 18.242188 -4.410156 17.6875 -3.335938 16.9375 -2.421875 C 16.1875 -1.515625 15.234375 -0.796875 14.078125 -0.265625 C 12.921875 0.265625 11.546875 0.53125 9.953125 0.53125 Z M 9.953125 0.53125 "/></g></g></g><g style="fill:var(--logo-accent)" fill-opacity="1"><g transform="translate(188.522697, 38.362703)"><g><path d="M 3.390625 0 L 3.390625 -28.734375 L 21.375 -28.734375 L 21.375 -23.265625 L 9.875 -23.265625 L 9.875 -17.5 L 19.65625 -17.5 L 19.65625 -12.078125 L 9.875 -12.078125 L 9.875 -5.46875 L 21.8125 -5.46875 L 21.8125 0 Z M 3.390625 0 "/></g></g></g><g style="fill:var(--logo-accent)" fill-opacity="1"><g transform="translate(212.665274, 38.362703)"><g><path d="M 8.984375 0 L 8.984375 -23.265625 L 1.109375 -23.265625 L 1.109375 -28.734375 L 23.390625 -28.734375 L 23.390625 -23.265625 L 15.515625 -23.265625 L 15.515625 0 Z M 8.984375 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(237.168921, 38.362703)"><g><path d="M 3.390625 0 L 3.390625 -28.734375 L 9.875 -28.734375 L 9.875 -5.46875 L 21.234375 -5.46875 L 21.234375 0 Z M 3.390625 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(259.725492, 38.362703)"><g><path d="M 10.140625 -14.546875 L 9.421875 -11.890625 L 15.546875 -11.890625 L 14.890625 -14.546875 C 14.484375 -15.984375 14.085938 -17.507812 13.703125 -19.125 C 13.316406 -20.738281 12.9375 -22.296875 12.5625 -23.796875 L 12.375 -23.796875 C 12.03125 -22.265625 11.671875 -20.695312 11.296875 -19.09375 C 10.929688 -17.5 10.546875 -15.984375 10.140625 -14.546875 Z M -0.265625 0 L 8.71875 -28.734375 L 16.53125 -28.734375 L 25.515625 0 L 18.640625 0 L 16.875 -6.828125 L 8.109375 -6.828125 L 6.34375 0 Z M -0.265625 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(284.528903, 38.362703)"><g><path d="M 16.078125 0.53125 C 14.109375 0.53125 12.265625 0.21875 10.546875 -0.40625 C 8.828125 -1.039062 7.335938 -1.972656 6.078125 -3.203125 C 4.816406 -4.441406 3.828125 -5.976562 3.109375 -7.8125 C 2.390625 -9.65625 2.03125 -11.78125 2.03125 -14.1875 C 2.03125 -16.5625 2.394531 -18.679688 3.125 -20.546875 C 3.863281 -22.421875 4.867188 -24.003906 6.140625 -25.296875 C 7.421875 -26.585938 8.910156 -27.566406 10.609375 -28.234375 C 12.316406 -28.910156 14.125 -29.25 16.03125 -29.25 C 18.125 -29.25 19.914062 -28.867188 21.40625 -28.109375 C 22.90625 -27.347656 24.128906 -26.484375 25.078125 -25.515625 L 21.671875 -21.375 C 20.941406 -22.019531 20.164062 -22.5625 19.34375 -23 C 18.519531 -23.4375 17.492188 -23.65625 16.265625 -23.65625 C 15.140625 -23.65625 14.113281 -23.441406 13.1875 -23.015625 C 12.269531 -22.597656 11.472656 -21.988281 10.796875 -21.1875 C 10.117188 -20.394531 9.597656 -19.425781 9.234375 -18.28125 C 8.867188 -17.132812 8.6875 -15.84375 8.6875 -14.40625 C 8.6875 -11.4375 9.351562 -9.132812 10.6875 -7.5 C 12.019531 -5.875 14.039062 -5.0625 16.75 -5.0625 C 17.332031 -5.0625 17.898438 -5.132812 18.453125 -5.28125 C 19.015625 -5.4375 19.472656 -5.660156 19.828125 -5.953125 L 19.828125 -10.890625 L 15.0625 -10.890625 L 15.0625 -16.171875 L 25.5625 -16.171875 L 25.5625 -2.953125 C 24.5625 -1.984375 23.238281 -1.160156 21.59375 -0.484375 C 19.945312 0.191406 18.109375 0.53125 16.078125 0.53125 Z M 16.078125 0.53125 "/></g></g></g><g transform="matrix(1, 0, 0, 1, 87, 30)"><g clip-path="url(#7440633a4e)"><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(0.777176, 40.025784)"><g><path d="M 13.71875 0.46875 C 12.09375 0.46875 10.554688 0.1875 9.109375 -0.375 C 7.671875 -0.9375 6.40625 -1.765625 5.3125 -2.859375 C 4.226562 -3.960938 3.375 -5.332031 2.75 -6.96875 C 2.125 -8.613281 1.8125 -10.507812 1.8125 -12.65625 C 1.8125 -14.78125 2.132812 -16.671875 2.78125 -18.328125 C 3.4375 -19.992188 4.316406 -21.398438 5.421875 -22.546875 C 6.523438 -23.703125 7.804688 -24.582031 9.265625 -25.1875 C 10.734375 -25.789062 12.28125 -26.09375 13.90625 -26.09375 C 15.5625 -26.09375 17.039062 -25.757812 18.34375 -25.09375 C 19.65625 -24.425781 20.742188 -23.644531 21.609375 -22.75 L 18.546875 -19.0625 C 17.890625 -19.664062 17.203125 -20.15625 16.484375 -20.53125 C 15.765625 -20.914062 14.945312 -21.109375 14.03125 -21.109375 C 13.164062 -21.109375 12.34375 -20.914062 11.5625 -20.53125 C 10.789062 -20.15625 10.125 -19.613281 9.5625 -18.90625 C 9 -18.195312 8.550781 -17.332031 8.21875 -16.3125 C 7.894531 -15.289062 7.734375 -14.132812 7.734375 -12.84375 C 7.734375 -10.195312 8.296875 -8.144531 9.421875 -6.6875 C 10.554688 -5.238281 12.066406 -4.515625 13.953125 -4.515625 C 14.992188 -4.515625 15.925781 -4.742188 16.75 -5.203125 C 17.582031 -5.660156 18.3125 -6.234375 18.9375 -6.921875 L 22 -3.296875 C 19.851562 -0.785156 17.09375 0.46875 13.71875 0.46875 Z M 13.71875 0.46875 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(23.640791, 40.025784)"><g><path d="M 3.03125 0 L 3.03125 -25.625 L 8.796875 -25.625 L 8.796875 -15.765625 L 17.640625 -15.765625 L 17.640625 -25.625 L 23.453125 -25.625 L 23.453125 0 L 17.640625 0 L 17.640625 -10.6875 L 8.796875 -10.6875 L 8.796875 0 Z M 3.03125 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(50.118567, 40.025784)"><g><path d="M 3.03125 0 L 3.03125 -25.625 L 12.265625 -25.625 C 13.617188 -25.625 14.890625 -25.488281 16.078125 -25.21875 C 17.273438 -24.957031 18.316406 -24.519531 19.203125 -23.90625 C 20.097656 -23.289062 20.804688 -22.472656 21.328125 -21.453125 C 21.859375 -20.429688 22.125 -19.160156 22.125 -17.640625 C 22.125 -15.753906 21.707031 -14.203125 20.875 -12.984375 C 20.050781 -11.765625 18.945312 -10.851562 17.5625 -10.25 L 23.375 0 L 16.890625 0 L 11.984375 -9.234375 L 8.796875 -9.234375 L 8.796875 0 Z M 8.796875 -13.828125 L 11.78125 -13.828125 C 13.300781 -13.828125 14.460938 -14.148438 15.265625 -14.796875 C 16.066406 -15.441406 16.46875 -16.390625 16.46875 -17.640625 C 16.46875 -18.898438 16.066406 -19.78125 15.265625 -20.28125 C 14.460938 -20.78125 13.300781 -21.03125 11.78125 -21.03125 L 8.796875 -21.03125 Z M 8.796875 -13.828125 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(74.200001, 40.025784)"><g><path d="M 13.4375 0.46875 C 11.707031 0.46875 10.128906 0.160156 8.703125 -0.453125 C 7.273438 -1.066406 6.050781 -1.945312 5.03125 -3.09375 C 4.007812 -4.25 3.21875 -5.648438 2.65625 -7.296875 C 2.09375 -8.953125 1.8125 -10.828125 1.8125 -12.921875 C 1.8125 -15.023438 2.09375 -16.894531 2.65625 -18.53125 C 3.21875 -20.164062 4.007812 -21.539062 5.03125 -22.65625 C 6.050781 -23.769531 7.273438 -24.617188 8.703125 -25.203125 C 10.128906 -25.796875 11.707031 -26.09375 13.4375 -26.09375 C 15.164062 -26.09375 16.742188 -25.796875 18.171875 -25.203125 C 19.597656 -24.617188 20.820312 -23.757812 21.84375 -22.625 C 22.863281 -21.5 23.65625 -20.117188 24.21875 -18.484375 C 24.789062 -16.847656 25.078125 -14.992188 25.078125 -12.921875 C 25.078125 -10.828125 24.789062 -8.953125 24.21875 -7.296875 C 23.65625 -5.648438 22.863281 -4.25 21.84375 -3.09375 C 20.820312 -1.945312 19.597656 -1.066406 18.171875 -0.453125 C 16.742188 0.160156 15.164062 0.46875 13.4375 0.46875 Z M 13.4375 -4.515625 C 15.195312 -4.515625 16.585938 -5.265625 17.609375 -6.765625 C 18.628906 -8.273438 19.140625 -10.328125 19.140625 -12.921875 C 19.140625 -15.492188 18.628906 -17.5 17.609375 -18.9375 C 16.585938 -20.382812 15.195312 -21.109375 13.4375 -21.109375 C 11.6875 -21.109375 10.296875 -20.382812 9.265625 -18.9375 C 8.242188 -17.5 7.734375 -15.492188 7.734375 -12.921875 C 7.734375 -10.328125 8.242188 -8.273438 9.265625 -6.765625 C 10.296875 -5.265625 11.6875 -4.515625 13.4375 -4.515625 Z M 13.4375 -4.515625 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(101.070639, 40.025784)"><g><path d="M 3.03125 0 L 3.03125 -25.625 L 8.953125 -25.625 L 15.640625 -12.890625 L 18.15625 -7.234375 L 18.3125 -7.234375 C 18.175781 -8.597656 18.023438 -10.113281 17.859375 -11.78125 C 17.691406 -13.457031 17.609375 -15.054688 17.609375 -16.578125 L 17.609375 -25.625 L 23.109375 -25.625 L 23.109375 0 L 17.171875 0 L 10.5 -12.765625 L 7.984375 -18.359375 L 7.8125 -18.359375 C 7.945312 -16.941406 8.097656 -15.421875 8.265625 -13.796875 C 8.441406 -12.171875 8.53125 -10.597656 8.53125 -9.078125 L 8.53125 0 Z M 3.03125 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(127.194871, 40.025784)"><g><path d="M 3.03125 0 L 3.03125 -25.625 L 8.796875 -25.625 L 8.796875 0 Z M 3.03125 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(139.01952, 40.025784)"><g><path d="M 13.71875 0.46875 C 12.09375 0.46875 10.554688 0.1875 9.109375 -0.375 C 7.671875 -0.9375 6.40625 -1.765625 5.3125 -2.859375 C 4.226562 -3.960938 3.375 -5.332031 2.75 -6.96875 C 2.125 -8.613281 1.8125 -10.507812 1.8125 -12.65625 C 1.8125 -14.78125 2.132812 -16.671875 2.78125 -18.328125 C 3.4375 -19.992188 4.316406 -21.398438 5.421875 -22.546875 C 6.523438 -23.703125 7.804688 -24.582031 9.265625 -25.1875 C 10.734375 -25.789062 12.28125 -26.09375 13.90625 -26.09375 C 15.5625 -26.09375 17.039062 -25.757812 18.34375 -25.09375 C 19.65625 -24.425781 20.742188 -23.644531 21.609375 -22.75 L 18.546875 -19.0625 C 17.890625 -19.664062 17.203125 -20.15625 16.484375 -20.53125 C 15.765625 -20.914062 14.945312 -21.109375 14.03125 -21.109375 C 13.164062 -21.109375 12.34375 -20.914062 11.5625 -20.53125 C 10.789062 -20.15625 10.125 -19.613281 9.5625 -18.90625 C 9 -18.195312 8.550781 -17.332031 8.21875 -16.3125 C 7.894531 -15.289062 7.734375 -14.132812 7.734375 -12.84375 C 7.734375 -10.195312 8.296875 -8.144531 9.421875 -6.6875 C 10.554688 -5.238281 12.066406 -4.515625 13.953125 -4.515625 C 14.992188 -4.515625 15.925781 -4.742188 16.75 -5.203125 C 17.582031 -5.660156 18.3125 -6.234375 18.9375 -6.921875 L 22 -3.296875 C 19.851562 -0.785156 17.09375 0.46875 13.71875 0.46875 Z M 13.71875 0.46875 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(161.883135, 40.025784)"><g><path d="M 3.03125 0 L 3.03125 -25.625 L 8.796875 -25.625 L 8.796875 -4.875 L 18.9375 -4.875 L 18.9375 0 Z M 3.03125 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(182.232539, 40.025784)"><g><path d="M 3.03125 0 L 3.03125 -25.625 L 19.0625 -25.625 L 19.0625 -20.75 L 8.796875 -20.75 L 8.796875 -15.59375 L 17.53125 -15.59375 L 17.53125 -10.765625 L 8.796875 -10.765625 L 8.796875 -4.875 L 19.453125 -4.875 L 19.453125 0 Z M 3.03125 0 "/></g></g></g><g style="fill:var(--logo-ink)" fill-opacity="1"><g transform="translate(203.760466, 40.025784)"><g><path d="M 10.84375 0.46875 C 9.164062 0.46875 7.492188 0.160156 5.828125 -0.453125 C 4.171875 -1.066406 2.6875 -1.988281 1.375 -3.21875 L 4.671875 -7.1875 C 5.585938 -6.40625 6.601562 -5.765625 7.71875 -5.265625 C 8.832031 -4.765625 9.925781 -4.515625 11 -4.515625 C 12.207031 -4.515625 13.101562 -4.738281 13.6875 -5.1875 C 14.28125 -5.632812 14.578125 -6.238281 14.578125 -7 C 14.578125 -7.382812 14.488281 -7.722656 14.3125 -8.015625 C 14.144531 -8.304688 13.894531 -8.5625 13.5625 -8.78125 C 13.238281 -9 12.847656 -9.207031 12.390625 -9.40625 C 11.929688 -9.601562 11.429688 -9.820312 10.890625 -10.0625 L 7.546875 -11.46875 C 6.890625 -11.738281 6.253906 -12.082031 5.640625 -12.5 C 5.023438 -12.914062 4.472656 -13.40625 3.984375 -13.96875 C 3.503906 -14.53125 3.117188 -15.1875 2.828125 -15.9375 C 2.535156 -16.6875 2.390625 -17.53125 2.390625 -18.46875 C 2.390625 -19.519531 2.613281 -20.507812 3.0625 -21.4375 C 3.507812 -22.363281 4.140625 -23.175781 4.953125 -23.875 C 5.765625 -24.570312 6.726562 -25.113281 7.84375 -25.5 C 8.957031 -25.894531 10.179688 -26.09375 11.515625 -26.09375 C 13.003906 -26.09375 14.472656 -25.800781 15.921875 -25.21875 C 17.378906 -24.644531 18.660156 -23.8125 19.765625 -22.71875 L 16.8125 -19.0625 C 15.976562 -19.71875 15.140625 -20.222656 14.296875 -20.578125 C 13.460938 -20.929688 12.535156 -21.109375 11.515625 -21.109375 C 10.515625 -21.109375 9.71875 -20.90625 9.125 -20.5 C 8.539062 -20.09375 8.25 -19.519531 8.25 -18.78125 C 8.25 -18.382812 8.347656 -18.050781 8.546875 -17.78125 C 8.742188 -17.507812 9.019531 -17.257812 9.375 -17.03125 C 9.726562 -16.8125 10.140625 -16.601562 10.609375 -16.40625 C 11.078125 -16.207031 11.585938 -15.992188 12.140625 -15.765625 L 15.4375 -14.421875 C 17.007812 -13.796875 18.25 -12.929688 19.15625 -11.828125 C 20.0625 -10.722656 20.515625 -9.269531 20.515625 -7.46875 C 20.515625 -6.394531 20.296875 -5.378906 19.859375 -4.421875 C 19.429688 -3.460938 18.800781 -2.625 17.96875 -1.90625 C 17.144531 -1.1875 16.128906 -0.609375 14.921875 -0.171875 C 13.722656 0.253906 12.363281 0.46875 10.84375 0.46875 Z M 10.84375 0.46875 "/></g></g></g></g></g><g clip-path="url(#de8058c8f4)"><g transform="matrix(1, 0, 0, 1, 173, 76)"><g clip-path="url(#7b387cea8f)"><g clip-path="url(#ca8408905a)"><path style="fill:var(--logo-accent)" d="M 138.882812 0.484375 L 138.882812 6.015625 L 0.488281 6.015625 L 0.488281 0.484375 Z M 138.882812 0.484375 " fill-opacity="1" fill-rule="nonzero"/></g></g></g></g><g clip-path="url(#c139577ef9)"><g transform="matrix(1, 0, 0, 1, 109, 76)"><g clip-path="url(#ac5b1acdf1)"><g clip-path="url(#5d6c7f59fe)"><path style="fill:var(--logo-accent)" d="M 54.648438 0.480469 L 54.648438 6.015625 L 0.640625 6.015625 L 0.640625 0.480469 Z M 54.648438 0.480469 " fill-opacity="1" fill-rule="nonzero"/></g></g></g></g><g clip-path="url(#10ab4d4dd8)"><g transform="matrix(1, 0, 0, 1, 91, 76)"><g clip-path="url(#01e0aa897a)"><g clip-path="url(#5f36893ccd)"><path style="fill:var(--logo-accent)" d="M 8.800781 0.480469 L 8.800781 6.011719 L 0.734375 6.011719 L 0.734375 0.480469 Z M 8.800781 0.480469 " fill-opacity="1" fill-rule="nonzero"/></g></g></g></g></symbol>
+<symbol id="tjc-ring" viewBox="0 0 322.5 92.25"><defs><g/><clipPath id="351e431f24r"><path d="M 10.121094 9.886719 L 82.28125 9.886719 L 82.28125 82.050781 L 10.121094 82.050781 Z M 10.121094 9.886719 " clip-rule="nonzero"/></clipPath><clipPath id="79f2f9e187r"><path d="M 46.183594 9.886719 L 46.496094 9.886719 C 66.414062 9.886719 82.558594 26.035156 82.558594 45.953125 C 82.558594 65.867188 66.414062 82.015625 46.496094 82.015625 L 46.183594 82.015625 C 26.265625 82.015625 10.121094 65.867188 10.121094 45.953125 C 10.121094 26.035156 26.265625 9.886719 46.183594 9.886719 Z M 46.183594 9.886719 " clip-rule="nonzero"/></clipPath><clipPath id="63756d411cr"><path d="M 28.503906 22.011719 L 64.214844 22.011719 L 64.214844 69.625 L 28.503906 69.625 Z M 28.503906 22.011719 " clip-rule="nonzero"/></clipPath><clipPath id="7440633a4er"><rect x="0" width="226" y="0" height="52"/></clipPath><clipPath id="de8058c8f4r"><path d="M 173.480469 76.484375 L 311.882812 76.484375 L 311.882812 82.015625 L 173.480469 82.015625 Z M 173.480469 76.484375 " clip-rule="nonzero"/></clipPath><clipPath id="ca8408905ar"><path d="M 0.480469 0.484375 L 138.882812 0.484375 L 138.882812 6.015625 L 0.480469 6.015625 Z M 0.480469 0.484375 " clip-rule="nonzero"/></clipPath><clipPath id="7b387cea8fr"><rect x="0" width="139" y="0" height="7"/></clipPath><clipPath id="c139577ef9r"><path d="M 109.636719 76.480469 L 163.648438 76.480469 L 163.648438 82.015625 L 109.636719 82.015625 Z M 109.636719 76.480469 " clip-rule="nonzero"/></clipPath><clipPath id="5d6c7f59fer"><path d="M 0.636719 0.480469 L 54.648438 0.480469 L 54.648438 6.015625 L 0.636719 6.015625 Z M 0.636719 0.480469 " clip-rule="nonzero"/></clipPath><clipPath id="ac5b1acdf1r"><rect x="0" width="55" y="0" height="7"/></clipPath><clipPath id="10ab4d4dd8r"><path d="M 91.746094 76.480469 L 99.800781 76.480469 L 99.800781 82.011719 L 91.746094 82.011719 Z M 91.746094 76.480469 " clip-rule="nonzero"/></clipPath><clipPath id="5f36893ccdr"><path d="M 0.746094 0.480469 L 8.800781 0.480469 L 8.800781 6.011719 L 0.746094 6.011719 Z M 0.746094 0.480469 " clip-rule="nonzero"/></clipPath><clipPath id="01e0aa897ar"><rect x="0" width="9" y="0" height="7"/></clipPath></defs><g clip-path="url(#351e431f24r)"><g clip-path="url(#79f2f9e187r)"><path stroke-linecap="butt" transform="matrix(0.743952, 0, 0, 0.743952, 10.118691, 9.886967)" fill="none" stroke-linejoin="miter" d="M 48.477485 -0.000333924 L 48.897539 -0.000333924 C 75.670744 -0.000333924 97.371794 21.705967 97.371794 48.479172 C 97.371794 75.247126 75.670744 96.953427 48.897539 96.953427 L 48.477485 96.953427 C 21.70428 96.953427 0.00322934 75.247126 0.00322934 48.479172 C 0.00322934 21.705967 21.70428 -0.000333924 48.477485 -0.000333924 Z M 48.477485 -0.000333924 " style="stroke:var(--logo-ink)" stroke-width="14" stroke-opacity="1" stroke-miterlimit="4"/></g></g><g clip-path="url(#63756d411cr)"><path style="fill:var(--logo-accent)" d="M 46.335938 48.1875 C 41.160156 48.1875 36.964844 43.988281 36.964844 38.8125 C 36.964844 33.636719 41.160156 29.441406 46.335938 29.441406 C 51.511719 29.441406 55.707031 33.636719 55.707031 38.8125 C 55.707031 43.988281 51.511719 48.1875 46.335938 48.1875 Z M 46.335938 22.003906 C 36.492188 22.003906 28.507812 29.988281 28.507812 39.832031 C 28.507812 53.074219 46.335938 69.882812 46.335938 69.882812 C 46.335938 69.882812 64.164062 53.074219 64.164062 39.832031 C 64.164062 29.988281 56.183594 22.003906 46.335938 22.003906 " fill-opacity="1" fill-rule="nonzero"/></g></symbol>
+<symbol id="i-chev-r" viewBox="0 0 12 12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-chev-l" viewBox="0 0 12 12"><path d="M8 2L4 6l4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-menu" viewBox="0 0 20 20"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+<symbol id="i-close" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+<symbol id="i-ext" viewBox="0 0 12 12"><path d="M4.5 2H10v5.5M10 2L2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-pin" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M10 1.5a6.3 6.3 0 0 0-6.3 6.3c0 5 6.3 10.7 6.3 10.7s6.3-5.7 6.3-10.7A6.3 6.3 0 0 0 10 1.5zm0 8.6a2.3 2.3 0 1 1 0-4.6 2.3 2.3 0 0 1 0 4.6z"/></symbol>
+</svg><div class="doc"><h1>Components</h1><p>Round 2. Every component is shown in light and dark, on phone (390px) and desktop where the layout changes. Colours, sizes and spacing come only from tokens.css. Layout switches use container queries, so the phone and desktop demos below are real renderings of the same CSS.</p>
+<p class="note">Photos are placeholders from the mood board. Titles are real post titles from plan.md; dates, bios and the Reader Stories are draft samples.</p>
+<nav aria-label="Components"><ul class="toc-doc"><li><a href="#header">1. Header and menu</a></li><li><a href="#footer">2. Footer</a></li><li><a href="#focus">3. Skip link and focus style</a></li><li><a href="#route">4. Route divider</a></li><li><a href="#story-card">5. Story card</a></li><li><a href="#country-card">6. Country card</a></li><li><a href="#breadcrumb">7. Breadcrumb</a></li><li><a href="#byline">8. Story byline</a></li><li><a href="#toc">9. Table of contents</a></li><li><a href="#figure">10. Figure with caption</a></li><li><a href="#callout">11. Callout: “Lesson learned”</a></li><li><a href="#author">12. Author box</a></li><li><a href="#write-to-us">13. “Write to us” line</a></li><li><a href="#more-from">14. “More from [country]” block</a></li><li><a href="#pagination">15. Pagination</a></li><li><a href="#section-intro">16. Section intro</a></li><li><a href="#toolkit">17. Toolkit item and disclosure note</a></li><li><a href="#reader-label">18. Reader Story label</a></li><li><a href="#empty">19. Empty state and 404</a></li></ul></nav><section class="sec" id="header"><h2>1. Header and menu</h2><p>Logo left, four links right on desktop; a no-JavaScript &lt;details&gt; menu on phone. The current page is marked by a Link Blue underline and aria-current=&quot;page&quot;, never by colour alone.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Default</li><li>Hover: link goes to full-strength text with a grey underline</li><li>Current page: Link Blue underline bar + aria-current</li><li>Focus: 3px Link Blue outline, 2px offset</li><li>Menu open (phone): full-width panel, 48px rows</li></ul></div><div><h3>Accessibility</h3><ul><li>Menu is a native &lt;details&gt;/&lt;summary&gt;: keyboard and screen reader friendly with no script.</li><li>Summary is 48px tall; panel links are 48px. Desktop links are 44px tall.</li><li>Two nav landmarks share the label “Main”; only one is displayed at a time (the other is display:none, so it is removed from the accessibility tree).</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-text, color-text-muted, color-link, color-border, space-*, size-logo, size-logo-mobile, header-height-md</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone, closed · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><header class="site-header"><div class="shell"><div class="site-header__bar">
+<a class="site-logo" href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 306 76" aria-hidden="true" focusable="false"><use href="#tjc-logo" width="322.5" height="92.25"/></svg></a>
+<nav class="nav" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav>
+<details class="menu"><summary><span>Menu</span><svg class="icon i-open" aria-hidden="true"><use href="#i-menu"/></svg><svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg></summary>
+<nav class="menu__panel" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav></details>
+</div></div></header></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone, closed · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><header class="site-header"><div class="shell"><div class="site-header__bar">
+<a class="site-logo" href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 306 76" aria-hidden="true" focusable="false"><use href="#tjc-logo" width="322.5" height="92.25"/></svg></a>
+<nav class="nav" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav>
+<details class="menu"><summary><span>Menu</span><svg class="icon i-open" aria-hidden="true"><use href="#i-menu"/></svg><svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg></summary>
+<nav class="menu__panel" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav></details>
+</div></div></header></div></div></div></div></div><div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone, menu open · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><header class="site-header"><div class="shell"><div class="site-header__bar">
+<a class="site-logo" href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 306 76" aria-hidden="true" focusable="false"><use href="#tjc-logo" width="322.5" height="92.25"/></svg></a>
+<nav class="nav" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav>
+<details class="menu" open><summary><span>Menu</span><svg class="icon i-open" aria-hidden="true"><use href="#i-menu"/></svg><svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg></summary>
+<nav class="menu__panel" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav></details>
+</div></div></header></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone, menu open · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><header class="site-header"><div class="shell"><div class="site-header__bar">
+<a class="site-logo" href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 306 76" aria-hidden="true" focusable="false"><use href="#tjc-logo" width="322.5" height="92.25"/></svg></a>
+<nav class="nav" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav>
+<details class="menu" open><summary><span>Menu</span><svg class="icon i-open" aria-hidden="true"><use href="#i-menu"/></svg><svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg></summary>
+<nav class="menu__panel" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav></details>
+</div></div></header></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:1100px"><div class="shell"><header class="site-header"><div class="shell"><div class="site-header__bar">
+<a class="site-logo" href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 306 76" aria-hidden="true" focusable="false"><use href="#tjc-logo" width="322.5" height="92.25"/></svg></a>
+<nav class="nav" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav>
+<details class="menu"><summary><span>Menu</span><svg class="icon i-open" aria-hidden="true"><use href="#i-menu"/></svg><svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg></summary>
+<nav class="menu__panel" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav></details>
+</div></div></header></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:1100px"><div class="shell"><header class="site-header"><div class="shell"><div class="site-header__bar">
+<a class="site-logo" href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 306 76" aria-hidden="true" focusable="false"><use href="#tjc-logo" width="322.5" height="92.25"/></svg></a>
+<nav class="nav" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav>
+<details class="menu"><summary><span>Menu</span><svg class="icon i-open" aria-hidden="true"><use href="#i-menu"/></svg><svg class="icon i-close" aria-hidden="true"><use href="#i-close"/></svg></summary>
+<nav class="menu__panel" aria-label="Main"><ul><li><a href="pages/places.html">Places</a></li><li><a href="pages/life-abroad.html" aria-current="page">Life Abroad</a></li><li><a href="pages/stories.html">Stories</a></li><li><a href="pages/about.html">About</a></li></ul></nav></details>
+</div></div></header></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;header class=&quot;site-header&quot;&gt;
+ &lt;div class=&quot;shell&quot;&gt;
+  &lt;div class=&quot;site-header__bar&quot;&gt;
+   &lt;a aria-label=&quot;The Jet Lag Chronicles, home&quot; class=&quot;site-logo&quot; href=&quot;pages/home.html&quot;&gt;
+    &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; viewbox=&quot;8 8 306 76&quot;&gt;
+     &lt;use height=&quot;92.25&quot; href=&quot;#tjc-logo&quot; width=&quot;322.5&quot;&gt;
+     &lt;/use&gt;
+    &lt;/svg&gt;
+   &lt;/a&gt;
+   &lt;nav aria-label=&quot;Main&quot; class=&quot;nav&quot;&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;pages/places.html&quot;&gt;
+       Places
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a aria-current=&quot;page&quot; href=&quot;pages/life-abroad.html&quot;&gt;
+       Life Abroad
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;pages/stories.html&quot;&gt;
+       Stories
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;pages/about.html&quot;&gt;
+       About
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/nav&gt;
+   &lt;details class=&quot;menu&quot; open=&quot;&quot;&gt;
+    &lt;summary&gt;
+     &lt;span&gt;
+      Menu
+     &lt;/span&gt;
+     &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon i-open&quot;&gt;
+      &lt;use href=&quot;#i-menu&quot;&gt;
+      &lt;/use&gt;
+     &lt;/svg&gt;
+     &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon i-close&quot;&gt;
+      &lt;use href=&quot;#i-close&quot;&gt;
+      &lt;/use&gt;
+     &lt;/svg&gt;
+    &lt;/summary&gt;
+    &lt;nav aria-label=&quot;Main&quot; class=&quot;menu__panel&quot;&gt;
+     &lt;ul&gt;
+      &lt;li&gt;
+       &lt;a href=&quot;pages/places.html&quot;&gt;
+        Places
+       &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+       &lt;a aria-current=&quot;page&quot; href=&quot;pages/life-abroad.html&quot;&gt;
+        Life Abroad
+       &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+       &lt;a href=&quot;pages/stories.html&quot;&gt;
+        Stories
+       &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+       &lt;a href=&quot;pages/about.html&quot;&gt;
+        About
+       &lt;/a&gt;
+      &lt;/li&gt;
+     &lt;/ul&gt;
+    &lt;/nav&gt;
+   &lt;/details&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/header&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Header + menu ---------- */
+.site-header { position: relative; background: var(--color-page); border-block-end: var(--border-hairline); }
+.site-header__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: var(--header-height); }
+.site-logo { display: inline-flex; align-items: center; min-height: var(--target-min); }
+.site-logo svg { width: var(--size-logo-mobile); height: auto; }
+.nav { display: none; }
+.menu { display: block; }
+.menu &gt; summary {
+  list-style: none; display: inline-flex; align-items: center; gap: var(--space-2); cursor: pointer;
+  min-height: var(--target-min); padding-inline: var(--space-3); margin-inline-end: calc(var(--space-3) * -1);
+  font: var(--weight-semibold) var(--text-nav) / 1.2 var(--font-sans); color: var(--color-text); border-radius: var(--radius-card);
+}
+.menu &gt; summary::-webkit-details-marker { display: none; }
+.menu .i-close { display: none; }
+.menu[open] .i-open { display: none; }
+.menu[open] .i-close { display: block; }
+.menu__panel {
+  position: absolute; z-index: var(--z-menu); inset-inline: 0; inset-block-start: 100%;
+  background: var(--color-surface); border-block-end: var(--border-hairline); box-shadow: var(--shadow-overlay);
+}
+.menu__panel ul { list-style: none; padding: var(--space-2) 0 var(--space-4); }
+.menu__panel a {
+  display: flex; align-items: center; min-height: var(--target-min); padding-inline: var(--gutter);
+  font: var(--weight-semibold) var(--text-h4) / 1.2 var(--font-sans); color: var(--color-text); text-decoration: none;
+  border-inline-start: var(--focus-width) solid transparent;
+}
+.menu__panel a:hover { background: var(--color-surface-sunken); color: var(--color-text); }
+.menu__panel a[aria-current=&quot;page&quot;] { color: var(--color-link); border-inline-start-color: var(--color-link); }
+.site-header__bar { min-height: var(--header-height-md); }
+.site-logo svg { width: var(--size-logo); }
+.menu { display: none; }
+.nav { display: block; }
+.nav ul { display: flex; gap: var(--space-6); list-style: none; padding: 0; }
+.nav a {
+    position: relative; display: inline-flex; align-items: center; min-height: var(--target-min);
+    font: var(--weight-semibold) var(--text-nav) / 1.2 var(--font-sans); color: var(--color-text); text-decoration: none;
+  }
+.nav a::after { content: &quot;&quot;; position: absolute; inset-inline: 0; inset-block-end: var(--space-2); border-block-end: var(--border-width-thick) solid transparent; }
+.nav a:hover { color: var(--color-text); }
+.nav a:hover::after { border-block-end-color: var(--color-border-strong); }
+.nav a[aria-current=&quot;page&quot;] { color: var(--color-link); }
+.nav a[aria-current=&quot;page&quot;]::after { border-block-end-color: var(--color-link); }</code></pre></details></section><section class="sec" id="footer"><h2>2. Footer</h2><p>Ring mark, one-line tagline, Follow, contact and more, and the legal line. A Toolkit link appears in the “contact and more” list only when the Toolkit page is live.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Default</li><li>Link hover: Link Blue text with underline</li><li>Focus: standard ring</li></ul></div><div><h3>Accessibility</h3><ul><li>Social links name the network in text, no icon-only links.</li><li>The footer h2s are visually small but are real headings for navigation.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-surface-sunken, color-border, color-text-muted, size-ring-footer, space-*</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><footer class="site-footer"><div class="shell"><div class="site-footer__grid">
+<div class="site-footer__brand"><a href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></a><p class="site-footer__tag">Travel stories with real-life lessons, from Moni &amp; Dunny, a Canadian-Colombian couple living and travelling abroad.</p></div>
+<div class="site-footer__col"><h2>Follow</h2><ul class="footer-list"><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">X</a></li></ul></div>
+<div class="site-footer__col"><h2>Contact and more</h2><ul class="footer-list"><li><a href="mailto:info@thejetlagchronicles.com">info@thejetlagchronicles.com</a></li><li><a href="#">RSS</a></li><li><a href="pages/privacy.html">Privacy</a></li><li><a href="pages/toolkit.html">Our Travel Toolkit</a></li></ul></div></div>
+<p class="site-footer__legal">© 2026 Moni &amp; Dunny</p></div></footer></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><footer class="site-footer"><div class="shell"><div class="site-footer__grid">
+<div class="site-footer__brand"><a href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></a><p class="site-footer__tag">Travel stories with real-life lessons, from Moni &amp; Dunny, a Canadian-Colombian couple living and travelling abroad.</p></div>
+<div class="site-footer__col"><h2>Follow</h2><ul class="footer-list"><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">X</a></li></ul></div>
+<div class="site-footer__col"><h2>Contact and more</h2><ul class="footer-list"><li><a href="mailto:info@thejetlagchronicles.com">info@thejetlagchronicles.com</a></li><li><a href="#">RSS</a></li><li><a href="pages/privacy.html">Privacy</a></li><li><a href="pages/toolkit.html">Our Travel Toolkit</a></li></ul></div></div>
+<p class="site-footer__legal">© 2026 Moni &amp; Dunny</p></div></footer></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop (with Toolkit link) · light</p><div class="demo theme-light"><div class="ctx" style="width:1100px"><div class="shell"><footer class="site-footer"><div class="shell"><div class="site-footer__grid">
+<div class="site-footer__brand"><a href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></a><p class="site-footer__tag">Travel stories with real-life lessons, from Moni &amp; Dunny, a Canadian-Colombian couple living and travelling abroad.</p></div>
+<div class="site-footer__col"><h2>Follow</h2><ul class="footer-list"><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">X</a></li></ul></div>
+<div class="site-footer__col"><h2>Contact and more</h2><ul class="footer-list"><li><a href="mailto:info@thejetlagchronicles.com">info@thejetlagchronicles.com</a></li><li><a href="#">RSS</a></li><li><a href="pages/privacy.html">Privacy</a></li><li><a href="pages/toolkit.html">Our Travel Toolkit</a></li></ul></div></div>
+<p class="site-footer__legal">© 2026 Moni &amp; Dunny</p></div></footer></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop (with Toolkit link) · dark</p><div class="demo theme-dark"><div class="ctx" style="width:1100px"><div class="shell"><footer class="site-footer"><div class="shell"><div class="site-footer__grid">
+<div class="site-footer__brand"><a href="pages/home.html" aria-label="The Jet Lag Chronicles, home"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></a><p class="site-footer__tag">Travel stories with real-life lessons, from Moni &amp; Dunny, a Canadian-Colombian couple living and travelling abroad.</p></div>
+<div class="site-footer__col"><h2>Follow</h2><ul class="footer-list"><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">X</a></li></ul></div>
+<div class="site-footer__col"><h2>Contact and more</h2><ul class="footer-list"><li><a href="mailto:info@thejetlagchronicles.com">info@thejetlagchronicles.com</a></li><li><a href="#">RSS</a></li><li><a href="pages/privacy.html">Privacy</a></li><li><a href="pages/toolkit.html">Our Travel Toolkit</a></li></ul></div></div>
+<p class="site-footer__legal">© 2026 Moni &amp; Dunny</p></div></footer></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;footer class=&quot;site-footer&quot;&gt;
+ &lt;div class=&quot;shell&quot;&gt;
+  &lt;div class=&quot;site-footer__grid&quot;&gt;
+   &lt;div class=&quot;site-footer__brand&quot;&gt;
+    &lt;a aria-label=&quot;The Jet Lag Chronicles, home&quot; href=&quot;pages/home.html&quot;&gt;
+     &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; viewbox=&quot;8 8 76 76&quot;&gt;
+      &lt;use height=&quot;92.25&quot; href=&quot;#tjc-ring&quot; width=&quot;322.5&quot;&gt;
+      &lt;/use&gt;
+     &lt;/svg&gt;
+    &lt;/a&gt;
+    &lt;p class=&quot;site-footer__tag&quot;&gt;
+     Travel stories with real-life lessons, from Moni &amp;amp; Dunny, a Canadian-Colombian couple living and travelling abroad.
+    &lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;site-footer__col&quot;&gt;
+    &lt;h2&gt;
+     Follow
+    &lt;/h2&gt;
+    &lt;ul class=&quot;footer-list&quot;&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+       Instagram
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+       YouTube
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+       X
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;site-footer__col&quot;&gt;
+    &lt;h2&gt;
+     Contact and more
+    &lt;/h2&gt;
+    &lt;ul class=&quot;footer-list&quot;&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;mailto:info@thejetlagchronicles.com&quot;&gt;
+       info@thejetlagchronicles.com
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;
+       RSS
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;pages/privacy.html&quot;&gt;
+       Privacy
+      &lt;/a&gt;
+     &lt;/li&gt;
+     &lt;li&gt;
+      &lt;a href=&quot;pages/toolkit.html&quot;&gt;
+       Our Travel Toolkit
+      &lt;/a&gt;
+     &lt;/li&gt;
+    &lt;/ul&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class=&quot;site-footer__legal&quot;&gt;
+   © 2026 Moni &amp;amp; Dunny
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/footer&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Footer ---------- */
+.site-footer { margin-block-start: var(--space-9); padding-block: var(--space-7) var(--space-6); border-block-start: var(--border-hairline); }
+.site-footer__grid { display: grid; gap: var(--space-6); }
+.site-footer__brand { display: grid; gap: var(--space-3); justify-items: start; align-content: start; }
+.site-footer__brand svg { width: var(--size-ring-footer); height: var(--size-ring-footer); }
+.site-footer__tag { max-width: var(--measure-intro); color: var(--color-text-muted); font-size: var(--text-small); line-height: var(--leading-ui); }
+.site-footer__col h2 { font: var(--weight-semibold) var(--text-eyebrow) / 1.3 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); margin-block-end: var(--space-1); }
+.footer-list { list-style: none; padding: 0; }
+.footer-list a { display: inline-flex; align-items: center; min-height: var(--target-min); color: var(--color-text); text-decoration-color: var(--color-border-strong); }
+.footer-list a:hover { color: var(--color-link); text-decoration-color: currentColor; }
+.site-footer__legal { margin-block-start: var(--space-6); padding-block-start: var(--space-4); border-block-start: var(--border-hairline); font-size: var(--text-small); color: var(--color-text-subtle); }</code></pre></details></section><section class="sec" id="focus"><h2>3. Skip link and focus style</h2><p>One focus style for everything: a 3px Focus Blue outline with a 2px offset. Never removed, never reduced to a colour change. Focus Blue passes 3:1 against the page and surface colours in both modes.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Skip link hidden off-screen until focused, then pinned top-left</li><li>Focus ring: 3px solid var(--color-focus), offset 2px</li><li>Card focus: the ring wraps the whole card, not just the title</li></ul></div><div><h3>Accessibility</h3><ul><li>Skip link is the first focusable element and targets #main (tabindex=&quot;-1&quot;).</li><li>Focus is never hidden under a sticky header (the header is not sticky).</li><li>Windows High Contrast: outlines use real outline, so they survive forced colours.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-focus, focus-width, focus-offset</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><p class="t-small t-muted">Skip link, shown when focused (first Tab stop on every page):</p><a class="skip-link force-focus" style="position:static;transform:none" href="#main">Skip to content</a><p class="t-small t-muted">Focus ring on a link, a button-link and a card:</p><p><a class="force-focus" href="#">Chiang Mai vs Bangkok</a></p><p><a class="btn-link force-focus" href="#">Visit Wise<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg></a></p></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><p class="t-small t-muted">Skip link, shown when focused (first Tab stop on every page):</p><a class="skip-link force-focus" style="position:static;transform:none" href="#main">Skip to content</a><p class="t-small t-muted">Focus ring on a link, a button-link and a card:</p><p><a class="force-focus" href="#">Chiang Mai vs Bangkok</a></p><p><a class="btn-link force-focus" href="#">Visit Wise<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg></a></p></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:700px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><p class="t-small t-muted">Skip link, shown when focused (first Tab stop on every page):</p><a class="skip-link force-focus" style="position:static;transform:none" href="#main">Skip to content</a><p class="t-small t-muted">Focus ring on a link, a button-link and a card:</p><p><a class="force-focus" href="#">Chiang Mai vs Bangkok</a></p><p><a class="btn-link force-focus" href="#">Visit Wise<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg></a></p></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:700px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><p class="t-small t-muted">Skip link, shown when focused (first Tab stop on every page):</p><a class="skip-link force-focus" style="position:static;transform:none" href="#main">Skip to content</a><p class="t-small t-muted">Focus ring on a link, a button-link and a card:</p><p><a class="force-focus" href="#">Chiang Mai vs Bangkok</a></p><p><a class="btn-link force-focus" href="#">Visit Wise<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg></a></p></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;a class=&quot;skip-link&quot; href=&quot;#main&quot;&gt;
+ Skip to content
+&lt;/a&gt;
+:focus-visible { outline: var(--focus-width) solid var(--color-focus); outline-offset: var(--focus-offset); }
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute; z-index: var(--z-skip); inset-inline-start: var(--space-4); inset-block-start: var(--space-3);
+  display: inline-flex; align-items: center; min-height: var(--target-min); padding-inline: var(--space-4);
+  background: var(--color-surface); color: var(--color-link); font-weight: var(--weight-semibold);
+  border: var(--border-strong); border-radius: var(--radius-card);
+  transform: translateY(calc(-100% - var(--space-4)));
+}
+.skip-link:focus { transform: none; }
+.story-card:has(.story-card__link:focus-visible) { outline: var(--focus-width) solid var(--color-focus); outline-offset: var(--focus-offset); border-radius: var(--radius-card); }
+.country-card:has(.country-card__link:focus-visible) { outline: var(--focus-width) solid var(--color-focus); outline-offset: var(--focus-offset); border-radius: var(--radius-card); }</code></pre></details></section><section class="sec" id="route"><h2>4. Route divider</h2><p>The brand’s dashed route line with a small pin at one end. Decoration only: it carries no information, is hidden from assistive tech, and is used at most once per section break.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Left-aligned (default)</li><li>Centred (404, empty states)</li></ul></div><div><h3>Accessibility</h3><ul><li>aria-hidden=&quot;true&quot;; it must never be the only signal of a section change, so a heading always follows it.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-route, space-*</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-6)"><div class="route" aria-hidden="true"><span></span><span></span><span></span></div></div><div style="padding-bottom:var(--space-6)"><div class="route route--center" aria-hidden="true"><span></span><span></span><span></span></div></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-6)"><div class="route" aria-hidden="true"><span></span><span></span><span></span></div></div><div style="padding-bottom:var(--space-6)"><div class="route route--center" aria-hidden="true"><span></span><span></span><span></span></div></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:700px"><div class="shell"><div style="padding-block:var(--space-6)"><div class="route" aria-hidden="true"><span></span><span></span><span></span></div></div><div style="padding-bottom:var(--space-6)"><div class="route route--center" aria-hidden="true"><span></span><span></span><span></span></div></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:700px"><div class="shell"><div style="padding-block:var(--space-6)"><div class="route" aria-hidden="true"><span></span><span></span><span></span></div></div><div style="padding-bottom:var(--space-6)"><div class="route route--center" aria-hidden="true"><span></span><span></span><span></span></div></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;div aria-hidden=&quot;true&quot; class=&quot;route&quot;&gt;
+ &lt;span&gt;
+ &lt;/span&gt;
+ &lt;span&gt;
+ &lt;/span&gt;
+ &lt;span&gt;
+ &lt;/span&gt;
+&lt;/div&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Route divider ---------- */
+.route { display: flex; gap: var(--route-gap); height: var(--route-thickness); width: 100%; max-width: var(--route-width); }
+.route span { background: var(--color-route); border-radius: var(--radius-sm); }
+.route span:nth-child(1) { flex: 1; } .route span:nth-child(2) { flex: 7; } .route span:nth-child(3) { flex: 18; }
+.route--center { margin-inline: auto; }</code></pre></details></section><section class="sec" id="story-card"><h2>5. Story card</h2><p>The workhorse. Three sizes. The whole card is one link (a stretched link on the title), so there is one tab stop per card. Eyebrow is ink (country, then city), never Link Blue.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Featured: 3:2 photo on phone, 2:1 from md, with the large serif title and lead below</li><li>Standard: 4:3 photo, eyebrow, title, two-line summary, date and read time</li><li>Compact: 1:1 thumbnail left, title and meta; no summary</li><li>Hover: title underlines</li><li>Focus: ring around the whole card</li><li>Reader story: adds the clay “Reader story” chip before the eyebrow</li></ul></div><div><h3>Accessibility</h3><ul><li>One link per card; the title text is the accessible name.</li><li>Photos are decorative here (alt=&quot;&quot;), because the title says it all.</li><li>Summary is clamped to 2 lines with line-clamp, not truncated by JS.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> radius-card, color-surface, color-border, color-text, color-text-muted, ratio-card, ratio-featured, size-thumb, space-*</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone: featured + standard · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><article class="story-card story-card--featured"><span class="story-card__media" aria-hidden="true"><img src="img/chiang-mai-monks.jpg" alt="" width="700" height="520" fetchpriority="high" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Chiang Mai</p><h2 class="story-card__title"><a class="story-card__link" href="pages/story.html">Chiang Mai vs Bangkok: where should you live?</a></h2><p class="story-card__summary">We spent months in both. One has mountains and slow mornings, the other has everything at 2 a.m. Here’s how we’d choose.</p><p class="story-card__meta"><time>9 November 2025</time> · 10 min read</p></div></article></div><div class="grid-cards" style="padding-block:var(--space-4)"><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-skyline.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Ode to Bangkok: a love letter to the city</a></h3><p class="story-card__summary">Two years, three apartments and one very loud soi. What Bangkok taught us about living somewhere that never slows down.</p><p class="story-card__meta"><time>12 April 2025</time> · 9 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Is Thailand still worth it?</a></h3><p class="story-card__summary">Prices are up, the crowds are back, and we still keep coming home to it. Our honest answer after two more years.</p><p class="story-card__meta"><time>2 February 2026</time> · 8 min read</p></div></article></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone: featured + standard · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><article class="story-card story-card--featured"><span class="story-card__media" aria-hidden="true"><img src="img/chiang-mai-monks.jpg" alt="" width="700" height="520" fetchpriority="high" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Chiang Mai</p><h2 class="story-card__title"><a class="story-card__link" href="pages/story.html">Chiang Mai vs Bangkok: where should you live?</a></h2><p class="story-card__summary">We spent months in both. One has mountains and slow mornings, the other has everything at 2 a.m. Here’s how we’d choose.</p><p class="story-card__meta"><time>9 November 2025</time> · 10 min read</p></div></article></div><div class="grid-cards" style="padding-block:var(--space-4)"><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-skyline.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Ode to Bangkok: a love letter to the city</a></h3><p class="story-card__summary">Two years, three apartments and one very loud soi. What Bangkok taught us about living somewhere that never slows down.</p><p class="story-card__meta"><time>12 April 2025</time> · 9 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Is Thailand still worth it?</a></h3><p class="story-card__summary">Prices are up, the crowds are back, and we still keep coming home to it. Our honest answer after two more years.</p><p class="story-card__meta"><time>2 February 2026</time> · 8 min read</p></div></article></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop: featured + standard · light</p><div class="demo theme-light"><div class="ctx" style="width:1100px"><div class="shell"><div style="padding-block:var(--space-4)"><article class="story-card story-card--featured"><span class="story-card__media" aria-hidden="true"><img src="img/chiang-mai-monks.jpg" alt="" width="700" height="520" fetchpriority="high" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Chiang Mai</p><h2 class="story-card__title"><a class="story-card__link" href="pages/story.html">Chiang Mai vs Bangkok: where should you live?</a></h2><p class="story-card__summary">We spent months in both. One has mountains and slow mornings, the other has everything at 2 a.m. Here’s how we’d choose.</p><p class="story-card__meta"><time>9 November 2025</time> · 10 min read</p></div></article></div><div class="grid-cards" style="padding-block:var(--space-4)"><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-skyline.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Ode to Bangkok: a love letter to the city</a></h3><p class="story-card__summary">Two years, three apartments and one very loud soi. What Bangkok taught us about living somewhere that never slows down.</p><p class="story-card__meta"><time>12 April 2025</time> · 9 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Is Thailand still worth it?</a></h3><p class="story-card__summary">Prices are up, the crowds are back, and we still keep coming home to it. Our honest answer after two more years.</p><p class="story-card__meta"><time>2 February 2026</time> · 8 min read</p></div></article></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop: featured + standard · dark</p><div class="demo theme-dark"><div class="ctx" style="width:1100px"><div class="shell"><div style="padding-block:var(--space-4)"><article class="story-card story-card--featured"><span class="story-card__media" aria-hidden="true"><img src="img/chiang-mai-monks.jpg" alt="" width="700" height="520" fetchpriority="high" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Chiang Mai</p><h2 class="story-card__title"><a class="story-card__link" href="pages/story.html">Chiang Mai vs Bangkok: where should you live?</a></h2><p class="story-card__summary">We spent months in both. One has mountains and slow mornings, the other has everything at 2 a.m. Here’s how we’d choose.</p><p class="story-card__meta"><time>9 November 2025</time> · 10 min read</p></div></article></div><div class="grid-cards" style="padding-block:var(--space-4)"><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-skyline.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Ode to Bangkok: a love letter to the city</a></h3><p class="story-card__summary">Two years, three apartments and one very loud soi. What Bangkok taught us about living somewhere that never slows down.</p><p class="story-card__meta"><time>12 April 2025</time> · 9 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Is Thailand still worth it?</a></h3><p class="story-card__summary">Prices are up, the crowds are back, and we still keep coming home to it. Our honest answer after two more years.</p><p class="story-card__meta"><time>2 February 2026</time> · 8 min read</p></div></article></div></div></div></div></div></div><div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone: compact + reader · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><article class="story-card story-card--compact"><span class="story-card__media" aria-hidden="true"><img src="img/maeklong-train.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Cost of living in Thailand</a></h3><p class="story-card__meta"><time>3 June 2025</time> · 7 min read</p></div></article><article class="story-card story-card--compact"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">DTV visa for remote workers</a></h3><p class="story-card__meta"><time>14 March 2025</time> · 9 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/kl-cat.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow"><span class="chip chip--guest">Reader story</span> Vietnam</p><h3 class="story-card__title"><a class="story-card__link" href="pages/reader-story.html">I fell asleep on a night bus and woke up in the wrong country</a></h3><p class="story-card__summary">A very short story about a very long border queue and the stranger who shared her mandarins.</p><p class="story-card__meta"><time>2 November 2026</time> · 5 min read</p></div></article></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone: compact + reader · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><article class="story-card story-card--compact"><span class="story-card__media" aria-hidden="true"><img src="img/maeklong-train.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Cost of living in Thailand</a></h3><p class="story-card__meta"><time>3 June 2025</time> · 7 min read</p></div></article><article class="story-card story-card--compact"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">DTV visa for remote workers</a></h3><p class="story-card__meta"><time>14 March 2025</time> · 9 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/kl-cat.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow"><span class="chip chip--guest">Reader story</span> Vietnam</p><h3 class="story-card__title"><a class="story-card__link" href="pages/reader-story.html">I fell asleep on a night bus and woke up in the wrong country</a></h3><p class="story-card__summary">A very short story about a very long border queue and the stranger who shared her mandarins.</p><p class="story-card__meta"><time>2 November 2026</time> · 5 min read</p></div></article></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;article class=&quot;story-card&quot;&gt;
+ &lt;span aria-hidden=&quot;true&quot; class=&quot;story-card__media&quot;&gt;
+  &lt;img src=&quot;…&quot; alt=&quot;…&quot; width height loading=&quot;lazy&quot;&gt;
+ &lt;/span&gt;
+ &lt;div class=&quot;story-card__body&quot;&gt;
+  &lt;p class=&quot;eyebrow&quot;&gt;
+   Thailand · Bangkok
+  &lt;/p&gt;
+  &lt;h3 class=&quot;story-card__title&quot;&gt;
+   &lt;a class=&quot;story-card__link&quot; href=&quot;pages/story.html&quot;&gt;
+    Ode to Bangkok: a love letter to the city
+   &lt;/a&gt;
+  &lt;/h3&gt;
+  &lt;p class=&quot;story-card__summary&quot;&gt;
+   Two years, three apartments and one very loud soi. What Bangkok taught us about living somewhere that never slows down.
+  &lt;/p&gt;
+  &lt;p class=&quot;story-card__meta&quot;&gt;
+   &lt;time&gt;
+    12 April 2025
+   &lt;/time&gt;
+   · 9 min read
+  &lt;/p&gt;
+ &lt;/div&gt;
+&lt;/article&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Story card (featured, standard, compact) ---------- */
+.story-card { position: relative; display: grid; gap: var(--space-3); align-content: start; }
+.story-card__media { display: block; aspect-ratio: var(--ratio-card); overflow: hidden; border-radius: var(--radius-card); background: var(--color-surface-sunken); }
+.story-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.story-card__body { display: grid; gap: var(--space-2); align-content: start; }
+.story-card__title { font: var(--weight-semibold) var(--text-card-title) / var(--leading-snug) var(--font-serif); letter-spacing: var(--tracking-heading); text-wrap: balance; }
+.story-card__link { color: var(--color-text); text-decoration: none; }
+.story-card__link::after { content: &quot;&quot;; position: absolute; inset: 0; }
+.story-card__link:hover { color: var(--color-text); text-decoration: underline; text-decoration-thickness: var(--underline-thickness-hover); text-underline-offset: var(--underline-offset); }
+.story-card__summary { color: var(--color-text-muted); font-size: var(--text-small); line-height: var(--leading-ui); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.story-card__meta { color: var(--color-text-muted); font-size: var(--text-caption); line-height: var(--leading-ui); font-variant-numeric: tabular-nums; }
+.story-card:has(.story-card__link:focus-visible) { outline: var(--focus-width) solid var(--color-focus); outline-offset: var(--focus-offset); border-radius: var(--radius-card); }
+.story-card--featured { gap: var(--space-4); }
+.story-card--featured .story-card__media { aspect-ratio: var(--ratio-featured); }
+.story-card--featured .story-card__body { gap: var(--space-3); max-width: var(--container-text); }
+.story-card--featured .story-card__title { font-size: var(--text-h2); letter-spacing: var(--tracking-heading); }
+.story-card--featured .story-card__summary { font: italic var(--weight-regular) var(--text-lead) / var(--leading-lead) var(--font-serif); display: block; -webkit-line-clamp: unset; }
+.story-card--compact { grid-template-columns: minmax(0, 1fr) var(--size-thumb); column-gap: var(--space-4); align-items: start; padding-block: var(--space-4); border-block-end: var(--border-hairline); }
+.story-card--compact .story-card__media { order: 2; aspect-ratio: var(--ratio-compact); }
+.story-card--compact .story-card__title { font-size: var(--text-card-title-compact); line-height: var(--leading-heading); letter-spacing: 0; }
+.story-card--compact .story-card__summary { display: none; }</code></pre></details></section><section class="sec" id="country-card"><h2>6. Country card</h2><p>Portrait 4:5 photo with the country name in a scrim band at the bottom and a story count. One link. Cards group under a continent heading (Asia, later Europe and so on).</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Default</li><li>Hover: name underlines</li><li>Focus: ring around the card</li></ul></div><div><h3>Accessibility</h3><ul><li>Name + count read as “Thailand, 11 stories”.</li><li>Scrim is 64% over the photo; white text measures 5.44:1 even on a pure-white photo.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> ratio-country, color-scrim, color-on-scrim, radius-card</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div class="grid-countries" style="padding-block:var(--space-4)"><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/bangkok-skyline.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Thailand<span class="sr-only">, </span><span class="country-card__count">11 stories</span></a></h3></article><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/penang-blue-house.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Malaysia<span class="sr-only">, </span><span class="country-card__count">5 stories</span></a></h3></article><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/street-painter.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Vietnam<span class="sr-only">, </span><span class="country-card__count">4 stories</span></a></h3></article></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div class="grid-countries" style="padding-block:var(--space-4)"><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/bangkok-skyline.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Thailand<span class="sr-only">, </span><span class="country-card__count">11 stories</span></a></h3></article><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/penang-blue-house.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Malaysia<span class="sr-only">, </span><span class="country-card__count">5 stories</span></a></h3></article><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/street-painter.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Vietnam<span class="sr-only">, </span><span class="country-card__count">4 stories</span></a></h3></article></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:1100px"><div class="shell"><div class="grid-countries" style="padding-block:var(--space-4)"><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/bangkok-skyline.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Thailand<span class="sr-only">, </span><span class="country-card__count">11 stories</span></a></h3></article><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/penang-blue-house.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Malaysia<span class="sr-only">, </span><span class="country-card__count">5 stories</span></a></h3></article><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/street-painter.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Vietnam<span class="sr-only">, </span><span class="country-card__count">4 stories</span></a></h3></article></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:1100px"><div class="shell"><div class="grid-countries" style="padding-block:var(--space-4)"><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/bangkok-skyline.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Thailand<span class="sr-only">, </span><span class="country-card__count">11 stories</span></a></h3></article><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/penang-blue-house.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Malaysia<span class="sr-only">, </span><span class="country-card__count">5 stories</span></a></h3></article><article class="country-card"><span class="country-card__media" aria-hidden="true"><img src="img/street-painter.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><h3 class="country-card__name"><a class="country-card__link" href="pages/thailand.html">Vietnam<span class="sr-only">, </span><span class="country-card__count">4 stories</span></a></h3></article></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;article class=&quot;country-card&quot;&gt;
+ &lt;span aria-hidden=&quot;true&quot; class=&quot;country-card__media&quot;&gt;
+  &lt;img src=&quot;…&quot; alt=&quot;…&quot; width height loading=&quot;lazy&quot;&gt;
+ &lt;/span&gt;
+ &lt;h3 class=&quot;country-card__name&quot;&gt;
+  &lt;a class=&quot;country-card__link&quot; href=&quot;pages/thailand.html&quot;&gt;
+   Thailand
+   &lt;span class=&quot;sr-only&quot;&gt;
+    ,
+   &lt;/span&gt;
+   &lt;span class=&quot;country-card__count&quot;&gt;
+    11 stories
+   &lt;/span&gt;
+  &lt;/a&gt;
+ &lt;/h3&gt;
+&lt;/article&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>.grid-cards, .grid-countries, .grid-list { display: grid; gap: var(--space-6) var(--space-5); grid-template-columns: minmax(0, 1fr); }
+.grid-countries { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); }
+.grid-countries { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6) var(--space-5); }
+.grid-countries { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.country-card:has(.country-card__link:focus-visible) { outline: var(--focus-width) solid var(--color-focus); outline-offset: var(--focus-offset); border-radius: var(--radius-card); }
+/* ---------- Country card ---------- */
+.country-card { position: relative; display: grid; gap: var(--space-3); align-content: start; }
+.country-card__media { display: block; aspect-ratio: var(--ratio-country); overflow: hidden; border-radius: var(--radius-card); background: var(--color-surface-sunken); }
+.country-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.country-card__name { font: var(--weight-semibold) var(--text-card-title) / var(--leading-snug) var(--font-serif); }
+.country-card__link { color: var(--color-text); text-decoration: none; }
+.country-card__link::after { content: &quot;&quot;; position: absolute; inset: 0; }
+.country-card__link:hover { color: var(--color-text); text-decoration: underline; text-decoration-thickness: var(--underline-thickness-hover); }
+.country-card__count { display: block; color: var(--color-text-muted); font-size: var(--text-small); font-weight: var(--weight-regular); font-family: var(--font-sans); letter-spacing: 0; }</code></pre></details></section><section class="sec" id="breadcrumb"><h2>7. Breadcrumb</h2><p>Home › Places › Country › Story, in muted text. The last item is the current page, not a link. On phone it wraps; it never scrolls sideways.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Link: muted text, underline on hover (Link Blue)</li><li>Current: ink, aria-current=&quot;page&quot;</li></ul></div><div><h3>Accessibility</h3><ul><li>&lt;nav aria-label=&quot;Breadcrumb&quot;&gt; with an ordered list; separators are CSS, not read aloud.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-text-muted, color-text, color-link</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="pages/home.html">Home</a></li><li><a href="pages/places.html">Places</a></li><li><a href="pages/thailand.html">Thailand</a></li><li><span aria-current="page">Ode to Bangkok</span></li></ol></nav></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="pages/home.html">Home</a></li><li><a href="pages/places.html">Places</a></li><li><a href="pages/thailand.html">Thailand</a></li><li><span aria-current="page">Ode to Bangkok</span></li></ol></nav></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="pages/home.html">Home</a></li><li><a href="pages/places.html">Places</a></li><li><a href="pages/thailand.html">Thailand</a></li><li><span aria-current="page">Ode to Bangkok</span></li></ol></nav></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="pages/home.html">Home</a></li><li><a href="pages/places.html">Places</a></li><li><a href="pages/thailand.html">Thailand</a></li><li><span aria-current="page">Ode to Bangkok</span></li></ol></nav></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;nav aria-label=&quot;Breadcrumb&quot; class=&quot;breadcrumb&quot;&gt;
+ &lt;ol&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;pages/home.html&quot;&gt;
+    Home
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;pages/places.html&quot;&gt;
+    Places
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;pages/thailand.html&quot;&gt;
+    Thailand
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;span aria-current=&quot;page&quot;&gt;
+    Ode to Bangkok
+   &lt;/span&gt;
+  &lt;/li&gt;
+ &lt;/ol&gt;
+&lt;/nav&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Breadcrumb ---------- */
+.breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; list-style: none; padding: 0; font-size: var(--text-breadcrumb); line-height: var(--leading-ui); color: var(--color-text-muted); }
+.breadcrumb li { display: inline-flex; align-items: center; gap: var(--space-2); }
+.breadcrumb li + li::before { content: &quot;&quot;; width: var(--size-icon-sm); height: var(--size-icon-sm); flex: none; margin-inline-end: 0; background: currentColor; mask: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 12 12&#x27;%3E%3Cpath d=&#x27;M4 2l4 4-4 4&#x27; fill=&#x27;none&#x27; stroke=&#x27;black&#x27; stroke-width=&#x27;1.5&#x27; stroke-linecap=&#x27;round&#x27; stroke-linejoin=&#x27;round&#x27;/%3E%3C/svg%3E&quot;) center / contain no-repeat; }
+.breadcrumb a { display: inline-flex; align-items: center; min-height: var(--target-min); color: var(--color-text-muted); }
+.breadcrumb a:hover { color: var(--color-link); }
+.breadcrumb [aria-current=&quot;page&quot;] { color: var(--color-text); }</code></pre></details></section><section class="sec" id="byline"><h2>8. Story byline</h2><p>Author, published date, updated date (only when there is one) and read time on one wrapping line. Dates use real &lt;time&gt; elements.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>With update date</li><li>Without update date (guest or new post)</li></ul></div><div><h3>Accessibility</h3><ul><li>Separators are aria-hidden; the order reads naturally as a sentence.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-text-muted, text-small</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><p class="byline"><span>By <span class="byline__author">Moni &amp; Dunny</span></span><span aria-hidden="true">·</span><span>Published <time>12 April 2025</time></span><span aria-hidden="true">·</span><span>Updated <time>3 March 2026</time></span><span aria-hidden="true">·</span><span>9 min read</span></p><p class="byline"><span>By <span class="byline__author">Camila R.</span></span><span aria-hidden="true">·</span><span>Published <time>9 November 2026</time></span><span aria-hidden="true">·</span><span>6 min read</span></p></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><p class="byline"><span>By <span class="byline__author">Moni &amp; Dunny</span></span><span aria-hidden="true">·</span><span>Published <time>12 April 2025</time></span><span aria-hidden="true">·</span><span>Updated <time>3 March 2026</time></span><span aria-hidden="true">·</span><span>9 min read</span></p><p class="byline"><span>By <span class="byline__author">Camila R.</span></span><span aria-hidden="true">·</span><span>Published <time>9 November 2026</time></span><span aria-hidden="true">·</span><span>6 min read</span></p></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><p class="byline"><span>By <span class="byline__author">Moni &amp; Dunny</span></span><span aria-hidden="true">·</span><span>Published <time>12 April 2025</time></span><span aria-hidden="true">·</span><span>Updated <time>3 March 2026</time></span><span aria-hidden="true">·</span><span>9 min read</span></p><p class="byline"><span>By <span class="byline__author">Camila R.</span></span><span aria-hidden="true">·</span><span>Published <time>9 November 2026</time></span><span aria-hidden="true">·</span><span>6 min read</span></p></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><p class="byline"><span>By <span class="byline__author">Moni &amp; Dunny</span></span><span aria-hidden="true">·</span><span>Published <time>12 April 2025</time></span><span aria-hidden="true">·</span><span>Updated <time>3 March 2026</time></span><span aria-hidden="true">·</span><span>9 min read</span></p><p class="byline"><span>By <span class="byline__author">Camila R.</span></span><span aria-hidden="true">·</span><span>Published <time>9 November 2026</time></span><span aria-hidden="true">·</span><span>6 min read</span></p></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;p class=&quot;byline&quot;&gt;
+ &lt;span&gt;
+  By
+  &lt;span class=&quot;byline__author&quot;&gt;
+   Moni &amp;amp; Dunny
+  &lt;/span&gt;
+ &lt;/span&gt;
+ &lt;span aria-hidden=&quot;true&quot;&gt;
+  ·
+ &lt;/span&gt;
+ &lt;span&gt;
+  Published
+  &lt;time&gt;
+   12 April 2025
+  &lt;/time&gt;
+ &lt;/span&gt;
+ &lt;span aria-hidden=&quot;true&quot;&gt;
+  ·
+ &lt;/span&gt;
+ &lt;span&gt;
+  Updated
+  &lt;time&gt;
+   3 March 2026
+  &lt;/time&gt;
+ &lt;/span&gt;
+ &lt;span aria-hidden=&quot;true&quot;&gt;
+  ·
+ &lt;/span&gt;
+ &lt;span&gt;
+  9 min read
+ &lt;/span&gt;
+&lt;/p&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Byline ---------- */
+.byline { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); font-size: var(--text-byline); line-height: var(--leading-ui); color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
+.byline__author { font-weight: var(--weight-semibold); color: var(--color-text); }
+.byline__author a { color: inherit; }
+.byline [aria-hidden=&quot;true&quot;] { color: var(--color-text-subtle); }</code></pre></details></section><section class="sec" id="toc"><h2>9. Table of contents</h2><p>Shown on stories with four or more sections. An ordered list of jump links in a tinted box. On desktop it stays in the text column, never in a sidebar.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Default</li><li>Link hover: underline</li><li>Focus: standard ring</li></ul></div><div><h3>Accessibility</h3><ul><li>&lt;nav aria-labelledby&gt;; links use real #fragment ids; headings have scroll-margin so they are never hidden.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-surface-tint, color-border, color-link, radius-card</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="toc" aria-labelledby="toc-title"><p class="eyebrow toc__title" id="toc-title">In this story</p><ol><li><a href="#arrive">Arriving</a></li><li><a href="#home">Finding a home</a></li><li><a href="#food">Eating well</a></li><li><a href="#move">Getting around</a></li><li><a href="#cost">What it costs</a></li><li><a href="#leave">Leaving</a></li></ol></nav></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="toc" aria-labelledby="toc-title"><p class="eyebrow toc__title" id="toc-title">In this story</p><ol><li><a href="#arrive">Arriving</a></li><li><a href="#home">Finding a home</a></li><li><a href="#food">Eating well</a></li><li><a href="#move">Getting around</a></li><li><a href="#cost">What it costs</a></li><li><a href="#leave">Leaving</a></li></ol></nav></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="toc" aria-labelledby="toc-title"><p class="eyebrow toc__title" id="toc-title">In this story</p><ol><li><a href="#arrive">Arriving</a></li><li><a href="#home">Finding a home</a></li><li><a href="#food">Eating well</a></li><li><a href="#move">Getting around</a></li><li><a href="#cost">What it costs</a></li><li><a href="#leave">Leaving</a></li></ol></nav></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="toc" aria-labelledby="toc-title"><p class="eyebrow toc__title" id="toc-title">In this story</p><ol><li><a href="#arrive">Arriving</a></li><li><a href="#home">Finding a home</a></li><li><a href="#food">Eating well</a></li><li><a href="#move">Getting around</a></li><li><a href="#cost">What it costs</a></li><li><a href="#leave">Leaving</a></li></ol></nav></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;nav aria-labelledby=&quot;toc-title&quot; class=&quot;toc&quot;&gt;
+ &lt;p class=&quot;eyebrow toc__title&quot; id=&quot;toc-title&quot;&gt;
+  In this story
+ &lt;/p&gt;
+ &lt;ol&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;#arrive&quot;&gt;
+    Arriving
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;#home&quot;&gt;
+    Finding a home
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;#food&quot;&gt;
+    Eating well
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;#move&quot;&gt;
+    Getting around
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;#cost&quot;&gt;
+    What it costs
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;#leave&quot;&gt;
+    Leaving
+   &lt;/a&gt;
+  &lt;/li&gt;
+ &lt;/ol&gt;
+&lt;/nav&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Table of contents ---------- */
+.toc { background: var(--color-surface-sunken); border-radius: var(--radius-card); padding: var(--space-5); }
+.toc__title { margin-block-end: var(--space-2); }
+.toc ol { padding-inline-start: var(--space-5); }
+.toc li::marker { color: var(--color-text-muted); font-weight: var(--weight-semibold); }
+.toc a { display: inline-flex; align-items: center; min-height: var(--target-min); font-size: var(--text-small); line-height: var(--leading-ui); }</code></pre></details></section><section class="sec" id="figure"><h2>10. Figure with caption</h2><p>Photos keep their own orientation; portraits are capped at 80svh and 28rem so they never swallow a phone screen. The credit line appears only when the optional credit field is filled in (required for guest and reader photos).</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Wide figure: extends past the text column on desktop</li><li>Text-width figure</li><li>With credit</li><li>Portrait: capped height</li></ul></div><div><h3>Accessibility</h3><ul><li>Every figure needs real alt text describing the photo, or alt=&quot;&quot; when purely decorative.</li><li>Caption sits in &lt;figcaption&gt;.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-text-muted, text-small, radius-photo, space-*</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div class="story-grid" style="padding-block:var(--space-4)"><figure class="wide"><img src="img/penang-blue-house.jpg" alt="A bright blue shophouse in Penang with a parked trishaw and a banana plant" width="700" height="520" loading="lazy" decoding="async"><figcaption>The blue house on Cannon Street, early on a Sunday.</figcaption></figure><figure class=""><img src="img/penang-street.jpg" alt="A Penang street corner with a food cart, faded shophouses and a green awning" width="700" height="520" loading="lazy" decoding="async"><figcaption>Lunch on Lebuh Chulia. Photo credit shown only when we have one.<span class="credit">Photo: Camila R.</span></figcaption></figure></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div class="story-grid" style="padding-block:var(--space-4)"><figure class="wide"><img src="img/penang-blue-house.jpg" alt="A bright blue shophouse in Penang with a parked trishaw and a banana plant" width="700" height="520" loading="lazy" decoding="async"><figcaption>The blue house on Cannon Street, early on a Sunday.</figcaption></figure><figure class=""><img src="img/penang-street.jpg" alt="A Penang street corner with a food cart, faded shophouses and a green awning" width="700" height="520" loading="lazy" decoding="async"><figcaption>Lunch on Lebuh Chulia. Photo credit shown only when we have one.<span class="credit">Photo: Camila R.</span></figcaption></figure></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:1100px"><div class="shell"><div class="story-grid" style="padding-block:var(--space-4)"><figure class="wide"><img src="img/penang-blue-house.jpg" alt="A bright blue shophouse in Penang with a parked trishaw and a banana plant" width="700" height="520" loading="lazy" decoding="async"><figcaption>The blue house on Cannon Street, early on a Sunday.</figcaption></figure><figure class=""><img src="img/penang-street.jpg" alt="A Penang street corner with a food cart, faded shophouses and a green awning" width="700" height="520" loading="lazy" decoding="async"><figcaption>Lunch on Lebuh Chulia. Photo credit shown only when we have one.<span class="credit">Photo: Camila R.</span></figcaption></figure></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:1100px"><div class="shell"><div class="story-grid" style="padding-block:var(--space-4)"><figure class="wide"><img src="img/penang-blue-house.jpg" alt="A bright blue shophouse in Penang with a parked trishaw and a banana plant" width="700" height="520" loading="lazy" decoding="async"><figcaption>The blue house on Cannon Street, early on a Sunday.</figcaption></figure><figure class=""><img src="img/penang-street.jpg" alt="A Penang street corner with a food cart, faded shophouses and a green awning" width="700" height="520" loading="lazy" decoding="async"><figcaption>Lunch on Lebuh Chulia. Photo credit shown only when we have one.<span class="credit">Photo: Camila R.</span></figcaption></figure></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;figure class=&quot;wide&quot;&gt;
+ &lt;img src=&quot;…&quot; alt=&quot;…&quot; width height loading=&quot;lazy&quot;&gt;
+ &lt;figcaption&gt;
+  Caption
+  &lt;span class=&quot;credit&quot;&gt;
+   Photo: Name
+  &lt;/span&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>:where(.ctx) :is(h1, h2, h3, h4, p, ul, ol, figure) { margin: 0; }
+.figcap .credit { display: block; font-style: italic; color: var(--color-text-subtle); }</code></pre></details></section><section class="sec" id="callout"><h2>11. Callout: “Lesson learned”</h2><p>The brand’s signature. A pin icon and an ink label, a short serif lead, one or two sentences. Use once or twice per story at most. Not a warning box: it has no alarm colours.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Default (one style only)</li></ul></div><div><h3>Accessibility</h3><ul><li>&lt;aside aria-label=&quot;Lesson learned&quot;&gt;; the label is text, so the meaning does not depend on the icon.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-surface-tint, color-border, color-route, radius-card</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div class="story-grid" style="padding-block:var(--space-4)"><aside class="callout" aria-label="Lesson learned"><p class="callout__label eyebrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Lesson learned</span></p><p class="callout__title">Ask for the rental contract in English.</p><p>Our first landlord sent it in Thai only. We signed it anyway. Don’t.</p></aside></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div class="story-grid" style="padding-block:var(--space-4)"><aside class="callout" aria-label="Lesson learned"><p class="callout__label eyebrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Lesson learned</span></p><p class="callout__title">Ask for the rental contract in English.</p><p>Our first landlord sent it in Thai only. We signed it anyway. Don’t.</p></aside></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:900px"><div class="shell"><div class="story-grid" style="padding-block:var(--space-4)"><aside class="callout" aria-label="Lesson learned"><p class="callout__label eyebrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Lesson learned</span></p><p class="callout__title">Ask for the rental contract in English.</p><p>Our first landlord sent it in Thai only. We signed it anyway. Don’t.</p></aside></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:900px"><div class="shell"><div class="story-grid" style="padding-block:var(--space-4)"><aside class="callout" aria-label="Lesson learned"><p class="callout__label eyebrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Lesson learned</span></p><p class="callout__title">Ask for the rental contract in English.</p><p>Our first landlord sent it in Thai only. We signed it anyway. Don’t.</p></aside></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;aside aria-label=&quot;Lesson learned&quot; class=&quot;callout&quot;&gt;
+ &lt;p class=&quot;callout__label eyebrow&quot;&gt;
+  &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon&quot; focusable=&quot;false&quot;&gt;
+   &lt;use href=&quot;#i-pin&quot;&gt;
+   &lt;/use&gt;
+  &lt;/svg&gt;
+  &lt;span&gt;
+   Lesson learned
+  &lt;/span&gt;
+ &lt;/p&gt;
+ &lt;p class=&quot;callout__title&quot;&gt;
+  Title
+ &lt;/p&gt;
+ &lt;p&gt;
+  Text
+ &lt;/p&gt;
+&lt;/aside&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Callout / lesson learned ---------- */
+.callout { background: var(--color-surface-tint); border-radius: var(--radius-card); border-inline-start: var(--focus-width) solid var(--color-route); padding: var(--space-5); display: grid; gap: var(--space-2); }
+.callout__label { display: flex; align-items: center; gap: var(--space-2); }
+.callout__label svg { color: var(--color-route); width: var(--size-icon); height: var(--size-icon); }
+.callout__title { font: var(--weight-semibold) var(--text-h4) / var(--leading-heading) var(--font-serif); color: var(--color-text); }
+.callout p { color: var(--color-text); }</code></pre></details></section><section class="sec" id="author"><h2>12. Author box</h2><p>Team version uses the ring mark as an avatar; guest version uses the author’s photo (or the ring if none), a “Guest author” label in clay, and one external link marked rel=&quot;ugc nofollow&quot;.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Team</li><li>Guest (clay accent on the border)</li></ul></div><div><h3>Accessibility</h3><ul><li>External link announces “(external link)” to screen readers.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-surface, color-border, color-guest, size-avatar, radius-card</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="author" aria-label="About the author"><div><span class="author__photo" aria-hidden="true"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></span></div><div class="author__body"><p class="eyebrow author__eyebrow">Written by</p><p class="author__name">Moni &amp; Dunny</p><p class="author__bio">We’re Moni &amp; Dunny, a Canadian-Colombian couple who moved abroad and kept writing things down. We keep the spreadsheets, make the wrong turns and tell you about both.</p><a class="author__link" href="pages/about.html">More about us<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></div></aside><aside class="author author--guest" aria-label="About the author"><div><span class="author__photo" aria-hidden="true"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></span></div><div class="author__body"><p class="eyebrow author__eyebrow">Guest author</p><p class="author__name">Camila R.</p><p class="author__bio">Camila is a teacher from Medellín who spent a year moving between Lisbon and Porto.</p><a class="author__link" href="#" rel="ugc nofollow">camilar.example<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link)</span></a></div></aside></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="author" aria-label="About the author"><div><span class="author__photo" aria-hidden="true"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></span></div><div class="author__body"><p class="eyebrow author__eyebrow">Written by</p><p class="author__name">Moni &amp; Dunny</p><p class="author__bio">We’re Moni &amp; Dunny, a Canadian-Colombian couple who moved abroad and kept writing things down. We keep the spreadsheets, make the wrong turns and tell you about both.</p><a class="author__link" href="pages/about.html">More about us<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></div></aside><aside class="author author--guest" aria-label="About the author"><div><span class="author__photo" aria-hidden="true"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></span></div><div class="author__body"><p class="eyebrow author__eyebrow">Guest author</p><p class="author__name">Camila R.</p><p class="author__bio">Camila is a teacher from Medellín who spent a year moving between Lisbon and Porto.</p><a class="author__link" href="#" rel="ugc nofollow">camilar.example<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link)</span></a></div></aside></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="author" aria-label="About the author"><div><span class="author__photo" aria-hidden="true"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></span></div><div class="author__body"><p class="eyebrow author__eyebrow">Written by</p><p class="author__name">Moni &amp; Dunny</p><p class="author__bio">We’re Moni &amp; Dunny, a Canadian-Colombian couple who moved abroad and kept writing things down. We keep the spreadsheets, make the wrong turns and tell you about both.</p><a class="author__link" href="pages/about.html">More about us<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></div></aside><aside class="author author--guest" aria-label="About the author"><div><span class="author__photo" aria-hidden="true"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></span></div><div class="author__body"><p class="eyebrow author__eyebrow">Guest author</p><p class="author__name">Camila R.</p><p class="author__bio">Camila is a teacher from Medellín who spent a year moving between Lisbon and Porto.</p><a class="author__link" href="#" rel="ugc nofollow">camilar.example<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link)</span></a></div></aside></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="author" aria-label="About the author"><div><span class="author__photo" aria-hidden="true"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></span></div><div class="author__body"><p class="eyebrow author__eyebrow">Written by</p><p class="author__name">Moni &amp; Dunny</p><p class="author__bio">We’re Moni &amp; Dunny, a Canadian-Colombian couple who moved abroad and kept writing things down. We keep the spreadsheets, make the wrong turns and tell you about both.</p><a class="author__link" href="pages/about.html">More about us<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></div></aside><aside class="author author--guest" aria-label="About the author"><div><span class="author__photo" aria-hidden="true"><svg viewBox="8 8 76 76" aria-hidden="true" focusable="false"><use href="#tjc-ring" width="322.5" height="92.25"/></svg></span></div><div class="author__body"><p class="eyebrow author__eyebrow">Guest author</p><p class="author__name">Camila R.</p><p class="author__bio">Camila is a teacher from Medellín who spent a year moving between Lisbon and Porto.</p><a class="author__link" href="#" rel="ugc nofollow">camilar.example<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link)</span></a></div></aside></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;aside aria-label=&quot;About the author&quot; class=&quot;author&quot;&gt;
+ &lt;div&gt;
+  &lt;span aria-hidden=&quot;true&quot; class=&quot;author__photo&quot;&gt;
+   &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; viewbox=&quot;8 8 76 76&quot;&gt;
+    &lt;use height=&quot;92.25&quot; href=&quot;#tjc-ring&quot; width=&quot;322.5&quot;&gt;
+    &lt;/use&gt;
+   &lt;/svg&gt;
+  &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;author__body&quot;&gt;
+  &lt;p class=&quot;eyebrow author__eyebrow&quot;&gt;
+   Written by
+  &lt;/p&gt;
+  &lt;p class=&quot;author__name&quot;&gt;
+   Moni &amp;amp; Dunny
+  &lt;/p&gt;
+  &lt;p class=&quot;author__bio&quot;&gt;
+   We’re Moni &amp;amp; Dunny, a Canadian-Colombian couple who moved abroad and kept writing things down. We keep the spreadsheets, make the wrong turns and tell you about both.
+  &lt;/p&gt;
+  &lt;a class=&quot;author__link&quot; href=&quot;pages/about.html&quot;&gt;
+   More about us
+   &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-sm&quot; focusable=&quot;false&quot;&gt;
+    &lt;use href=&quot;#i-chev-r&quot;&gt;
+    &lt;/use&gt;
+   &lt;/svg&gt;
+  &lt;/a&gt;
+ &lt;/div&gt;
+&lt;/aside&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Author box ---------- */
+.author { display: grid; grid-template-columns: var(--size-avatar) minmax(0, 1fr); gap: var(--space-4); align-items: start; padding: var(--space-5); background: var(--color-surface); border: var(--border-hairline); border-radius: var(--radius-card); }
+.author__photo { width: var(--size-avatar); aspect-ratio: var(--ratio-author); border-radius: var(--radius-round); object-fit: cover; background: var(--color-surface-sunken); display: grid; place-items: center; }
+.author__photo svg { width: 60%; height: 60%; }
+.author__body { display: grid; gap: var(--space-2); }
+.author__name { font: var(--weight-semibold) var(--text-card-title) / var(--leading-snug) var(--font-serif); }
+.author__bio { font-size: var(--text-small); line-height: var(--leading-ui); }
+.author__link { display: inline-flex; align-items: center; gap: var(--space-1); min-height: var(--target-min); font-size: var(--text-small); font-weight: var(--weight-semibold); width: fit-content; }
+.author--guest .author__eyebrow { color: var(--color-guest); }</code></pre></details></section><section class="sec" id="write-to-us"><h2>13. “Write to us” line</h2><p>A single quiet line at the end of every story, in place of comments. It is a mailto link, not a form and not a box that asks for anything else.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Default</li><li>Link hover and focus as standard links</li></ul></div><div><h3>Accessibility</h3><ul><li>The link text says what it does (the email address).</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-surface-sunken, color-text</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><aside class="write-to-us" aria-label="Write to us"><p class="write-to-us__title">Been here? Write to us.</p><p>Got a correction, a better noodle place or a story of your own? Email <a href="mailto:info@thejetlagchronicles.com">info@thejetlagchronicles.com</a>. We read everything.</p></aside></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><aside class="write-to-us" aria-label="Write to us"><p class="write-to-us__title">Been here? Write to us.</p><p>Got a correction, a better noodle place or a story of your own? Email <a href="mailto:info@thejetlagchronicles.com">info@thejetlagchronicles.com</a>. We read everything.</p></aside></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4)"><aside class="write-to-us" aria-label="Write to us"><p class="write-to-us__title">Been here? Write to us.</p><p>Got a correction, a better noodle place or a story of your own? Email <a href="mailto:info@thejetlagchronicles.com">info@thejetlagchronicles.com</a>. We read everything.</p></aside></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4)"><aside class="write-to-us" aria-label="Write to us"><p class="write-to-us__title">Been here? Write to us.</p><p>Got a correction, a better noodle place or a story of your own? Email <a href="mailto:info@thejetlagchronicles.com">info@thejetlagchronicles.com</a>. We read everything.</p></aside></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;aside aria-label=&quot;Write to us&quot; class=&quot;write-to-us&quot;&gt;
+ &lt;p class=&quot;write-to-us__title&quot;&gt;
+  Been here? Write to us.
+ &lt;/p&gt;
+ &lt;p&gt;
+  Got a correction, a better noodle place or a story of your own? Email
+  &lt;a href=&quot;mailto:info@thejetlagchronicles.com&quot;&gt;
+   info@thejetlagchronicles.com
+  &lt;/a&gt;
+  . We read everything.
+ &lt;/p&gt;
+&lt;/aside&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Write to us ---------- */
+.write-to-us { padding-block: var(--space-5); border-block: var(--border-hairline); display: grid; gap: var(--space-1); }
+.write-to-us__title { font: var(--weight-semibold) var(--text-h4) / var(--leading-heading) var(--font-serif); }
+.write-to-us a { font-weight: var(--weight-semibold); }</code></pre></details></section><section class="sec" id="more-from"><h2>14. “More from [country]” block</h2><p>Three standard cards under a heading, with a link to the full country page. Always at the end of a story, before the footer. Never an infinite list.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Three cards: one column on phone, three columns from lg</li></ul></div><div><h3>Accessibility</h3><ul><li>Heading is an h2; card headings are h3.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> (uses story card and section head)</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><section class="more-from" aria-labelledby="mf-h"><div class="section__head"><h2 class="t-h3" id="mf-h">More from Thailand</h2><a class="link-more" href="pages/thailand.html">All Thailand stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></div><div class="grid-cards"><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Is Thailand still worth it?</a></h3><p class="story-card__summary">Prices are up, the crowds are back, and we still keep coming home to it. Our honest answer after two more years.</p><p class="story-card__meta"><time>2 February 2026</time> · 8 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/chiang-mai-monks.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Chiang Mai</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Chiang Mai vs Bangkok: where should you live?</a></h3><p class="story-card__summary">We spent months in both. One has mountains and slow mornings, the other has everything at 2 a.m. Here’s how we’d choose.</p><p class="story-card__meta"><time>9 November 2025</time> · 10 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/maeklong-train.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Cost of living in Thailand</a></h3><p class="story-card__summary">What we actually spent each month, in baht and in Canadian dollars, with no rounding in our favour.</p><p class="story-card__meta"><time>3 June 2025</time> · 7 min read</p></div></article></div></section></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><section class="more-from" aria-labelledby="mf-h"><div class="section__head"><h2 class="t-h3" id="mf-h">More from Thailand</h2><a class="link-more" href="pages/thailand.html">All Thailand stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></div><div class="grid-cards"><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Is Thailand still worth it?</a></h3><p class="story-card__summary">Prices are up, the crowds are back, and we still keep coming home to it. Our honest answer after two more years.</p><p class="story-card__meta"><time>2 February 2026</time> · 8 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/chiang-mai-monks.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Chiang Mai</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Chiang Mai vs Bangkok: where should you live?</a></h3><p class="story-card__summary">We spent months in both. One has mountains and slow mornings, the other has everything at 2 a.m. Here’s how we’d choose.</p><p class="story-card__meta"><time>9 November 2025</time> · 10 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/maeklong-train.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Cost of living in Thailand</a></h3><p class="story-card__summary">What we actually spent each month, in baht and in Canadian dollars, with no rounding in our favour.</p><p class="story-card__meta"><time>3 June 2025</time> · 7 min read</p></div></article></div></section></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:1100px"><div class="shell"><div style="padding-block:var(--space-4)"><section class="more-from" aria-labelledby="mf-h"><div class="section__head"><h2 class="t-h3" id="mf-h">More from Thailand</h2><a class="link-more" href="pages/thailand.html">All Thailand stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></div><div class="grid-cards"><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Is Thailand still worth it?</a></h3><p class="story-card__summary">Prices are up, the crowds are back, and we still keep coming home to it. Our honest answer after two more years.</p><p class="story-card__meta"><time>2 February 2026</time> · 8 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/chiang-mai-monks.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Chiang Mai</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Chiang Mai vs Bangkok: where should you live?</a></h3><p class="story-card__summary">We spent months in both. One has mountains and slow mornings, the other has everything at 2 a.m. Here’s how we’d choose.</p><p class="story-card__meta"><time>9 November 2025</time> · 10 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/maeklong-train.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Cost of living in Thailand</a></h3><p class="story-card__summary">What we actually spent each month, in baht and in Canadian dollars, with no rounding in our favour.</p><p class="story-card__meta"><time>3 June 2025</time> · 7 min read</p></div></article></div></section></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:1100px"><div class="shell"><div style="padding-block:var(--space-4)"><section class="more-from" aria-labelledby="mf-h"><div class="section__head"><h2 class="t-h3" id="mf-h">More from Thailand</h2><a class="link-more" href="pages/thailand.html">All Thailand stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></div><div class="grid-cards"><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/bangkok-night-market.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Bangkok</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Is Thailand still worth it?</a></h3><p class="story-card__summary">Prices are up, the crowds are back, and we still keep coming home to it. Our honest answer after two more years.</p><p class="story-card__meta"><time>2 February 2026</time> · 8 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/chiang-mai-monks.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand · Chiang Mai</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Chiang Mai vs Bangkok: where should you live?</a></h3><p class="story-card__summary">We spent months in both. One has mountains and slow mornings, the other has everything at 2 a.m. Here’s how we’d choose.</p><p class="story-card__meta"><time>9 November 2025</time> · 10 min read</p></div></article><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/maeklong-train.jpg" alt="" width="1400" height="800" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow">Thailand</p><h3 class="story-card__title"><a class="story-card__link" href="pages/story.html">Cost of living in Thailand</a></h3><p class="story-card__summary">What we actually spent each month, in baht and in Canadian dollars, with no rounding in our favour.</p><p class="story-card__meta"><time>3 June 2025</time> · 7 min read</p></div></article></div></section></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;section aria-labelledby=&quot;mf-h&quot; class=&quot;more-from&quot;&gt;
+ &lt;div class=&quot;section__head&quot;&gt;
+  &lt;h2 class=&quot;t-h3&quot; id=&quot;mf-h&quot;&gt;
+   More from Thailand
+  &lt;/h2&gt;
+  &lt;a class=&quot;link-more&quot; href=&quot;#&quot;&gt;
+   All Thailand stories
+   &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-sm&quot; focusable=&quot;false&quot;&gt;
+    &lt;use href=&quot;#i-chev-r&quot;&gt;
+    &lt;/use&gt;
+   &lt;/svg&gt;
+  &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;grid-cards&quot;&gt;
+  &lt;article class=&quot;story-card&quot;&gt;
+   &lt;span aria-hidden=&quot;true&quot; class=&quot;story-card__media&quot;&gt;
+    &lt;img src=&quot;…&quot; alt=&quot;…&quot; width height loading=&quot;lazy&quot;&gt;
+   &lt;/span&gt;
+   &lt;div class=&quot;story-card__body&quot;&gt;
+    &lt;p class=&quot;eyebrow&quot;&gt;
+     Thailand · Bangkok
+    &lt;/p&gt;
+    &lt;h3 class=&quot;story-card__title&quot;&gt;
+     &lt;a class=&quot;story-card__link&quot; href=&quot;pages/story.html&quot;&gt;
+      Is Thailand still worth it?
+     &lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;p class=&quot;story-card__summary&quot;&gt;
+     Prices are up, the crowds are back, and we still keep coming home to it. Our honest answer after two more years.
+    &lt;/p&gt;
+    &lt;p class=&quot;story-card__meta&quot;&gt;
+     &lt;time&gt;
+      2 February 2026
+     &lt;/time&gt;
+     · 8 min read
+    &lt;/p&gt;
+   &lt;/div&gt;
+  &lt;/article&gt;
+ &lt;/div&gt;
+&lt;/section&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>.section__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2) var(--space-5); margin-block-end: var(--space-5); }
+.section__head--route { display: grid; justify-content: stretch; gap: var(--space-4); }
+.link-more { display: inline-flex; align-items: center; gap: var(--space-1); min-height: var(--target-min); font-weight: var(--weight-semibold); }
+.grid-cards, .grid-countries, .grid-list { display: grid; gap: var(--space-6) var(--space-5); grid-template-columns: minmax(0, 1fr); }</code></pre></details></section><section class="sec" id="pagination"><h2>15. Pagination</h2><p>Phone: Newer, “Page 2 of 4”, Older. From md: Newer, numbers, Older. All targets are at least 44px. The first and last page show the unavailable end as disabled text, not a dead link.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Current page: filled ink pill</li><li>Hover: sunken background and underline</li><li>Disabled: muted, no link</li><li>Focus: standard ring</li></ul></div><div><h3>Accessibility</h3><ul><li>&lt;nav aria-label=&quot;Pagination&quot;&gt;; current page has aria-current=&quot;page&quot;; numbers have visually-hidden “Page”.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-text, color-page, color-surface-sunken, radius-pill</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="pagination" aria-label="Pagination"><ul><li><a href="pages/stories.html" rel="prev"><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-l"/></svg><span class="pg-label">Newer</span><span class="sr-only pg-sr"> stories</span></a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>1</a></li><li class="pg-num"><a href="pages/stories.html" aria-current="page"><span class="sr-only">Page </span>2</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>3</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>4</a></li><li><span class="pg pg-status">Page 2 of 4</span></li><li><a href="pages/stories.html" rel="next"><span class="pg-label">Older</span><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg><span class="sr-only pg-sr"> stories</span></a></li></ul></nav></div><div style="padding-block:var(--space-4)"><nav class="pagination" aria-label="Pagination"><ul><li><span class="pg" aria-disabled="true"><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-l"/></svg><span class="pg-label">Newer</span></span></li><li class="pg-num"><a href="pages/stories.html" aria-current="page"><span class="sr-only">Page </span>1</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>2</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>3</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>4</a></li><li><span class="pg pg-status">Page 1 of 4</span></li><li><a href="pages/stories.html" rel="next"><span class="pg-label">Older</span><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg><span class="sr-only pg-sr"> stories</span></a></li></ul></nav></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="pagination" aria-label="Pagination"><ul><li><a href="pages/stories.html" rel="prev"><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-l"/></svg><span class="pg-label">Newer</span><span class="sr-only pg-sr"> stories</span></a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>1</a></li><li class="pg-num"><a href="pages/stories.html" aria-current="page"><span class="sr-only">Page </span>2</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>3</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>4</a></li><li><span class="pg pg-status">Page 2 of 4</span></li><li><a href="pages/stories.html" rel="next"><span class="pg-label">Older</span><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg><span class="sr-only pg-sr"> stories</span></a></li></ul></nav></div><div style="padding-block:var(--space-4)"><nav class="pagination" aria-label="Pagination"><ul><li><span class="pg" aria-disabled="true"><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-l"/></svg><span class="pg-label">Newer</span></span></li><li class="pg-num"><a href="pages/stories.html" aria-current="page"><span class="sr-only">Page </span>1</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>2</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>3</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>4</a></li><li><span class="pg pg-status">Page 1 of 4</span></li><li><a href="pages/stories.html" rel="next"><span class="pg-label">Older</span><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg><span class="sr-only pg-sr"> stories</span></a></li></ul></nav></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="pagination" aria-label="Pagination"><ul><li><a href="pages/stories.html" rel="prev"><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-l"/></svg><span class="pg-label">Newer</span><span class="sr-only pg-sr"> stories</span></a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>1</a></li><li class="pg-num"><a href="pages/stories.html" aria-current="page"><span class="sr-only">Page </span>2</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>3</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>4</a></li><li><span class="pg pg-status">Page 2 of 4</span></li><li><a href="pages/stories.html" rel="next"><span class="pg-label">Older</span><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg><span class="sr-only pg-sr"> stories</span></a></li></ul></nav></div><div style="padding-block:var(--space-4)"><nav class="pagination" aria-label="Pagination"><ul><li><span class="pg" aria-disabled="true"><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-l"/></svg><span class="pg-label">Newer</span></span></li><li class="pg-num"><a href="pages/stories.html" aria-current="page"><span class="sr-only">Page </span>1</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>2</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>3</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>4</a></li><li><span class="pg pg-status">Page 1 of 4</span></li><li><a href="pages/stories.html" rel="next"><span class="pg-label">Older</span><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg><span class="sr-only pg-sr"> stories</span></a></li></ul></nav></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4)"><nav class="pagination" aria-label="Pagination"><ul><li><a href="pages/stories.html" rel="prev"><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-l"/></svg><span class="pg-label">Newer</span><span class="sr-only pg-sr"> stories</span></a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>1</a></li><li class="pg-num"><a href="pages/stories.html" aria-current="page"><span class="sr-only">Page </span>2</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>3</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>4</a></li><li><span class="pg pg-status">Page 2 of 4</span></li><li><a href="pages/stories.html" rel="next"><span class="pg-label">Older</span><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg><span class="sr-only pg-sr"> stories</span></a></li></ul></nav></div><div style="padding-block:var(--space-4)"><nav class="pagination" aria-label="Pagination"><ul><li><span class="pg" aria-disabled="true"><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-l"/></svg><span class="pg-label">Newer</span></span></li><li class="pg-num"><a href="pages/stories.html" aria-current="page"><span class="sr-only">Page </span>1</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>2</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>3</a></li><li class="pg-num"><a href="pages/stories.html"><span class="sr-only">Page </span>4</a></li><li><span class="pg pg-status">Page 1 of 4</span></li><li><a href="pages/stories.html" rel="next"><span class="pg-label">Older</span><svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg><span class="sr-only pg-sr"> stories</span></a></li></ul></nav></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;nav aria-label=&quot;Pagination&quot; class=&quot;pagination&quot;&gt;
+ &lt;ul&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;pages/stories.html&quot; rel=&quot;prev&quot;&gt;
+    &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-sm&quot; focusable=&quot;false&quot;&gt;
+     &lt;use href=&quot;#i-chev-l&quot;&gt;
+     &lt;/use&gt;
+    &lt;/svg&gt;
+    &lt;span class=&quot;pg-label&quot;&gt;
+     Newer
+    &lt;/span&gt;
+    &lt;span class=&quot;sr-only pg-sr&quot;&gt;
+     stories
+    &lt;/span&gt;
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;pg-num&quot;&gt;
+   &lt;a href=&quot;pages/stories.html&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+     Page
+    &lt;/span&gt;
+    1
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;pg-num&quot;&gt;
+   &lt;a aria-current=&quot;page&quot; href=&quot;pages/stories.html&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+     Page
+    &lt;/span&gt;
+    2
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;pg-num&quot;&gt;
+   &lt;a href=&quot;pages/stories.html&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+     Page
+    &lt;/span&gt;
+    3
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;pg-num&quot;&gt;
+   &lt;a href=&quot;pages/stories.html&quot;&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;
+     Page
+    &lt;/span&gt;
+    4
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;span class=&quot;pg pg-status&quot;&gt;
+    Page 2 of 4
+   &lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;pages/stories.html&quot; rel=&quot;next&quot;&gt;
+    &lt;span class=&quot;pg-label&quot;&gt;
+     Older
+    &lt;/span&gt;
+    &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-sm&quot; focusable=&quot;false&quot;&gt;
+     &lt;use href=&quot;#i-chev-r&quot;&gt;
+     &lt;/use&gt;
+    &lt;/svg&gt;
+    &lt;span class=&quot;sr-only pg-sr&quot;&gt;
+     stories
+    &lt;/span&gt;
+   &lt;/a&gt;
+  &lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Pagination ---------- */
+.pagination ul { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-1); list-style: none; padding: 0; }
+.pagination a, .pagination .pg { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1); min-width: var(--target-min); min-height: var(--target-min); padding-inline: var(--space-3); border-radius: var(--radius-card); color: var(--color-text); text-decoration: none; font-weight: var(--weight-semibold); font-variant-numeric: tabular-nums; }
+.pagination a:hover { background: var(--color-surface-sunken); color: var(--color-text); text-decoration: underline; text-decoration-thickness: var(--underline-thickness); }
+.pagination [aria-current=&quot;page&quot;] { background: var(--color-text); color: var(--color-page); }
+.pagination [aria-current=&quot;page&quot;]:hover { background: var(--color-text); color: var(--color-page); }
+.pagination .pg[aria-disabled=&quot;true&quot;] { color: var(--color-text-subtle); font-weight: var(--weight-regular); }
+.pagination .pg-num { display: none; }
+.pagination .pg-status { color: var(--color-text-muted); font-weight: var(--weight-regular); padding-inline: var(--space-3); }
+.pagination .pg-label { display: none; }</code></pre></details></section><section class="sec" id="section-intro"><h2>16. Section intro</h2><p>Opens Places, a country, Life Abroad and All stories. Eyebrow, serif h1, a lead paragraph, and an optional photo (2:1 on desktop, 4:3 on phone).</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Text only</li><li>With photo and caption</li></ul></div><div><h3>Accessibility</h3><ul><li>One h1 per page.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> text-h1, text-lead, ratio-hero, ratio-hero-wide</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><section class="section-intro" aria-labelledby="si-h"><div class="section-intro__text"><p class="eyebrow">Our guides</p><h1 class="t-h1" id="si-h">Life Abroad</h1><p class="t-lead">The practical side of leaving: visas, money, banks and the habits that keep a long trip from becoming a long headache.</p></div></section><section class="section-intro" aria-labelledby="si-h"><div class="section-intro__text"><p class="eyebrow">Asia</p><h1 class="t-h1" id="si-h">Thailand</h1><p class="t-lead">Eleven stories from two years of living in Bangkok, Chiang Mai and the islands.</p></div><figure><div class="section-intro__media"><img src="img/bangkok-skyline.jpg" alt="Bangkok skyline at dusk from a rooftop" width="1400" height="800" fetchpriority="high" decoding="async"></div><p class="figcap">Bangkok from our old rooftop.</p></figure></section></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><section class="section-intro" aria-labelledby="si-h"><div class="section-intro__text"><p class="eyebrow">Our guides</p><h1 class="t-h1" id="si-h">Life Abroad</h1><p class="t-lead">The practical side of leaving: visas, money, banks and the habits that keep a long trip from becoming a long headache.</p></div></section><section class="section-intro" aria-labelledby="si-h"><div class="section-intro__text"><p class="eyebrow">Asia</p><h1 class="t-h1" id="si-h">Thailand</h1><p class="t-lead">Eleven stories from two years of living in Bangkok, Chiang Mai and the islands.</p></div><figure><div class="section-intro__media"><img src="img/bangkok-skyline.jpg" alt="Bangkok skyline at dusk from a rooftop" width="1400" height="800" fetchpriority="high" decoding="async"></div><p class="figcap">Bangkok from our old rooftop.</p></figure></section></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:1100px"><div class="shell"><section class="section-intro" aria-labelledby="si-h"><div class="section-intro__text"><p class="eyebrow">Our guides</p><h1 class="t-h1" id="si-h">Life Abroad</h1><p class="t-lead">The practical side of leaving: visas, money, banks and the habits that keep a long trip from becoming a long headache.</p></div></section><section class="section-intro" aria-labelledby="si-h"><div class="section-intro__text"><p class="eyebrow">Asia</p><h1 class="t-h1" id="si-h">Thailand</h1><p class="t-lead">Eleven stories from two years of living in Bangkok, Chiang Mai and the islands.</p></div><figure><div class="section-intro__media"><img src="img/bangkok-skyline.jpg" alt="Bangkok skyline at dusk from a rooftop" width="1400" height="800" fetchpriority="high" decoding="async"></div><p class="figcap">Bangkok from our old rooftop.</p></figure></section></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:1100px"><div class="shell"><section class="section-intro" aria-labelledby="si-h"><div class="section-intro__text"><p class="eyebrow">Our guides</p><h1 class="t-h1" id="si-h">Life Abroad</h1><p class="t-lead">The practical side of leaving: visas, money, banks and the habits that keep a long trip from becoming a long headache.</p></div></section><section class="section-intro" aria-labelledby="si-h"><div class="section-intro__text"><p class="eyebrow">Asia</p><h1 class="t-h1" id="si-h">Thailand</h1><p class="t-lead">Eleven stories from two years of living in Bangkok, Chiang Mai and the islands.</p></div><figure><div class="section-intro__media"><img src="img/bangkok-skyline.jpg" alt="Bangkok skyline at dusk from a rooftop" width="1400" height="800" fetchpriority="high" decoding="async"></div><p class="figcap">Bangkok from our old rooftop.</p></figure></section></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;section aria-labelledby=&quot;si-h&quot; class=&quot;section-intro&quot;&gt;
+ &lt;div class=&quot;section-intro__text&quot;&gt;
+  &lt;p class=&quot;eyebrow&quot;&gt;
+   Asia
+  &lt;/p&gt;
+  &lt;h1 class=&quot;t-h1&quot; id=&quot;si-h&quot;&gt;
+   Thailand
+  &lt;/h1&gt;
+  &lt;p class=&quot;t-lead&quot;&gt;
+   Eleven stories from two years of living in Bangkok, Chiang Mai and the islands.
+  &lt;/p&gt;
+ &lt;/div&gt;
+ &lt;figure&gt;
+  &lt;div class=&quot;section-intro__media&quot;&gt;
+   &lt;img src=&quot;…&quot; alt=&quot;…&quot; width height loading=&quot;lazy&quot;&gt;
+  &lt;/div&gt;
+  &lt;p class=&quot;figcap&quot;&gt;
+   Bangkok from our old rooftop.
+  &lt;/p&gt;
+ &lt;/figure&gt;
+&lt;/section&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Type helpers ---------- */
+.t-h1 { font: var(--weight-semibold) var(--text-h1) / var(--leading-tight) var(--font-serif); letter-spacing: var(--tracking-display); text-wrap: balance; }
+.t-lead { font: italic var(--weight-regular) var(--text-lead) / var(--leading-lead) var(--font-serif); color: var(--color-text-muted); max-width: var(--measure-lead); }
+/* ---------- Section intro ---------- */
+.section-intro { display: grid; gap: var(--space-5); padding-block: var(--space-6) 0; }
+.section-intro__text { display: grid; gap: var(--space-3); max-width: var(--container-text); }
+.section-intro__media { aspect-ratio: var(--ratio-hero); overflow: hidden; border-radius: var(--radius-card); background: var(--color-surface-sunken); }
+.section-intro__media img { width: 100%; height: 100%; object-fit: cover; }
+.cover__body .t-h1 { max-width: var(--container-text); }</code></pre></details></section><section class="sec" id="toolkit"><h2>17. Toolkit item and disclosure note</h2><p>The Toolkit is the only place with commercial links. The disclosure note comes first on the page, in plain words. Every affiliate item carries the visible word “Affiliate”, rel=&quot;sponsored noopener&quot;, and says why we use it.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Affiliate item</li><li>Non-affiliate item</li><li>Button-link hover: tinted background</li><li>Focus: standard ring</li></ul></div><div><h3>Accessibility</h3><ul><li>Button-link announces “(external link, affiliate)”.</li><li>The label is text in a chip, never colour alone.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-surface, color-border, color-surface-tint, radius-card</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="disclosure" aria-labelledby="disc-t"><p class="disclosure__title" id="disc-t">How this page works</p><p>Some of the links below are affiliate links. If you buy through one, we may earn a small commission, at no extra cost to you. We only list things we really use, we say why, and every affiliate link is labelled. The rest are plain recommendations that earn us nothing.</p></aside><article class="toolkit-item"><div class="toolkit-item__head toolkit-item__head--nologo"><div><h3 class="toolkit-item__name">Wise</h3><div class="toolkit-item__meta"><span class="eyebrow">Money</span><span class="chip">Affiliate</span></div></div></div>
+<div class="toolkit-item__why"><p class="eyebrow">Why we use it</p><p>Cheap transfers and a card that works in every country we’ve lived in. We moved our rent through it for two years.</p></div><a class="btn-link" href="#" rel="sponsored noopener">Visit Wise<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link, affiliate)</span></a></article><article class="toolkit-item"><div class="toolkit-item__head toolkit-item__head--nologo"><div><h3 class="toolkit-item__name">Notion</h3><div class="toolkit-item__meta"><span class="eyebrow">Planning</span><span class="t-small t-muted">Free plan available</span></div></div></div>
+<div class="toolkit-item__why"><p class="eyebrow">Why we use it</p><p>Where our spreadsheets, checklists and story drafts live.</p></div><a class="btn-link" href="#" rel="noopener">Visit Notion<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link)</span></a></article></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="disclosure" aria-labelledby="disc-t"><p class="disclosure__title" id="disc-t">How this page works</p><p>Some of the links below are affiliate links. If you buy through one, we may earn a small commission, at no extra cost to you. We only list things we really use, we say why, and every affiliate link is labelled. The rest are plain recommendations that earn us nothing.</p></aside><article class="toolkit-item"><div class="toolkit-item__head toolkit-item__head--nologo"><div><h3 class="toolkit-item__name">Wise</h3><div class="toolkit-item__meta"><span class="eyebrow">Money</span><span class="chip">Affiliate</span></div></div></div>
+<div class="toolkit-item__why"><p class="eyebrow">Why we use it</p><p>Cheap transfers and a card that works in every country we’ve lived in. We moved our rent through it for two years.</p></div><a class="btn-link" href="#" rel="sponsored noopener">Visit Wise<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link, affiliate)</span></a></article><article class="toolkit-item"><div class="toolkit-item__head toolkit-item__head--nologo"><div><h3 class="toolkit-item__name">Notion</h3><div class="toolkit-item__meta"><span class="eyebrow">Planning</span><span class="t-small t-muted">Free plan available</span></div></div></div>
+<div class="toolkit-item__why"><p class="eyebrow">Why we use it</p><p>Where our spreadsheets, checklists and story drafts live.</p></div><a class="btn-link" href="#" rel="noopener">Visit Notion<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link)</span></a></article></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="disclosure" aria-labelledby="disc-t"><p class="disclosure__title" id="disc-t">How this page works</p><p>Some of the links below are affiliate links. If you buy through one, we may earn a small commission, at no extra cost to you. We only list things we really use, we say why, and every affiliate link is labelled. The rest are plain recommendations that earn us nothing.</p></aside><article class="toolkit-item"><div class="toolkit-item__head toolkit-item__head--nologo"><div><h3 class="toolkit-item__name">Wise</h3><div class="toolkit-item__meta"><span class="eyebrow">Money</span><span class="chip">Affiliate</span></div></div></div>
+<div class="toolkit-item__why"><p class="eyebrow">Why we use it</p><p>Cheap transfers and a card that works in every country we’ve lived in. We moved our rent through it for two years.</p></div><a class="btn-link" href="#" rel="sponsored noopener">Visit Wise<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link, affiliate)</span></a></article><article class="toolkit-item"><div class="toolkit-item__head toolkit-item__head--nologo"><div><h3 class="toolkit-item__name">Notion</h3><div class="toolkit-item__meta"><span class="eyebrow">Planning</span><span class="t-small t-muted">Free plan available</span></div></div></div>
+<div class="toolkit-item__why"><p class="eyebrow">Why we use it</p><p>Where our spreadsheets, checklists and story drafts live.</p></div><a class="btn-link" href="#" rel="noopener">Visit Notion<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link)</span></a></article></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="disclosure" aria-labelledby="disc-t"><p class="disclosure__title" id="disc-t">How this page works</p><p>Some of the links below are affiliate links. If you buy through one, we may earn a small commission, at no extra cost to you. We only list things we really use, we say why, and every affiliate link is labelled. The rest are plain recommendations that earn us nothing.</p></aside><article class="toolkit-item"><div class="toolkit-item__head toolkit-item__head--nologo"><div><h3 class="toolkit-item__name">Wise</h3><div class="toolkit-item__meta"><span class="eyebrow">Money</span><span class="chip">Affiliate</span></div></div></div>
+<div class="toolkit-item__why"><p class="eyebrow">Why we use it</p><p>Cheap transfers and a card that works in every country we’ve lived in. We moved our rent through it for two years.</p></div><a class="btn-link" href="#" rel="sponsored noopener">Visit Wise<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link, affiliate)</span></a></article><article class="toolkit-item"><div class="toolkit-item__head toolkit-item__head--nologo"><div><h3 class="toolkit-item__name">Notion</h3><div class="toolkit-item__meta"><span class="eyebrow">Planning</span><span class="t-small t-muted">Free plan available</span></div></div></div>
+<div class="toolkit-item__why"><p class="eyebrow">Why we use it</p><p>Where our spreadsheets, checklists and story drafts live.</p></div><a class="btn-link" href="#" rel="noopener">Visit Notion<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-ext"/></svg><span class="sr-only"> (external link)</span></a></article></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;article class=&quot;toolkit-item&quot;&gt;
+ &lt;div class=&quot;toolkit-item__head toolkit-item__head--nologo&quot;&gt;
+  &lt;div&gt;
+   &lt;h3 class=&quot;toolkit-item__name&quot;&gt;
+    Wise
+   &lt;/h3&gt;
+   &lt;div class=&quot;toolkit-item__meta&quot;&gt;
+    &lt;span class=&quot;eyebrow&quot;&gt;
+     Money
+    &lt;/span&gt;
+    &lt;span class=&quot;chip&quot;&gt;
+     Affiliate
+    &lt;/span&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;toolkit-item__why&quot;&gt;
+  &lt;p class=&quot;eyebrow&quot;&gt;
+   Why we use it
+  &lt;/p&gt;
+  &lt;p&gt;
+   Why
+  &lt;/p&gt;
+ &lt;/div&gt;
+ &lt;a class=&quot;btn-link&quot; href=&quot;#&quot; rel=&quot;sponsored noopener&quot;&gt;
+  Visit Wise
+  &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-sm&quot; focusable=&quot;false&quot;&gt;
+   &lt;use href=&quot;#i-ext&quot;&gt;
+   &lt;/use&gt;
+  &lt;/svg&gt;
+  &lt;span class=&quot;sr-only&quot;&gt;
+   (external link, affiliate)
+  &lt;/span&gt;
+ &lt;/a&gt;
+&lt;/article&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Toolkit ---------- */
+.chip { display: inline-flex; align-items: center; min-height: var(--target-floor); padding-inline: var(--space-2); border: var(--border-strong); border-radius: var(--radius-sm); background: var(--color-surface-sunken); color: var(--color-text); font: var(--weight-semibold) var(--text-eyebrow) / 1.3 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; white-space: nowrap; }
+.chip--guest { background: var(--color-guest-surface); color: var(--color-guest); border-color: var(--color-guest); }
+.toolkit-item { display: grid; gap: var(--space-3); align-content: start; padding: var(--space-5); background: var(--color-surface); border: var(--border-hairline); border-radius: var(--radius-card); }
+.toolkit-item__head { display: grid; grid-template-columns: var(--size-avatar) minmax(0, 1fr); gap: var(--space-4); align-items: center; }
+.toolkit-item__head--nologo { grid-template-columns: minmax(0, 1fr); }
+.toolkit-item__logo { width: var(--size-avatar); aspect-ratio: var(--ratio-author); border-radius: var(--radius-card); background: var(--color-surface-sunken); display: grid; place-items: center; font: var(--weight-semibold) var(--text-h3) / 1 var(--font-serif); color: var(--color-text-muted); }
+.toolkit-item__name { font: var(--weight-semibold) var(--text-card-title) / var(--leading-snug) var(--font-serif); }
+.toolkit-item__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); margin-block-start: var(--space-1); }
+.toolkit-item__why { display: grid; gap: var(--space-1); }
+.btn-link { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--target-min); padding-inline: var(--space-4); border: var(--border-width) solid var(--color-link); border-radius: var(--radius-card); font-weight: var(--weight-semibold); text-decoration: none; width: fit-content; }
+.btn-link:hover { background: var(--color-surface-tint); text-decoration: none; }
+.disclosure { display: grid; gap: var(--space-2); padding: var(--space-5); background: var(--color-surface-sunken); border-radius: var(--radius-card); max-width: var(--container-text); }
+.disclosure__title { font: var(--weight-semibold) var(--text-h4) / var(--leading-heading) var(--font-serif); }
+.reader-banner .chip { width: fit-content; }</code></pre></details></section><section class="sec" id="reader-label"><h2>18. Reader Story label</h2><p>The only place the warm clay accent appears. A chip on cards and a banner at the top of the story. Words carry the meaning; clay is a hint, not a signal.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Chip on a card</li><li>Banner on the story page</li></ul></div><div><h3>Accessibility</h3><ul><li>Clay on its surface passes 4.5:1 in both modes (see contrast table).</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-guest, color-guest-surface</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="reader-banner" aria-label="About this story"><span class="chip chip--guest">Reader story</span><p>Written by <b>Camila R.</b>, not by us. We lightly edited it. The photos and opinions are theirs.</p></aside><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/penang-street.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow"><span class="chip chip--guest">Reader story</span> Portugal · Lisbon</p><h3 class="story-card__title"><a class="story-card__link" href="pages/reader-story.html">The suitcase that toured Lisbon without me</a></h3><p class="story-card__summary">My bag took a three-day holiday of its own. The airline’s tracking page was the funniest thing I read all year.</p><p class="story-card__meta"><time>9 November 2026</time> · 6 min read</p></div></article></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="reader-banner" aria-label="About this story"><span class="chip chip--guest">Reader story</span><p>Written by <b>Camila R.</b>, not by us. We lightly edited it. The photos and opinions are theirs.</p></aside><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/penang-street.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow"><span class="chip chip--guest">Reader story</span> Portugal · Lisbon</p><h3 class="story-card__title"><a class="story-card__link" href="pages/reader-story.html">The suitcase that toured Lisbon without me</a></h3><p class="story-card__summary">My bag took a three-day holiday of its own. The airline’s tracking page was the funniest thing I read all year.</p><p class="story-card__meta"><time>9 November 2026</time> · 6 min read</p></div></article></div></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="reader-banner" aria-label="About this story"><span class="chip chip--guest">Reader story</span><p>Written by <b>Camila R.</b>, not by us. We lightly edited it. The photos and opinions are theirs.</p></aside><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/penang-street.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow"><span class="chip chip--guest">Reader story</span> Portugal · Lisbon</p><h3 class="story-card__title"><a class="story-card__link" href="pages/reader-story.html">The suitcase that toured Lisbon without me</a></h3><p class="story-card__summary">My bag took a three-day holiday of its own. The airline’s tracking page was the funniest thing I read all year.</p><p class="story-card__meta"><time>9 November 2026</time> · 6 min read</p></div></article></div></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:900px"><div class="shell"><div style="padding-block:var(--space-4);display:grid;gap:var(--space-4)"><aside class="reader-banner" aria-label="About this story"><span class="chip chip--guest">Reader story</span><p>Written by <b>Camila R.</b>, not by us. We lightly edited it. The photos and opinions are theirs.</p></aside><article class="story-card"><span class="story-card__media" aria-hidden="true"><img src="img/penang-street.jpg" alt="" width="700" height="520" loading="lazy" decoding="async"></span><div class="story-card__body"><p class="eyebrow"><span class="chip chip--guest">Reader story</span> Portugal · Lisbon</p><h3 class="story-card__title"><a class="story-card__link" href="pages/reader-story.html">The suitcase that toured Lisbon without me</a></h3><p class="story-card__summary">My bag took a three-day holiday of its own. The airline’s tracking page was the funniest thing I read all year.</p><p class="story-card__meta"><time>9 November 2026</time> · 6 min read</p></div></article></div></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;aside aria-label=&quot;About this story&quot; class=&quot;reader-banner&quot;&gt;
+ &lt;span class=&quot;chip chip--guest&quot;&gt;
+  Reader story
+ &lt;/span&gt;
+ &lt;p&gt;
+  Written by
+  &lt;b&gt;
+   Camila R.
+  &lt;/b&gt;
+  , not by us. We lightly edited it. The photos and opinions are theirs.
+ &lt;/p&gt;
+&lt;/aside&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Toolkit ---------- */
+.chip { display: inline-flex; align-items: center; min-height: var(--target-floor); padding-inline: var(--space-2); border: var(--border-strong); border-radius: var(--radius-sm); background: var(--color-surface-sunken); color: var(--color-text); font: var(--weight-semibold) var(--text-eyebrow) / 1.3 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; white-space: nowrap; }
+.chip--guest { background: var(--color-guest-surface); color: var(--color-guest); border-color: var(--color-guest); }
+/* ---------- Reader story ---------- */
+.reader-banner { display: grid; gap: var(--space-1); padding: var(--space-4) var(--space-5); background: var(--color-guest-surface); border-inline-start: var(--focus-width) solid var(--color-guest); border-radius: var(--radius-card); max-width: var(--container-text); }
+.reader-banner p { color: var(--color-text); font-size: var(--text-small); line-height: var(--leading-ui); }
+.reader-banner .chip { width: fit-content; }</code></pre></details></section><section class="sec" id="empty"><h2>19. Empty state and 404</h2><p>Friendly, short, always with next steps as plain links. No illustration beyond the route divider. The 404 keeps the header and footer so people can recover.</p>
+<div class="specs"><div><h3>States and behaviour</h3><ul><li>Empty state (no results)</li><li>404</li></ul></div><div><h3>Accessibility</h3><ul><li>404 returns a real 404 status; the heading is the h1.</li></ul></div></div>
+<p class="tokens"><b>Tokens:</b> color-text, color-text-muted, color-route</p>
+<div class="demo-row"><div class="demo-cell"><p class="demo-label">Phone 390 · light</p><div class="demo theme-light"><div class="ctx" style="width:390px"><div class="shell"><section class="empty" aria-labelledby="em-h"><div class="route" aria-hidden="true"><span></span><span></span><span></span></div><h2 class="t-h2" id="em-h">No stories here yet</h2><p class="t-lead">We haven’t written about this one. Here are a few places to go instead.</p><ul class="empty__links"><li><a href="pages/stories.html">All stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/places.html">Places<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li></ul></section><section class="empty" aria-labelledby="nf-h"><p class="empty__code">Error 404</p><div class="route" aria-hidden="true"><span></span><span></span><span></span></div><h1 class="t-h1" id="nf-h">That page took a wrong turn</h1><p class="t-lead">We’ve missed a flight or two ourselves, so we won’t judge. The page you wanted may have moved, or the link may have a typo.</p><ul class="empty__links"><li><a href="pages/home.html">Go home<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/places.html">Browse places<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/stories.html">Read the latest stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li></ul></section></div></div></div></div><div class="demo-cell"><p class="demo-label">Phone 390 · dark</p><div class="demo theme-dark"><div class="ctx" style="width:390px"><div class="shell"><section class="empty" aria-labelledby="em-h"><div class="route" aria-hidden="true"><span></span><span></span><span></span></div><h2 class="t-h2" id="em-h">No stories here yet</h2><p class="t-lead">We haven’t written about this one. Here are a few places to go instead.</p><ul class="empty__links"><li><a href="pages/stories.html">All stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/places.html">Places<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li></ul></section><section class="empty" aria-labelledby="nf-h"><p class="empty__code">Error 404</p><div class="route" aria-hidden="true"><span></span><span></span><span></span></div><h1 class="t-h1" id="nf-h">That page took a wrong turn</h1><p class="t-lead">We’ve missed a flight or two ourselves, so we won’t judge. The page you wanted may have moved, or the link may have a typo.</p><ul class="empty__links"><li><a href="pages/home.html">Go home<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/places.html">Browse places<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/stories.html">Read the latest stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li></ul></section></div></div></div></div></div><div class="demo-stack"><div class="demo-cell"><p class="demo-label">Desktop · light</p><div class="demo theme-light"><div class="ctx" style="width:1100px"><div class="shell"><section class="empty" aria-labelledby="nf-h"><p class="empty__code">Error 404</p><div class="route" aria-hidden="true"><span></span><span></span><span></span></div><h1 class="t-h1" id="nf-h">That page took a wrong turn</h1><p class="t-lead">We’ve missed a flight or two ourselves, so we won’t judge. The page you wanted may have moved, or the link may have a typo.</p><ul class="empty__links"><li><a href="pages/home.html">Go home<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/places.html">Browse places<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/stories.html">Read the latest stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li></ul></section></div></div></div></div><div class="demo-cell"><p class="demo-label">Desktop · dark</p><div class="demo theme-dark"><div class="ctx" style="width:1100px"><div class="shell"><section class="empty" aria-labelledby="nf-h"><p class="empty__code">Error 404</p><div class="route" aria-hidden="true"><span></span><span></span><span></span></div><h1 class="t-h1" id="nf-h">That page took a wrong turn</h1><p class="t-lead">We’ve missed a flight or two ourselves, so we won’t judge. The page you wanted may have moved, or the link may have a typo.</p><ul class="empty__links"><li><a href="pages/home.html">Go home<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/places.html">Browse places<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li><li><a href="pages/stories.html">Read the latest stories<svg class="icon-sm" aria-hidden="true" focusable="false"><use href="#i-chev-r"/></svg></a></li></ul></section></div></div></div></div></div>
+<details class="code"><summary>HTML sketch</summary><pre><code>&lt;section aria-labelledby=&quot;nf-h&quot; class=&quot;empty&quot;&gt;
+ &lt;p class=&quot;empty__code&quot;&gt;
+  Error 404
+ &lt;/p&gt;
+ &lt;div aria-hidden=&quot;true&quot; class=&quot;route&quot;&gt;
+  &lt;span&gt;
+  &lt;/span&gt;
+  &lt;span&gt;
+  &lt;/span&gt;
+  &lt;span&gt;
+  &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;h1 class=&quot;t-h1&quot; id=&quot;nf-h&quot;&gt;
+  That page took a wrong turn
+ &lt;/h1&gt;
+ &lt;p class=&quot;t-lead&quot;&gt;
+  We’ve missed a flight or two ourselves, so we won’t judge. The page you wanted may have moved, or the link may have a typo.
+ &lt;/p&gt;
+ &lt;ul class=&quot;empty__links&quot;&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;pages/home.html&quot;&gt;
+    Go home
+    &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-sm&quot; focusable=&quot;false&quot;&gt;
+     &lt;use href=&quot;#i-chev-r&quot;&gt;
+     &lt;/use&gt;
+    &lt;/svg&gt;
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;pages/places.html&quot;&gt;
+    Browse places
+    &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-sm&quot; focusable=&quot;false&quot;&gt;
+     &lt;use href=&quot;#i-chev-r&quot;&gt;
+     &lt;/use&gt;
+    &lt;/svg&gt;
+   &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;pages/stories.html&quot;&gt;
+    Read the latest stories
+    &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-sm&quot; focusable=&quot;false&quot;&gt;
+     &lt;use href=&quot;#i-chev-r&quot;&gt;
+     &lt;/use&gt;
+    &lt;/svg&gt;
+   &lt;/a&gt;
+  &lt;/li&gt;
+ &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre></details>
+<details class="code"><summary>CSS (from components.css)</summary><pre><code>/* ---------- Empty state, 404 ---------- */
+.empty { display: grid; gap: var(--space-4); justify-items: start; align-content: start; padding-block: var(--space-7); max-width: var(--container-text); }
+.empty__links { display: flex; flex-wrap: wrap; gap: 0 var(--space-5); list-style: none; padding: 0; }
+.empty__links a { display: inline-flex; align-items: center; gap: var(--space-1); min-height: var(--target-min); font-weight: var(--weight-semibold); }
+.empty__code { font: var(--weight-semibold) var(--text-eyebrow) / 1.3 var(--font-sans); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }</code></pre></details></section></div></body></html>

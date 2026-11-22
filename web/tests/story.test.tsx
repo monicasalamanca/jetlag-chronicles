@@ -13,8 +13,8 @@ describe("story page", () => {
       />,
     );
     expect(html.match(/<h1/g)).toHaveLength(1);
-    expect(html).toContain("<h1>30 Thailand Scams</h1>");
-    expect(html).toContain("<p>Thailand</p>");
+    expect(html).toContain('<h1 class="t-h1">30 Thailand Scams</h1>');
+    expect(html).toContain('<p class="eyebrow">Thailand</p>');
     expect(html).toContain("<strong>not</strong>");
   });
 
@@ -28,5 +28,11 @@ describe("story page", () => {
   it("supports tables (cost-of-living posts use them)", async () => {
     const html = await renderMarkdown("| Item | Cost |\n|---|---|\n| Rent | 15,000 THB |");
     expect(html).toContain("<table>");
+  });
+
+  it("wraps tables in a focusable scroll region so they never widen the page", async () => {
+    const html = await renderMarkdown("| Item | Cost |\n|---|---|\n| Rent | 15,000 THB |");
+    expect(html).toMatch(/^<div class="table-wrap" role="region" tabindex="0" aria-label="Table"><table>/);
+    expect(html).toMatch(/<\/table><\/div>$/);
   });
 });

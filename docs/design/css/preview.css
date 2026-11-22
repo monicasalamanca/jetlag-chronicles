@@ -1,0 +1,55 @@
+/* Design-doc only: forces a colour mode so light and dark can sit side by side. Not part of the site. */
+.theme-light {
+  --color-page: #FBFAF7;
+  --color-surface: #FFFFFF;
+  --color-surface-sunken: #F3F0E8;
+  --color-surface-tint: #EDF4F9;
+  --color-border: #ECE6DA;
+  --color-border-strong: #7D8794;
+  --color-text: #2E3A4B;
+  --color-text-muted: #566171;
+  --color-text-subtle: #626C7A;
+  --color-link: #0A64A4;
+  --color-link-hover: #074E82;
+  --color-link-visited: #6A3F93;
+  --color-route: #0C90E9;
+  --color-focus: #0A64A4;
+  --color-guest: #96411F;
+  --color-guest-surface: #F9EEE8;
+  --color-selection: #CFE5F6;
+  --color-on-scrim: #FFFFFF;
+  --color-scrim: rgb(18 22 28 / 0.64);
+  --logo-ink: #2E3A4B;
+  --logo-accent: #0C90E9;
+  color-scheme: light;
+}
+.theme-dark {
+  --color-page: #12161C;
+  --color-surface: #1A2028;
+  --color-surface-sunken: #0E1217;
+  --color-surface-tint: #15222F;
+  --color-border: #2B333E;
+  --color-border-strong: #6B7686;
+  --color-text: #E8EBF0;
+  --color-text-muted: #AEB8C5;
+  --color-text-subtle: #9AA5B3;
+  --color-link: #7CC2F5;
+  --color-link-hover: #A8D8F8;
+  --color-link-visited: #C4A6EB;
+  --color-route: #2EA3F2;
+  --color-focus: #7CC2F5;
+  --color-guest: #F2A988;
+  --color-guest-surface: #2B1F1A;
+  --color-selection: #24496B;
+  --color-on-scrim: #FFFFFF;
+  --color-scrim: rgb(18 22 28 / 0.64);
+  --logo-ink: #E8EBF0;
+  --logo-accent: #2EA3F2;
+  color-scheme: dark;
+}
+.theme-dark .photo-fix { filter: none; }
+
+/* Static state demos (design doc only) */
+.force-focus { outline: var(--focus-width) solid var(--color-focus) !important; outline-offset: var(--focus-offset); }
+.force-hover { text-decoration: underline !important; text-decoration-thickness: var(--underline-thickness-hover) !important; }
+.demo .site-header { position: static; }

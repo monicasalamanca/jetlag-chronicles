@@ -1,6 +1,6 @@
 # 11 — Instant publishing via Strapi webhook
 
-Status: built, needs production setup (Moni)
+Status: done
 Type: AFK
 Source: `docs/plan.md`
 
@@ -14,7 +14,7 @@ Strapi webhook on publish/unpublish/update/delete calls a secret-protected reval
 - [x] Editing, publishing and unpublishing a post updates the story, its lists, home, sitemap and RSS within seconds
 - [x] If Strapi is down the site keeps serving the last version
 - [x] Works with standard Next.js APIs only (Cloudflare/OpenNext compatible)
-- [ ] Tested on the Vercel preview
+- [x] Tested on the Vercel preview
 
 ## Blocked by
 
@@ -29,3 +29,5 @@ Strapi webhook on publish/unpublish/update/delete calls a secret-protected reval
 - Verified: draft save → no change; publish → new title on 2nd visit; unpublish → 404; wrong secret → 401; Strapi stopped → all pages 200.
 - Sitemap/RSS/home don't exist yet; they must tag their fetches with `modelTag(...)` (issues 08, 09).
 - Remaining: set `REVALIDATE_SECRET` in Vercel and create the webhook in the Railway Strapi admin, then test on the preview.
+
+**2026-11-22 (Claude):** Production set up by Moni: `REVALIDATE_SECRET` in Vercel (Production), webhook "Website revalidate" in the Railway Strapi pointing at https://jetlag-chronicles.vercel.app/api/revalidate. The webhook's Trigger succeeded. Done.

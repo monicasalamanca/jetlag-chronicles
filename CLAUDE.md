@@ -3,7 +3,7 @@
 Non-monetized travel-story blog by Moni & Dunny (thejetlagchronicles.com). Rebuild of `../jetlag-fe` + `../jetlag-be`, keeping the 33 posts at their current URLs.
 
 - Plan and every locked decision: `docs/plan.md` (read it before changing routes, the content model, SEO or redirects)
-- Design: `docs/design-brief.md` → `docs/design-system.md` once Claude Design delivers (issue 00)
+- Design: `docs/design-system.md` (rules, components, extending the system) with mockups in `docs/design/` (`pages-gallery.html`, `components.html`). Read it before building any page or component.
 - Work items: `.scratch/rebuild/issues/` (local markdown tracker, see `docs/agents/issue-tracker.md`)
 
 ## Layout
@@ -16,6 +16,8 @@ web/   Next.js 16 App Router (pnpm). Based on the-bio-hive setup.
   src/lib/content.ts       server-only data loading (Strapi, cached + tagged for webhook revalidation)
   src/lib/strapi/client.ts the only place that calls Strapi
   src/components/          presentational, data comes in as props (tested with renderToStaticMarkup)
+  src/styles/              tokens.css, components.css, story.css (from the design system) + base.css
+  src/fonts/               self-hosted woff2 subsets (OFL), loaded by src/app/fonts.ts
   tests/                   Vitest
 ```
 
@@ -31,7 +33,8 @@ web/   Next.js 16 App Router (pnpm). Based on the-bio-hive setup.
 
 - **Story URLs never change.** `/<country>/<slug>` and `/lifestyle/<slug>` (section `place` / `life_abroad`). `storyPath()` in `src/lib/posts.ts` is the single source of truth.
 - **Pages load, components render.** Pages fetch and pass plain props to synchronous components.
-- **Tokens only** (after issue 03): components never hardcode colours, fonts, spacing, radii or shadows.
+- **Tokens only:** components and CSS never hardcode colours, fonts, spacing, radii or shadows (`tests/design-system.test.tsx` checks colours and undefined tokens). Use the class names from `components.css` / the mockups before inventing new ones. Layout switches use `@container ctx` (the body is the container), not media queries.
+- **Hidden sections** are switched on by one env flag each (`TOOLKIT_LIVE`, later Reader Stories). Off = not in menu, footer, lists, sitemap or RSS, and the page 404s.
 - **Portable hosting:** no Vercel-only features. Images go through the Cloudinary loader (`src/lib/cloudinary-loader.ts`); Vercel image optimization stays off.
 - **No third-party scripts or cookies.** Fonts are self-hosted via `next/font/local`. Ask before adding any third-party request.
 - **Markdown is sanitized**; raw HTML in post bodies is never rendered.
