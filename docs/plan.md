@@ -116,7 +116,7 @@ No share buttons, lightbox, prev/next or sidebar.
 
 ### 7.3 Design system — Mood board A
 
-> **Next step:** Claude Design builds the full design system and page designs from Board A using `docs/design-brief.md`. The result, `docs/design-system.md` plus `tokens.css`, **replaces this section as the design source of truth**. The values below are the starting point.
+> **Done (issue 00):** `docs/design-system.md` plus `web/src/styles/tokens.css` **replace this section as the design source of truth**. The values below were the starting point (Board A); where they differ, the design system wins.
 
 | Token | Value | Use |
 |---|---|---|

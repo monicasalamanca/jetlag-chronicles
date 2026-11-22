@@ -1,0 +1,7 @@
+/* Page shell. The body is the .ctx container that components.css queries (md 48rem, lg 64rem). */
+html { background: var(--color-page); }
+body { margin: 0; min-height: 100svh; display: flex; flex-direction: column; }
+body > main { flex: 1 0 auto; }
+
+/* Walking-skeleton story page (the full story layout is issue 04). */
+.story-page > .story-grid { margin-block-start: var(--space-6); }

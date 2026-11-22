@@ -1,0 +1,88 @@
+/* story.css: styles for story body content. Tokens only. */
+.story-grid {
+  display: grid;
+  /* Text column is 66ch, left-aligned with the title. Photos may use the wide track (up to --container-figure). */
+  grid-template-columns:
+    [text-start] min(var(--measure-prose), 100%) [text-end]
+    minmax(0, calc(var(--container-figure) - var(--measure-prose))) [wide-end];
+  font: var(--weight-regular) var(--text-body) / var(--leading-body) var(--font-sans);
+  color: var(--color-text);
+}
+.story-grid > * { grid-column: text-start / text-end; margin-block: 0; }
+.story-grid > * + * { margin-block-start: var(--space-5); }
+.story-grid > .wide { grid-column: text-start / wide-end; }
+
+.story-grid h2, .story-grid h3, .story-grid h4 {
+  font-family: var(--font-serif); font-weight: var(--weight-semibold);
+  text-wrap: balance; scroll-margin-top: calc(var(--header-height) + var(--space-4));
+}
+.story-grid h2 { font-size: var(--text-h2); line-height: var(--leading-snug); letter-spacing: var(--tracking-heading); margin-block-start: var(--space-8); }
+.story-grid h3 { font-size: var(--text-h3); line-height: var(--leading-snug); margin-block-start: var(--space-7); }
+.story-grid h4 { font-size: var(--text-h4); line-height: var(--leading-heading); margin-block-start: var(--space-6); }
+.story-grid h2 + *, .story-grid h3 + *, .story-grid h4 + * { margin-block-start: var(--space-3); }
+
+.story-grid a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: var(--underline-thickness);
+  text-underline-offset: var(--underline-offset);
+}
+.story-grid a:visited { color: var(--color-link-visited); }
+.story-grid a:hover { color: var(--color-link-hover); text-decoration-thickness: var(--underline-thickness-hover); }
+
+.story-grid ul, .story-grid ol { padding-inline-start: var(--space-5); }
+.story-grid li + li { margin-block-start: var(--space-2); }
+.story-grid ul li::marker { color: var(--color-route); }
+.story-grid ol li::marker { color: var(--color-text-muted); font-weight: var(--weight-semibold); }
+
+.story-grid blockquote {
+  margin-inline: 0; padding-inline-start: var(--space-5);
+  border-inline-start: var(--focus-width) solid var(--color-route);
+  font: italic var(--weight-regular) var(--text-lead) / var(--leading-lead) var(--font-serif);
+}
+.story-grid blockquote footer {
+  margin-block-start: var(--space-2);
+  font: normal var(--weight-regular) var(--text-small) / var(--leading-ui) var(--font-sans);
+  color: var(--color-text-muted);
+}
+
+.story-grid hr { border: 0; border-block-start: var(--border-hairline); margin-block: var(--space-7); }
+
+.story-grid code {
+  font: var(--weight-semibold) 0.9em var(--font-sans);
+  letter-spacing: 0.02em; font-variant-numeric: tabular-nums;
+  background: var(--color-surface-sunken); border: var(--border-hairline);
+  border-radius: var(--radius-sm); padding: 0.1em 0.35em;
+}
+
+/* Table: scrolls inside its own wrapper, never the page */
+.story-grid .table-wrap {
+  overflow-x: auto; background: var(--color-surface);
+  border: var(--border-hairline); border-radius: var(--radius-card);
+}
+.story-grid table {
+  width: 100%; min-width: 30rem; border-collapse: collapse;
+  font-size: var(--text-small); line-height: var(--leading-ui); font-variant-numeric: tabular-nums;
+}
+.story-grid caption {
+  caption-side: top; text-align: start; padding: var(--space-3) var(--space-4);
+  font-weight: var(--weight-semibold);
+}
+.story-grid th, .story-grid td { padding: var(--space-3) var(--space-4); text-align: start; vertical-align: top; border-block-start: var(--border-hairline); }
+.story-grid thead th { background: var(--color-surface-sunken); font-weight: var(--weight-semibold); border-block-end: var(--border-width-thick) solid var(--color-border-strong); }
+.story-grid .num { text-align: end; white-space: nowrap; }
+.story-grid tfoot th, .story-grid tfoot td { font-weight: var(--weight-semibold); border-block-start: var(--border-width-thick) solid var(--color-border-strong); }
+
+/* Figure: photos keep their own orientation. The credit line is optional: render it only when the credit field is
+   filled (required for guest and Reader Story photos). It sits under the caption, never on the photo. */
+.story-grid figure { margin-inline: 0; }
+.story-grid figure img {
+  display: block; width: 100%; height: auto;
+  background: var(--color-surface-sunken); border-radius: var(--radius-card);
+}
+.story-grid figure.portrait img { width: auto; max-width: 100%; max-height: 80svh; max-width: min(100%, 28rem); margin-inline: auto; }
+.story-grid figcaption {
+  margin-block-start: var(--space-2);
+  font-size: var(--text-caption); line-height: var(--leading-ui); color: var(--color-text-muted);
+}
+.story-grid figcaption .credit { display: block; font-style: italic; color: var(--color-text-subtle); }

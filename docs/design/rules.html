@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Extending the system and do/don’t</title><link rel="stylesheet" href="css/fonts.css"><style>body{margin:0;background:#FBFAF7;color:#2E3A4B;font:400 1.0625rem/1.6 "Source Sans 3",system-ui,sans-serif}.w{max-width:46rem;margin:0 auto;padding:32px 20px 80px}h1,h2{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.2}h2{margin-top:2.5rem}code{background:#F3F0E8;padding:.1em .3em;border-radius:4px}li{margin:.4em 0}a{color:#0A64A4}</style></head><body><div class="w"><h1>Extending the system, and do/don’t</h1><h2>Extending the system</h2>
+<ol>
+<li><strong>Reuse first.</strong> Before adding anything, try an existing component with different content. Most new pages are a section intro, cards and pagination.</li>
+<li><strong>A new component is allowed only when</strong> (a) the content has a structure no current component can hold, (b) it will appear on at least two pages or it is a template for many, and (c) it can be built from existing tokens. It needs: a spec in this file, light and dark renderings, mobile and desktop behaviour, accessibility notes and a contrast check. Otherwise it is a variant, not a component.</li>
+<li><strong>New tokens</strong> are added only when no existing token fits twice. Add to tokens.css, give the dark value, run the contrast script, then update section 3.</li>
+<li><strong>Adding a section (for example "Food").</strong> Add one nav item only if the header still fits at 320px (the menu holds up to six). Create a section intro page, reuse story cards, give it no colour of its own (sections are told apart by words, not colour). Add it to the eyebrow rules ("Food" as the eyebrow, with the city when there is one). Update the sitemap and this file.</li>
+<li><strong>Adding <code>/es/</code>.</strong> Same components and tokens. Set <code>lang="es"</code> on the page, translate all UI strings (menu, "Page 2 of 4", "Write to us", disclosure, skip link, aria-labels), and allow 30% longer text: nothing may truncate. Add <code>hreflang</code> pairs, keep the same URL structure, and show the language switch as a plain text link in the footer, not a flag or dropdown. Spanish accents are in the Latin subset, so no new fonts.</li>
+<li><strong>A new country page</strong> is a country page with content. It takes the standard section intro with a 4:3/2:1 hero from one of its own photos, then story cards. It gets no custom colour or layout. It appears under its continent heading on Places and gets a country card (4:5 photo, name, story count). Pick the card photo for the subject in the centre band so it survives both the 4:5 and 2:1 crops.</li>
+<li><strong>Guest and reader content</strong> always uses the clay chip, the banner and the guest author box, and requires a photo credit.</li>
+<li><strong>Anything commercial</strong> lives on the Toolkit page only, with the disclosure note and the visible word "Affiliate".</li>
+</ol>
+<h2>Do and don't</h2>
+<p><strong>Do</strong></p>
+<ul>
+<li>Lead with a real photo, then the title.</li>
+<li>Use ink for eyebrows, Link Blue only for things you can click.</li>
+<li>Keep one link per card, with the title as its name.</li>
+<li>Keep text in the 44rem column; let figures go wider on desktop.</li>
+<li>Add alt text, captions and, where known, a credit.</li>
+<li>Use tokens for every colour, size, space and radius.</li>
+<li>Test at 320px, in dark mode and with the keyboard.</li>
+<li>Use real titles and real sentences, never lorem ipsum.</li>
+<li>Use the route divider at most once per section break.</li>
+<li>Mark every affiliate link "Affiliate", with <code>rel="sponsored noopener"</code>.</li>
+</ul>
+<p><strong>Don't</strong></p>
+<ul>
+<li>Don't add share buttons, comments, newsletter boxes, pop-ups, carousels, sidebars, star ratings or ads.</li>
+<li>Don't use colour as the only signal (current page, affiliate, reader story, errors).</li>
+<li>Don't put text on a photo without the scrim.</li>
+<li>Don't recolour or stretch the logo, or put it on a busy photo.</li>
+<li>Don't add fonts, an icon font, or a dark-mode toggle.</li>
+<li>Don't remove or shrink the focus ring.</li>
+<li>Don't use the clay accent anywhere except Reader Stories.</li>
+<li>Don't crop faces or subjects out: pick the centre of the frame for <code>g_auto</code>.</li>
+<li>Don't hard-code hex values or pixel sizes in components.</li>
+<li>Don't make a new component when a variant will do.</li>
+</ul></div></body></html>
