@@ -1,0 +1,7 @@
+/* Page-level spacing that the mockups (docs/design/pages/) set inline. Tokens only. */
+
+/* Story page (docs/design/pages/story.html) */
+.story-page__crumbs { padding-block-start: var(--space-4); }
+.story-page__cover { padding-block-start: var(--space-4); }
+.story-page__toc { margin-block-start: var(--space-6); max-width: var(--measure-prose); }
+.story-page__body { margin-block-start: var(--space-7); }
