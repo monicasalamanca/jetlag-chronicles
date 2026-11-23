@@ -1,6 +1,6 @@
 # 05 — Migration script: import the posts and write the report
 
-Status: built, production import pending (Moni)
+Status: done (imported to production 2026-11-22: 41 posts, 6 countries, 246 photo records)
 Type: AFK
 Source: `docs/plan.md`
 

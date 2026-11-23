@@ -1,0 +1,2311 @@
+{
+  "about": "Issue 06 decisions applied to the imported posts: real alt text for every photo, reworded affiliate sentences, fixed links. Applied by cms/scripts/apply-fixes.js. See docs/migration-decisions.md.",
+  "posts": {
+    "ode-to-bangkok-love-letter-to-the-city": {
+      "coverAlt": "A tuk-tuk driver sits on a plastic chair beside his neon-lit tuk-tuk and a street food cart on a Bangkok street at night",
+      "replace": [
+        {
+          "find": "start using the system like a local, you can grab a prepaid BTS Skytrain Rabbit Card",
+          "with": "start using the system like a local, you can pick up a prepaid BTS Skytrain Rabbit Card at any station.",
+          "why": "text"
+        },
+        {
+          "find": "Bangkok_City_sky_view_aa0076be06.jpg)\n\n\n\n---\n\nDear Bangkok,",
+          "with": "Bangkok_City_sky_view_aa0076be06.jpg)\n\nDear Bangkok,",
+          "why": "text"
+        },
+        {
+          "find": "![Bangkok, City sky view](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745702443/Bangkok_City_sky_view_aa0076be06.jpg",
+          "with": "![Bangkok's skyline at dusk from high above, with the BTS Skytrain line cutting through the city](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745702443/Bangkok_City_sky_view_aa0076be06.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok Night Market 01](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745702443/Bangkok_Night_Market_01_0490b071dd.jpg",
+          "with": "![Crowds walking between red-roofed stalls at a Bangkok night market](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745702443/Bangkok_Night_Market_01_0490b071dd.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Bangkok monks.temple](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772942027/Thailand_Bangkok_monks_temple_681a7f8f1d.jpg",
+          "with": "![Two monks in orange robes at a small temple shrine with golden Buddha statues in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772942027/Thailand_Bangkok_monks_temple_681a7f8f1d.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![OdeToBangkok StreetFoodVendor](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775492/Bangkok_Street_Food_Vendor_76b40a4f5b.jpg",
+          "with": "![Street food vendors cooking at lit-up stalls on a Bangkok street at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775492/Bangkok_Street_Food_Vendor_76b40a4f5b.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![OdeToBangkok FriendsEnjoyingFood](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775494/Bangkok_friends_enjoying_food_de5079ced9.jpg",
+          "with": "![Friends sharing a meal at a street table in Bangkok's Chinatown, surrounded by red lanterns and lucky charms](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775494/Bangkok_friends_enjoying_food_de5079ced9.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Bangkok Dior](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772954011/Thailand_Bangkok_Dior_156283a819.jpg",
+          "with": "![A Dior store in Bangkok almost hidden behind a lush tropical garden](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772954011/Thailand_Bangkok_Dior_156283a819.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok Infinity Pool View.2](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770046131/Bangkok_Infinity_Pool_View_2_07e8aae965.jpg",
+          "with": "![A swimmer in a rooftop infinity pool facing Bangkok skyscrapers, including the pixelated MahaNakhon tower](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770046131/Bangkok_Infinity_Pool_View_2_07e8aae965.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![OdeToBangkok Budtender](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775490/Bangkok_budtender_4a7ac9f7b4.jpg",
+          "with": "![A neon \"Your Budtender\" sign above a cannabis stall at night in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775490/Bangkok_budtender_4a7ac9f7b4.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok Train.Station](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112217/Bangkok_Train_Station_ae7a7451b8.jpg",
+          "with": "![Late sun on the stairs and walkway of an elevated train station in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112217/Bangkok_Train_Station_ae7a7451b8.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok Lumpini Park sky view](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775477/Bangkok_Lumpini_Park_sky_view_e8d1e7bb92.jpg",
+          "with": "![Lumpini Park's green lawns and lake seen from above, with the Bangkok skyline behind](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775477/Bangkok_Lumpini_Park_sky_view_e8d1e7bb92.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "30-thailand-scams": {
+      "coverAlt": "A Thai man in a blue animal hat pulling a funny face at a market stall, under the words \"30 scams to avoid in Thailand\"",
+      "replace": [
+        {
+          "find": "![Leonardo Kino XL People uncomfortably sleeping in the small ec 0](https://res.cloudinary.com/jetlagchronicles/image/upload/v1751925112/Leonardo_Kino_XL_People_uncomfortably_sleeping_in_the_small_ec_0_fb897f2dc0.jpg",
+          "with": "![AI-generated image of passengers sleeping uncomfortably in cramped economy seats on a plane](https://res.cloudinary.com/jetlagchronicles/image/upload/v1751925112/Leonardo_Kino_XL_People_uncomfortably_sleeping_in_the_small_ec_0_fb897f2dc0.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Songthaew truck](https://res.cloudinary.com/jetlagchronicles/image/upload/v1751926185/Thailand_Songthaew_truck_a35482f75e.jpg",
+          "with": "![A red songthaew pickup taxi driving past old shophouses on a Thai street](https://res.cloudinary.com/jetlagchronicles/image/upload/v1751926185/Thailand_Songthaew_truck_a35482f75e.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Pattaya Motorcycles](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753638275/Thailand_Pattaya_Motorcycles_1811147f63.jpg",
+          "with": "![Motorbikes parked in front of a small restaurant in Pattaya](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753638275/Thailand_Pattaya_Motorcycles_1811147f63.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Fake.Brands.30.scams](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771559244/Fake_Brands_30_scams_bac58d5169.jpg",
+          "with": "![Rows of fake brand-name sneakers in plastic bags hanging at a market stall](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771559244/Fake_Brands_30_scams_bac58d5169.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand RepairShop](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753639085/Thailand_Repair_Shop_6abf5b4614.jpg",
+          "with": "![A cluttered electronics repair shop in Thailand at night, with fans and TVs stacked inside](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753639085/Thailand_Repair_Shop_6abf5b4614.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Bangkok tuktuk scam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1751923998/Thailand_Bangkok_tuktuk_scam_0d8ffbd810.jpg",
+          "with": "![View from the back seat of a tuk-tuk as the driver weaves through Bangkok traffic](https://res.cloudinary.com/jetlagchronicles/image/upload/v1751923998/Thailand_Bangkok_tuktuk_scam_0d8ffbd810.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand bus](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753639858/Thailand_bus_98371f3a74.jpg",
+          "with": "![Passengers boarding a red and cream city bus in Thailand](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753639858/Thailand_bus_98371f3a74.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thai baht](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753641554/Thai_baht_cd5d71416f.jpg",
+          "with": "![Close-up of a green Thai 20 baht banknote](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753641554/Thai_baht_cd5d71416f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Apple phone](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753643291/Apple_phone_c4fbbba70b.jpg",
+          "with": "![An iPhone lying face up on a wooden table](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753643291/Apple_phone_c4fbbba70b.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Job Hostage](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753640590/Job_Hostage_17f47f7f5f.jpg",
+          "with": "![A man in a shirt and tie with his hands bound by rope](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753640590/Job_Hostage_17f47f7f5f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Thai girl scammer](https://res.cloudinary.com/jetlagchronicles/image/upload/v1755902596/Thailand_Thai_girl_scammer_269dc5b1ca.jpg",
+          "with": "![AI-generated image of a young woman in a white top on a neon-lit Bangkok street at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1755902596/Thailand_Thai_girl_scammer_269dc5b1ca.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand house](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753646713/Thailand_house_83822444e2.jpg",
+          "with": "![A wooden Thai house on stilts by a pond under a cloudy evening sky](https://res.cloudinary.com/jetlagchronicles/image/upload/v1753646713/Thailand_house_83822444e2.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "chiang-mai-vs-bangkok-expat-guide": {
+      "coverAlt": "Two monks in saffron and maroon robes walking past a white temple wall in Chiang Mai",
+      "replace": [
+        {
+          "find": "![Expense Category Table](https://res.cloudinary.com/jetlagchronicles/image/upload/v1756497092/Expense_Category_Table_7f3d13bd27.jpg",
+          "with": "![Table of monthly costs, Chiang Mai vs Bangkok: rent ฿11,300 vs ฿20,000 (43% less), utilities ฿1,700 vs ฿4,900 (65% less), internet ฿376 vs ฿395 (5% less), transport ฿1,057 vs ฿1,650 (36% less), a meal out ฿150 vs ฿250 (40% less)](https://res.cloudinary.com/jetlagchronicles/image/upload/v1756497092/Expense_Category_Table_7f3d13bd27.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok High Rise Build 01](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775477/Bangkok_High_Rise_Build_01_ceb05e2b30.jpg",
+          "with": "![Looking up at Bangkok's glass skyscrapers against a blue sky](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775477/Bangkok_High_Rise_Build_01_ceb05e2b30.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand power lines](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882772/Thailand_power_lines_ff6299ce75.jpg",
+          "with": "![A tangle of overhead power lines and cables on a Thai street pole](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882772/Thailand_power_lines_ff6299ce75.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand ChiangMai Painter](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882771/Thailand_Chiang_Mai_Painter_9e4c07355e.jpg",
+          "with": "![A street artist painting a portrait at a busy Chiang Mai night market](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882771/Thailand_Chiang_Mai_Painter_9e4c07355e.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok At Night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748889835/Bangkok_At_Night_0013e6f371.jpg",
+          "with": "![Bangkok at night from above, with a glowing highway running through the city](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748889835/Bangkok_At_Night_0013e6f371.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Lighting lantern at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748890232/Thailand_Lighting_lantern_at_night_aaa44c7659.jpg",
+          "with": "![People releasing a glowing paper lantern into the night sky in Thailand](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748890232/Thailand_Lighting_lantern_at_night_aaa44c7659.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Dog waiting for train](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748890809/Thailand_Dog_waiting_for_train_5ff0ca6417.jpg",
+          "with": "![A dog sitting on an empty railway platform in rural Thailand](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748890809/Thailand_Dog_waiting_for_train_5ff0ca6417.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand BurnSeason](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748891104/Thailand_Burn_Season_26465492ab.jpg",
+          "with": "![Smoke rising from a burning field in northern Thailand during burning season](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748891104/Thailand_Burn_Season_26465492ab.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Food, outdoor tables](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748892293/Thailand_Food_outdoor_tables_651f2c4893.jpg",
+          "with": "![People eating at plastic tables outside a shop in Bangkok's Chinatown](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748892293/Thailand_Food_outdoor_tables_651f2c4893.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Ayutthaya, temple ruins 01](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775476/Ayutthaya_temple_ruins_01_75a1495286.jpg",
+          "with": "![The brick prang towers of a temple ruin in Ayutthaya](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775476/Ayutthaya_temple_ruins_01_75a1495286.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok vs Chiang Mai](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758328561/Bangkok_vs_Chiang_Mai_6a4e637c69.png",
+          "with": "![Chiang Mai vs Bangkok. Chiang Mai: lower cost of living, peaceful, tight-knit community, easy to get around, close to nature; but burning season, fewer luxury options, less international. Bangkok: endless food and nightlife, strong infrastructure, big expat scene, world-class medical care, international flights; but more expensive, traffic and noise, can feel isolating at first](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758328561/Bangkok_vs_Chiang_Mai_6a4e637c69.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand, Train Market](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882771/Thailand_Train_Market_f99408f8af.jpg",
+          "with": "![A train arriving through the Maeklong railway market, with stalls of fruit and vegetables right beside the tracks](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882771/Thailand_Train_Market_f99408f8af.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "cost-of-living-thailand": {
+      "coverAlt": "The head of a golden Buddha statue against a clear blue sky",
+      "replace": [
+        {
+          "find": "![Thailand HuaHin01](https://res.cloudinary.com/jetlagchronicles/image/upload/v1754254485/Thailand_Hua_Hin01_56452b260a.jpg",
+          "with": "![Hua Hin's coastline and town seen from a hilltop](https://res.cloudinary.com/jetlagchronicles/image/upload/v1754254485/Thailand_Hua_Hin01_56452b260a.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![EmptyWallet](https://res.cloudinary.com/jetlagchronicles/image/upload/v1754254718/Empty_Wallet_7ca941a179.jpg",
+          "with": "![Hands opening an empty leather wallet](https://res.cloudinary.com/jetlagchronicles/image/upload/v1754254718/Empty_Wallet_7ca941a179.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Dunny and Buddah](https://res.cloudinary.com/jetlagchronicles/image/upload/v1754255362/Thailand_Dunny_and_Buddah_279423462d.jpg",
+          "with": "![Dunny grinning and throwing a shaka next to a smiling golden child statue at a Thai temple](https://res.cloudinary.com/jetlagchronicles/image/upload/v1754255362/Thailand_Dunny_and_Buddah_279423462d.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "phuket-expat-digital-nomad-guide": {
+      "coverAlt": "Sun loungers and umbrellas on a quiet white-sand beach in Phuket, with a pier behind",
+      "replace": [
+        {
+          "find": "[www.tigermuaythai.com](link)",
+          "with": "[www.tigermuaythai.com](https://www.tigermuaythai.com)",
+          "why": "text"
+        },
+        {
+          "find": "![Thailand Phuket beach01](https://res.cloudinary.com/jetlagchronicles/image/upload/v1755385780/Thailand_Phuket_beach01_a756bc40e9.jpg",
+          "with": "![Sun loungers and umbrellas on a quiet white-sand beach in Phuket, with a pier behind](https://res.cloudinary.com/jetlagchronicles/image/upload/v1755385780/Thailand_Phuket_beach01_a756bc40e9.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Phuket maksim romashkin](https://res.cloudinary.com/jetlagchronicles/image/upload/v1755386216/Thailand_Phuket_maksim_romashkin_613073bc3a.jpg",
+          "with": "![Devotees in colourful robes walking in a street procession during Phuket's vegetarian festival](https://res.cloudinary.com/jetlagchronicles/image/upload/v1755386216/Thailand_Phuket_maksim_romashkin_613073bc3a.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand phuket island.life](https://res.cloudinary.com/jetlagchronicles/image/upload/v1756072797/Thailand_phuket_island_life_33ca56bf2a.jpg",
+          "with": "![Turquoise water between steep green limestone cliffs off Phuket](https://res.cloudinary.com/jetlagchronicles/image/upload/v1756072797/Thailand_phuket_island_life_33ca56bf2a.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Screenshot 2025 08 24 174845](https://res.cloudinary.com/jetlagchronicles/image/upload/v1756072196/Screenshot_2025_08_24_174845_3427068b1f.png",
+          "with": "![Screenshot from the Tiger Muay Thai website: a fighter mid-kick in a ring under the words \"Fight professional Muay Thai while training at Tiger Muay Thai\"](https://res.cloudinary.com/jetlagchronicles/image/upload/v1756072196/Screenshot_2025_08_24_174845_3427068b1f.png",
+          "why": "alt"
+        }
+      ]
+    },
+    "is-thailand-still-worth-it": {
+      "coverAlt": "A large stone Buddha seated between ancient brick walls in Sukhothai",
+      "replace": [
+        {
+          "find": "![OdeToBangkok Budtender](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775490/Bangkok_budtender_4a7ac9f7b4.jpg",
+          "with": "![A neon \"Your Budtender\" sign above a cannabis stall at night in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775490/Bangkok_budtender_4a7ac9f7b4.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Bangkok croc.food](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764802749/Thailand_Bangkok_croc_food_bc4e6e15fb.jpg",
+          "with": "![A vendor at a night market stall in Bangkok with a whole grilled crocodile on display](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764802749/Thailand_Bangkok_croc_food_bc4e6e15fb.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Bangkok Veggie.Market](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764802748/Thailand_Bangkok_Veggie_Market_0f0474bfad.jpg",
+          "with": "![A cook at a lit-up vegetable and noodle stall at a Bangkok night market, with a price board above](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764802748/Thailand_Bangkok_Veggie_Market_0f0474bfad.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "thailand-visa-border-run-guide": {
+      "coverAlt": "Small fishing boats anchored in shallow water off a Thai beach, with a Thai flag on a pole",
+      "replace": [
+        {
+          "find": "![IMG 7835](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718564/IMG_7835_e5d6f9761b.jpg",
+          "with": "![An empty platform at Surat Thani railway station at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718564/IMG_7835_e5d6f9761b.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 7563](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718580/IMG_7563_6915b41df4.jpg",
+          "with": "![A cartoon mascot statue on a station platform in front of an old black steam locomotive in Thailand](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718580/IMG_7563_6915b41df4.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 7419](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718554/IMG_7419_afce349d9e.jpg",
+          "with": "![A man walking alone along a long covered walkway at a station at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718554/IMG_7419_afce349d9e.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 7632](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718578/IMG_7632_cf9e01e5f9.jpg",
+          "with": "![A man walking past a hardware shop crammed with baskets, brooms and hammocks in Thailand](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718578/IMG_7632_cf9e01e5f9.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "bangkok-condo-rental-guide": {
+      "coverAlt": "A tuk-tuk with \"Thailand\" on its back in traffic on a busy Bangkok street",
+      "replace": [
+        {
+          "find": "![IMG 7338](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696502/IMG_7338_6882a0f87e.jpg",
+          "with": "![The elevated BTS Skytrain track above trees and condo towers in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696502/IMG_7338_6882a0f87e.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260220 180623](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696488/20260220_180623_f786ad12ab.jpg",
+          "with": "![A quiet car park between low-rise apartment buildings in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696488/20260220_180623_f786ad12ab.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260220 154726](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696489/20260220_154726_73529334b7.jpg",
+          "with": "![A billboard for a new condo development, Baan 365 Sukhumvit by LPN, above rooftops in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696489/20260220_154726_73529334b7.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand dog 01](https://res.cloudinary.com/jetlagchronicles/image/upload/v1756067119/Thailand_dog_01_3370576ab8.jpg",
+          "with": "![A small black and white dog looking up at the camera on a Bangkok street](https://res.cloudinary.com/jetlagchronicles/image/upload/v1756067119/Thailand_dog_01_3370576ab8.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 7337](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717655/IMG_7337_87c4d93841.jpg",
+          "with": "![Stairs up to On Nut BTS Skytrain station in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717655/IMG_7337_87c4d93841.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "vietnam-digital-nomad-hotspot-2026": {
+      "coverAlt": "A person in a conical hat standing with arms out at the edge of the sea on a Vietnamese beach",
+      "replace": [
+        {
+          "find": "![20260326 172106](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776700080/20260326_172106_15e8e5fcb1.jpg",
+          "with": "![The sun setting over a Vietnamese city skyline seen from a rooftop](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776700080/20260326_172106_15e8e5fcb1.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam, Tân Bình, Hồ Chí Minh](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758661063/Vietnam_Tan_Binh_Ho_Chi_Minh_2665d44e2b.jpg",
+          "with": "![Ho Chi Minh City's skyline lit up at night across the Saigon River, with the Bitexco tower on the left](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758661063/Vietnam_Tan_Binh_Ho_Chi_Minh_2665d44e2b.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Monica](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656390/Vietnam_Monica_c8af2a038a.jpg",
+          "with": "![Moni with her arms raised at the foot of a waterfall between dark rock walls in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656390/Vietnam_Monica_c8af2a038a.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam little boat](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656365/Vietnam_little_boat_b8e396f6c5.jpg",
+          "with": "![A fisherman paddling a round basket boat in calm water off the coast of Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656365/Vietnam_little_boat_b8e396f6c5.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260326 172043](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699212/20260326_172043_814ddb904e.jpg",
+          "with": "![A rooftop infinity pool looking out over the sea and hotel towers in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699212/20260326_172043_814ddb904e.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam ubrella.in.rain](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758660881/Vietnam_ubrella_in_rain_b52f123cd8.jpg",
+          "with": "![People sitting on a lakeside bench under an umbrella in the rain in Hanoi](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758660881/Vietnam_ubrella_in_rain_b52f123cd8.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Beach01](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656389/Vietnam_Beach01_b4c1df31fd.jpg",
+          "with": "![Swimmers on a wide sandy beach in Vietnam on a sunny day](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656389/Vietnam_Beach01_b4c1df31fd.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Beach Scene](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656389/Vietnam_Beach_Scene_b50f3db25f.jpg",
+          "with": "![A striped deck chair under palm leaves on a quiet beach with green hills behind, Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656389/Vietnam_Beach_Scene_b50f3db25f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260323 173403](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699211/20260323_173403_3386401378.jpg",
+          "with": "![Dunny and Moni taking a selfie at sunset by the river in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699211/20260323_173403_3386401378.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 8358](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699225/IMG_8358_94e495964e.jpg",
+          "with": "![A small dog sitting on a tiled pavement next to a parked scooter in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699225/IMG_8358_94e495964e.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam kids](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656389/Vietnam_kids_e7522d1d4f.jpg",
+          "with": "![A group of smiling children making peace signs inside a wooden house in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656389/Vietnam_kids_e7522d1d4f.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "vietnam-cost-of-living-2026": {
+      "coverAlt": "People eating at low plastic stools and tables outside a street food shop in Vietnam at dusk",
+      "replace": [
+        {
+          "find": "![Vietnam HCMC 1](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_HCMC_1_0763f6884a.jpg",
+          "with": "![Crowds on a street packed with neon signs at night in Ho Chi Minh City](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_HCMC_1_0763f6884a.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam hoi an](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758661753/Vietnam_hoi_an_781bb8b9bc.jpg",
+          "with": "![Visitors inside the gate of a Chinese assembly hall with carved red pillars in Hoi An](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758661753/Vietnam_hoi_an_781bb8b9bc.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam HCMC 4](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_HCMC_4_c61a8ded7d.jpg",
+          "with": "![Ho Chi Minh City's skyline at night, with the Landmark 81 tower lit in rainbow colours and searchlights](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_HCMC_4_c61a8ded7d.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Hoi An 1](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_Hoi_An_1_392191e30a.jpg",
+          "with": "![A woman and two girls in conical hats lighting paper lantern boats by the river in Hoi An at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_Hoi_An_1_392191e30a.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam HCMC Motorcycles](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760392740/Vietnam_HCMC_Motorcycles_e35a8361b9.jpg",
+          "with": "![Motorbike riders in face masks filling a wet street in Ho Chi Minh City](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760392740/Vietnam_HCMC_Motorcycles_e35a8361b9.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Kids 2](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760392740/Vietnam_Kids_2_45ca9abb62.jpg",
+          "with": "![Three children leaning on a railing outside an old apartment block in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760392740/Vietnam_Kids_2_45ca9abb62.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Beach.Legs](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656388/Vietnam_Beach_Legs_a503760b4c.jpg",
+          "with": "![Someone's legs stretched out on a white-sand beach looking out at the sea in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656388/Vietnam_Beach_Legs_a503760b4c.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "kuala-lumpur-digital-nomad-city-guide": {
+      "coverAlt": "An \"I love KL\" sign on a street corner in Kuala Lumpur, with a woman walking past",
+      "replace": [
+        {
+          "find": "![Malayasia KL I Love KL](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031297/Malayasia_KL_I_Love_KL_c20ca2a407.jpg",
+          "with": "![An \"I love KL\" sign on a street corner in Kuala Lumpur, with a woman walking past](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031297/Malayasia_KL_I_Love_KL_c20ca2a407.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia KL Local on balcony](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031919/Malaysia_KL_Local_on_balcony_328e38634c.jpg",
+          "with": "![A man relaxing on the balcony of an old shophouse above a restaurant sign in Kuala Lumpur](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031919/Malaysia_KL_Local_on_balcony_328e38634c.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia KL ScooterRides](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758032099/Malaysia_KL_Scooter_Rides_a7ac116d41.jpg",
+          "with": "![Two people riding electric scooters down a street in Kuala Lumpur](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758032099/Malaysia_KL_Scooter_Rides_a7ac116d41.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia KL Bukit Bintang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758030794/Malaysia_KL_Bukit_Bintang_d440b52303.jpg",
+          "with": "![Bukit Bintang junction in Kuala Lumpur at dusk, with giant video screens and traffic](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758030794/Malaysia_KL_Bukit_Bintang_d440b52303.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia KL infinityPool](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031912/Malaysia_KL_infinity_Pool_80240863ef.jpg",
+          "with": "![Sun loungers beside a rooftop infinity pool looking out at the Petronas Towers at dusk](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031912/Malaysia_KL_infinity_Pool_80240863ef.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia KL chinese rooftops](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760561933/Malaysia_KL_chinese_rooftops_03fef5fe1c.jpg",
+          "with": "![The ornate golden roofs of a Chinese temple with Kuala Lumpur's towers behind under a cloudy sky](https://res.cloudinary.com/jetlagchronicles/image/upload/v1760561933/Malaysia_KL_chinese_rooftops_03fef5fe1c.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malayasia KL Opium](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031298/Malayasia_KL_Opium_224e78ccd3.jpg",
+          "with": "![Vintage Chinese advertising posters in red frames along a wall in Kuala Lumpur](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031298/Malayasia_KL_Opium_224e78ccd3.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malayasia KL WeLoveCats](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031295/Malayasia_KL_We_Love_Cats_bdfedb32a0.jpg",
+          "with": "![A tattooed hand reaching out to a calico kitten on the pavement in Kuala Lumpur](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031295/Malayasia_KL_We_Love_Cats_bdfedb32a0.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "penang-digital-nomad-guide": {
+      "coverAlt": "A trishaw parked in front of the bright blue walls of a Chinese mansion in George Town, Penang",
+      "replace": [
+        {
+          "find": "![Malaysia Georgetown Streetview1](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763564372/Malaysia_Georgetown_Streetview1_b4c861e22f.jpg",
+          "with": "![Tourists outside an old shophouse café with a hawker cart in George Town, Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763564372/Malaysia_Georgetown_Streetview1_b4c861e22f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia Georgetown Condo View](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583779/Malaysia_Georgetown_Condo_View_5774abde5a.jpg",
+          "with": "![Sea view between condo towers and palm trees from a balcony in Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583779/Malaysia_Georgetown_Condo_View_5774abde5a.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Ringgit](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583037/Ringgit_bd158ed4e2.png",
+          "with": "![A spread of purple Malaysian 100 ringgit banknotes](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583037/Ringgit_bd158ed4e2.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia Georgetown CityView](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763566757/Malaysia_Georgetown_City_View_e157b9c0ee.jpg",
+          "with": "![George Town's rooftops and the coastline seen from above, Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763566757/Malaysia_Georgetown_City_View_e157b9c0ee.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia Penang temple3](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583780/Malaysia_Penang_temple3_46aa31ff0b.jpg",
+          "with": "![The richly carved and lantern-lit interior of a Chinese clan temple in Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583780/Malaysia_Penang_temple3_46aa31ff0b.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia Penang monkeys](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763585478/Malaysia_Penang_monkeys_88b829858c.jpg",
+          "with": "![Two macaque monkeys grooming each other on a stone path in Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763585478/Malaysia_Penang_monkeys_88b829858c.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "penang-vs-kuala-lumpur": {
+      "coverAlt": "The Petronas Twin Towers lit up at night in Kuala Lumpur",
+      "replace": [
+        {
+          "find": "![20260304 191430](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776482789/20260304_191430_8108e1006c.jpg",
+          "with": "![A street in George Town hung with red lanterns, with motorbikes and trishaws passing](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776482789/20260304_191430_8108e1006c.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260314 182212](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202628/20260314_182212_ee418c0de5.jpg",
+          "with": "![The big KLCC letters by the lake in front of Suria KLCC mall in Kuala Lumpur](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202628/20260314_182212_ee418c0de5.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![KL vs Penang cost.of.living](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763587884/KL_vs_Penang_cost_of_living_826147a398.png",
+          "with": "![Table of monthly costs, Kuala Lumpur vs Penang: rent RM2,800 vs RM1,900, utilities and internet RM300 vs RM250, food RM1,200 vs RM1,000, transport RM300 vs RM200, coworking RM500 vs RM400; total RM5,100 vs RM3,750](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763587884/KL_vs_Penang_cost_of_living_826147a398.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia Georgetown Waterfront.At.Night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763564371/Malaysia_Georgetown_Waterfront_At_Night_14b16edb3e.jpg",
+          "with": "![Yachts moored along a lit-up marina boardwalk in George Town at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763564371/Malaysia_Georgetown_Waterfront_At_Night_14b16edb3e.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia KL Jalon.Alors AtNight](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763568077/Malaysia_KL_Jalon_Alors_At_Night_7502bf0bc6.jpg",
+          "with": "![Crowds under strings of red lanterns on Jalan Alor food street in Kuala Lumpur at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763568077/Malaysia_KL_Jalon_Alors_At_Night_7502bf0bc6.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia MallView](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763568077/Malaysia_Mall_View_801d9e492c.jpg",
+          "with": "![Several floors of shops around the atrium of a Kuala Lumpur shopping mall](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763568077/Malaysia_Mall_View_801d9e492c.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia Georgetown Catbutt.Art](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763568077/Malaysia_Georgetown_Catbutt_Art_9c65c4ccaf.jpg",
+          "with": "![A red metal cat sculpture on a white wall in George Town, Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763568077/Malaysia_Georgetown_Catbutt_Art_9c65c4ccaf.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "mm2h-visa-guide-malaysia": {
+      "coverAlt": "A rooftop infinity pool with sun loungers facing the Petronas Towers at sunset",
+      "replace": [
+        {
+          "find": "![20260314 182254](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202629/20260314_182254_d341eeadb5.jpg",
+          "with": "![Looking up at the Petronas Twin Towers across the lake in KLCC Park](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202629/20260314_182254_d341eeadb5.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![MM2h chart](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764091480/MM_2h_chart_7fd909286f.png",
+          "with": "![MM2H tiers table. Silver: RM500,000 deposit (about $120,000), 50% can be withdrawn after 12 months, 5-year minimum. Gold: RM1,000,000 (about $240,000), 50% after 12 months, 15-year minimum. Platinum: RM4.5–5 million (about $1 million), withdrawal negotiable up to 20%, 20-year minimum](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764091480/MM_2h_chart_7fd909286f.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Gold Tier expenses](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764093193/Gold_Tier_expenses_47a4e5aff2.png",
+          "with": "![Gold tier start-up costs: fixed deposit RM1,000,000 ($240,000), minimum property RM1,000,000 ($240,000), government fees RM3,000 ($720), agent fees RM50,000 ($12,000), legal, banking and travel RM20,000 ($4,800); total about RM2,073,000 ($497,000)](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764093193/Gold_Tier_expenses_47a4e5aff2.png",
+          "why": "alt"
+        },
+        {
+          "find": "![20260314 182212](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202628/20260314_182212_ee418c0de5.jpg",
+          "with": "![The big KLCC letters by the lake in front of Suria KLCC mall in Kuala Lumpur](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202628/20260314_182212_ee418c0de5.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Penang Jetty.Views](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941374/Penang_Jetty_Views_305813296a.jpg",
+          "with": "![A colourful Chinese temple on stilts over the water at the clan jetties in Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941374/Penang_Jetty_Views_305813296a.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "bangkok-vs-kuala-lumpur-digital-nomads-guide": {
+      "coverAlt": "Bangkok's MahaNakhon tower next to Kuala Lumpur's Petronas Towers, labelled Bangkok and Kuala Lumpur",
+      "replace": [
+        {
+          "find": "If you want to move like the locals, pre-ordering a BTS Rabbit Card and save yourself",
+          "with": "If you want to move like the locals, get a BTS Rabbit Card and save yourself",
+          "why": "text"
+        },
+        {
+          "find": "![Thailand Song.Wat](https://res.cloudinary.com/jetlagchronicles/image/upload/v1773204882/Thailand_Song_Wat_2640aa98ad.jpg",
+          "with": "![Cartoon figures painted on a café wall above colourful stools at Song Wat Road in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1773204882/Thailand_Song_Wat_2640aa98ad.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia KL Food Court](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758030793/Malaysia_KL_Food_Court_85a845d292.jpg",
+          "with": "![The glowing entrance of a food court in Kuala Lumpur with \"Malaysia\" spelled out in big letters](https://res.cloudinary.com/jetlagchronicles/image/upload/v1758030793/Malaysia_KL_Food_Court_85a845d292.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Bangkok.Views.from.Nana.station](https://res.cloudinary.com/jetlagchronicles/image/upload/v1773205097/Thailand_Bangkok_Views_from_Nana_station_19c2a5a8a4.jpg",
+          "with": "![Looking down on traffic and tuk-tuks at a junction from Nana BTS station in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1773205097/Thailand_Bangkok_Views_from_Nana_station_19c2a5a8a4.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Bangkok Chinatown1](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764110569/Thailand_Bangkok_Chinatown1_38ebfc427f.jpg",
+          "with": "![Cars, motorbikes and street vendors on a busy road in Bangkok's Chinatown at dusk](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764110569/Thailand_Bangkok_Chinatown1_38ebfc427f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia KualaLumpur FoodCourt](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112358/Malaysia_Kuala_Lumpur_Food_Court_34eef460e9.jpg",
+          "with": "![A shiny temple hall with tables under a ceiling covered in red lanterns in Kuala Lumpur](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112358/Malaysia_Kuala_Lumpur_Food_Court_34eef460e9.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok Train.Station](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112217/Bangkok_Train_Station_ae7a7451b8.jpg",
+          "with": "![Late sun on the stairs and walkway of an elevated train station in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112217/Bangkok_Train_Station_ae7a7451b8.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok At Night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748889835/Bangkok_At_Night_0013e6f371.jpg",
+          "with": "![Bangkok at night from above, with a glowing highway running through the city](https://res.cloudinary.com/jetlagchronicles/image/upload/v1748889835/Bangkok_At_Night_0013e6f371.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Malaysia KualaLumpur Jalan.Petaling](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112359/Malaysia_Kuala_Lumpur_Jalan_Petaling_3e504170eb.jpg",
+          "with": "![The Petaling Street gate in Kuala Lumpur's Chinatown, with market stalls and shoppers below](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112359/Malaysia_Kuala_Lumpur_Jalan_Petaling_3e504170eb.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand.Traintrack.bird](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764113296/Thailand_Traintrack_bird_eeb5501e79.jpg",
+          "with": "![A green and yellow parrot on a perch next to railway tracks, with people walking past](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764113296/Thailand_Traintrack_bird_eeb5501e79.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "where-to-live-in-vietnam": {
+      "coverAlt": "Ho Chi Minh City's skyline lit up blue at night across the Saigon River",
+      "replace": [
+        {
+          "find": "![Vietnam DaNang at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764205978/Vietnam_Da_Nang_at_night_e2bdc01b33.jpg",
+          "with": "![Da Nang's bridges and city lights along the river under a fiery sunset](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764205978/Vietnam_Da_Nang_at_night_e2bdc01b33.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam HCMC bike.hawker](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764206305/Vietnam_HCMC_bike_hawker_cae344c87a.jpg",
+          "with": "![A street vendor pushing a lit-up food cart on a cobbled street in Ho Chi Minh City at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764206305/Vietnam_HCMC_bike_hawker_cae344c87a.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Hanoit.street.view](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764206306/Vietnam_Hanoit_street_view_950d913dcd.jpg",
+          "with": "![Old shopfronts and a flowering tree on a quiet street in Hanoi](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764206306/Vietnam_Hanoit_street_view_950d913dcd.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Nha.Trang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764208659/Vietnam_Nha_Trang_c36fe1ac2d.png",
+          "with": "![Palm trees and thatched umbrellas on a sunny beach in Nha Trang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764208659/Vietnam_Nha_Trang_c36fe1ac2d.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Vung.Tau](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764208961/Vietnam_Vung_Tau_ec27e80837.png",
+          "with": "![Vung Tau's city and long curving beach seen from a hilltop](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764208961/Vietnam_Vung_Tau_ec27e80837.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam City Costs](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764200332/Vietnam_City_Costs_af7d08ef00.png",
+          "with": "![Vietnam cities compared (cost, internet, air quality, safety, expat community). Da Nang: $$, excellent, good, high, medium. Saigon: $$$, excellent, poor, medium, high. Hanoi: $$, good, poor, medium, medium. Nha Trang: $, fair, moderate, medium, niche. Vung Tau: $, fair, fair, high, low](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764200332/Vietnam_City_Costs_af7d08ef00.png",
+          "why": "alt"
+        }
+      ]
+    },
+    "canadians-second-passports-exit-strategies": {
+      "coverAlt": "The words \"Game over\" over a mountain lake surrounded by pine forest in Canada",
+      "replace": [
+        {
+          "find": "![Air Canada Plane](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578028/Air_Canada_Plane_b7892e39b9.jpg",
+          "with": "![An Air Canada plane on a snowy runway](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578028/Air_Canada_Plane_b7892e39b9.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Ireland Dublin Nightlife1](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578360/Ireland_Dublin_Nightlife1_f65976b3be.jpg",
+          "with": "![Crowds outside the Temple Bar pub in Dublin at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578360/Ireland_Dublin_Nightlife1_f65976b3be.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Greece Santorini ocean.view](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578694/Greece_Santorini_ocean_view_e9996348d2.jpg",
+          "with": "![Whitewashed houses and a small pool above the deep blue sea in Santorini](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578694/Greece_Santorini_ocean_view_e9996348d2.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![gold_bars](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763579519/pexels_zlataky_cz_61823415_8442318_b20bd00f42.jpg",
+          "with": "![A pile of gold bars](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763579519/pexels_zlataky_cz_61823415_8442318_b20bd00f42.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Airport Departure](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578028/Airport_Departure_432b704737.jpg",
+          "with": "![A traveller with a suitcase looking out of the window at an airport departure gate](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578028/Airport_Departure_432b704737.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Departure List](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578028/Departure_List_f2f89ff66d.jpg",
+          "with": "![An airport departures board listing flights across Asia](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578028/Departure_List_f2f89ff66d.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "lifestyle-design-done-waiting": {
+      "coverAlt": "Dunny smiling in a cap in front of a green wall that says \"Not polite. Not boring. Not toned down.\" in Penang",
+      "replace": [
+        {
+          "find": "![Vietnam HCMC man.tennis](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764707151/Vietnam_HCMC_man_tennis_85983555e8.jpg",
+          "with": "![A shirtless older man swinging a tennis racket on a quiet court in Ho Chi Minh City](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764707151/Vietnam_HCMC_man_tennis_85983555e8.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Minca.Hammock](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764708712/Minca_Hammock_5d4ea40016.jpg",
+          "with": "![Hammocks on a wooden deck surrounded by jungle in Minca, Colombia](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764708712/Minca_Hammock_5d4ea40016.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand Suratthani](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941326/Thailand_Suratthani_9c10ee91ba.jpg",
+          "with": "![A motorbike parked in front of a wall with \"Suratthani\" in big orange letters](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941326/Thailand_Suratthani_9c10ee91ba.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "vietnam-visa-reality-for-digital-nomads-the-90-day-hack-border-runs-and-what-s-actually-legal": {
+      "coverAlt": "The Golden Bridge held up by giant stone hands above the mountains near Da Nang",
+      "replace": [
+        {
+          "find": "![Vietnam Dalat Streetview.man.headphones](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764707150/Vietnam_Dalat_Streetview_man_headphones_f873165da3.jpg",
+          "with": "![An older man in headphones waiting to cross a busy street in Da Lat](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764707150/Vietnam_Dalat_Streetview_man_headphones_f873165da3.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam DaNang at night](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764205978/Vietnam_Da_Nang_at_night_e2bdc01b33.jpg",
+          "with": "![Da Nang's bridges and city lights along the river under a fiery sunset](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764205978/Vietnam_Da_Nang_at_night_e2bdc01b33.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Kon.Tum](https://res.cloudinary.com/jetlagchronicles/image/upload/v1765381492/Vietnam_Kon_Tum_1140229980.jpg",
+          "with": "![Motorbikes and shoppers on a tree-lined street with clothes stalls in Kon Tum, Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1765381492/Vietnam_Kon_Tum_1140229980.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam nhat minh luong](https://res.cloudinary.com/jetlagchronicles/image/upload/v1765379696/Vietnam_nhat_minh_luong_ca0eaf3e1d.jpg",
+          "with": "![Light trails from boats on a river at night in Vietnam, with a hotel lit up behind](https://res.cloudinary.com/jetlagchronicles/image/upload/v1765379696/Vietnam_nhat_minh_luong_ca0eaf3e1d.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam Dalat Market.Street](https://res.cloudinary.com/jetlagchronicles/image/upload/v1765379696/Vietnam_Dalat_Market_Street_b8e234758f.jpg",
+          "with": "![A crowded night market street in Da Lat seen from above](https://res.cloudinary.com/jetlagchronicles/image/upload/v1765379696/Vietnam_Dalat_Market_Street_b8e234758f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam flag](https://res.cloudinary.com/jetlagchronicles/image/upload/v1765379696/Vietnam_flag_ef91ca0574.jpg",
+          "with": "![The Vietnamese flag flying from the Hanoi Flag Tower](https://res.cloudinary.com/jetlagchronicles/image/upload/v1765379696/Vietnam_flag_ef91ca0574.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "de-rantau-malaysia-remote-work-visa": {
+      "coverAlt": "Dunny and Moni pulling faces in a selfie under the Petronas Towers",
+      "replace": [
+        {
+          "find": "![20260313 190044](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202615/20260313_190044_5f7ec129c2.jpg",
+          "with": "![Colourful letters on the waterfront at the tourist jetty in Kuah, Langkawi, with hills behind](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202615/20260313_190044_5f7ec129c2.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Penang Georgetown Armenia](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941374/Penang_Georgetown_Armenia_917266a115.jpg",
+          "with": "![Tourists and motorbikes on Armenian Street under red lanterns in George Town, Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941374/Penang_Georgetown_Armenia_917266a115.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Ringgit](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583037/Ringgit_bd158ed4e2.png",
+          "with": "![A spread of purple Malaysian 100 ringgit banknotes](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583037/Ringgit_bd158ed4e2.png",
+          "why": "alt"
+        },
+        {
+          "find": "![MM2h chart](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764091480/MM_2h_chart_7fd909286f.png",
+          "with": "![MM2H tiers table. Silver: RM500,000 deposit (about $120,000), 50% can be withdrawn after 12 months, 5-year minimum. Gold: RM1,000,000 (about $240,000), 50% after 12 months, 15-year minimum. Platinum: RM4.5–5 million (about $1 million), withdrawal negotiable up to 20%, 20-year minimum](https://res.cloudinary.com/jetlagchronicles/image/upload/v1764091480/MM_2h_chart_7fd909286f.png",
+          "why": "alt"
+        }
+      ]
+    },
+    "thailand-dtv-vs-malaysia-de-rantau": {
+      "coverAlt": "Bangkok's skyline at sunset beside Kuala Lumpur's skyline with the Petronas Towers",
+      "replace": [
+        {
+          "find": "![DigitalNomad Passport 1](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763419333/Digital_Nomad_Passport_1_159fa0d5a3.jpg",
+          "with": "![A hand holding open a passport full of visa stamps](https://res.cloudinary.com/jetlagchronicles/image/upload/v1763419333/Digital_Nomad_Passport_1_159fa0d5a3.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "why-digital-nomads-need-multiple-hubs": {
+      "coverAlt": "Aiko the cat curled up next to a Canadian passport and boarding pass at the airport",
+      "replace": [
+        {
+          "find": "![Dunny Hitch.Hiking 01](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771556816/Dunny_Hitch_Hiking_01_67253e9900.jpg",
+          "with": "![Black and white photo of Dunny hitchhiking by a highway with a cardboard sign that says \"Montreal\"](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771556816/Dunny_Hitch_Hiking_01_67253e9900.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok.Botero](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771556819/Bangkok_Botero_e089bf8c4b.jpg",
+          "with": "![A big black Botero horse sculpture outside a Prada store in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771556819/Bangkok_Botero_e089bf8c4b.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Vietnam.Monica.beach](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771556818/Vietnam_Monica_beach_d63baf2ad3.jpg",
+          "with": "![Moni jumping with her arms up on a beach in Vietnam at dusk](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771556818/Vietnam_Monica_beach_d63baf2ad3.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "dtv-visa-for-remote-workers": {
+      "coverAlt": "A huge golden reclining Buddha inside a temple in Thailand",
+      "replace": [
+        {
+          "find": "![IMG 7495](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697706/IMG_7495_10a34d88b3.jpg",
+          "with": "![A tuk-tuk passing a construction hoarding that says \"For a better living\" in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697706/IMG_7495_10a34d88b3.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 7532](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697707/IMG_7532_10f6b8957f.jpg",
+          "with": "![A family with a small electric scooter outside a shophouse in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697707/IMG_7532_10f6b8957f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 7548](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697712/IMG_7548_ee09e05e1d.jpg",
+          "with": "![A tuk-tuk and a cyclist on Yaowarat Road in Bangkok's Chinatown](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697712/IMG_7548_ee09e05e1d.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260218 172135](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717807/20260218_172135_9295757ff2.jpg",
+          "with": "![A Dior store in Bangkok almost hidden behind a lush tropical garden](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717807/20260218_172135_9295757ff2.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "easiest-digital-nomad-visas-2026": {
+      "coverAlt": "A woman sitting cross-legged on a wide sandy beach, talking on the phone with a laptop on her lap",
+      "replace": [
+        {
+          "find": "![Tbilisi, Georgia](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399659/Tbilisi_Georgia_ab2fb201f9.png",
+          "with": "![A cable car above Tbilisi's old town and river, Georgia](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399659/Tbilisi_Georgia_ab2fb201f9.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Costa Rica](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399651/Costa_Rica_cac72cc4e2.jpg",
+          "with": "![Trees leaning over a quiet beach in Costa Rica](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399651/Costa_Rica_cac72cc4e2.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Dominica](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399658/Dominica_cd41021ef4.png",
+          "with": "![Colourful houses along the harbour in Roseau, Dominica, with green mountains behind](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399658/Dominica_cd41021ef4.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Barbados](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399658/Barbados_fcb2767b46.png",
+          "with": "![A boardwalk with old lamp posts along the water in Bridgetown, Barbados](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399658/Barbados_fcb2767b46.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Albania](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399658/Albania_e8c1a52f47.png",
+          "with": "![A pedestrian street with cafés and Christmas lights in Tirana, Albania, at dusk](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399658/Albania_e8c1a52f47.png",
+          "why": "alt"
+        },
+        {
+          "find": "![nomad visas table](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767400987/nomad_visas_table_428bb733a1.png",
+          "with": "![Top 5 easiest digital nomad visas (2026). Georgia: 10 days, free, $2,000 a month, online, 1 year. Costa Rica: 14 days, $125, $3,000, online, 1 year. Dominica: 14–28 days, $900, $4,167, online, 18 months. Barbados: 7 days, $2,000, $4,167, online, 12 months. Albania: 12 weeks, $50, $490, online and by post, 1 year, renewable](https://res.cloudinary.com/jetlagchronicles/image/upload/v1767400987/nomad_visas_table_428bb733a1.png",
+          "why": "alt"
+        }
+      ]
+    },
+    "first-90-days-abroad-expat-field-manual": {
+      "coverAlt": "Fountains and palm trees in KLCC Park with Kuala Lumpur's towers behind",
+      "replace": [
+        {
+          "find": "![dog.watching.Tokyo](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478084/dog_watching_Tokyo_371ca4ed73.jpg",
+          "with": "![People and a small dog on a bench at a neighbourhood playground in Tokyo at dusk](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478084/dog_watching_Tokyo_371ca4ed73.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Communa.13.art](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478083/Communa_13_art_cc0795320f.jpg",
+          "with": "![Colourful murals of faces on a wall in Comuna 13, Medellín](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478083/Communa_13_art_cc0795320f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand.bangkok dunny.OnNutStattion](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478555/Thailand_bangkok_dunny_On_Nut_Stattion_fd7883ef0c.jpg",
+          "with": "![Dunny on the platform at On Nut BTS station in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478555/Thailand_bangkok_dunny_On_Nut_Stattion_fd7883ef0c.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Tokyo.Pull ups](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478084/Tokyo_Pull_ups_2de3a1ebb6.jpg",
+          "with": "![Someone doing pull-ups on an outdoor bar in a small park in Tokyo](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478084/Tokyo_Pull_ups_2de3a1ebb6.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok.LumpiniPark.TaiChi](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478555/Bangkok_Lumpini_Park_Tai_Chi_284a310752.jpg",
+          "with": "![A woman practising tai chi on the grass in Lumpini Park, Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478555/Bangkok_Lumpini_Park_Tai_Chi_284a310752.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "digital-nomad-plateau-year-two": {
+      "coverAlt": "Two people walking down a narrow side street lined with shops and parked cars",
+      "replace": [
+        {
+          "find": "![IMG 8630](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719742/IMG_8630_4b26aed3d1.jpg",
+          "with": "![Small green parrots perched on a bicycle handlebar on a city street](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719742/IMG_8630_4b26aed3d1.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 8102](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719643/IMG_8102_e779b09a11.jpg",
+          "with": "![Two people sitting on yellow benches in front of a wall covered in graffiti](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719643/IMG_8102_e779b09a11.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 8021](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776720009/IMG_8021_3c4ab0a1e8.jpg",
+          "with": "![Two people posing by the big Chenang letters on the beach in Langkawi](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776720009/IMG_8021_3c4ab0a1e8.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 8056](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719735/IMG_8056_8d138dbd43.jpg",
+          "with": "![Brightly painted murals covering the walls of tall apartment buildings along a lane](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719735/IMG_8056_8d138dbd43.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 8625](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719734/IMG_8625_126a6b6b9a.jpg",
+          "with": "![An empty street lined with low buildings, with a white arrow painted on the road](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719734/IMG_8625_126a6b6b9a.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "medellin-bogota-cartagena-comparison": {
+      "coverAlt": "Medellín's skyline, Bogotá's cathedral and a colourful Cartagena street side by side",
+      "replace": [
+        {
+          "find": "![Colombia Main.City.Comparion.Chart](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769121621/Colombia_Main_City_Comparion_Chart_7a9cdd488e.png",
+          "with": "![Medellín vs Bogotá vs Cartagena. Best for: balanced lifestyle; work and stability; climate and coastal living. Rent (1-bed): medium; medium–high; high (seasonal). Internet: good; very good; inconsistent. Noise and density: medium; high; variable. Climate: mild; cool; hot and humid. Walkability: depends on neighbourhood; high; limited. Long-stay comfort: high; high; moderate](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769121621/Colombia_Main_City_Comparion_Chart_7a9cdd488e.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Colombia Cartagena flag](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769118519/Colombia_Cartagena_flag_a51bf1fd6d.jpg",
+          "with": "![The Colombian flag flying above the old city walls in Cartagena](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769118519/Colombia_Cartagena_flag_a51bf1fd6d.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "colombia-digital-nomad-visa-requirements-2026": {
+      "coverAlt": "Green cliffs and forest under low cloud at La Chorrera, Colombia",
+      "replace": [
+        {
+          "find": "![Colombia Bogota streetviews1](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036689/Colombia_Bogota_streetviews1_70f3fa4ac2.jpg",
+          "with": "![A cobbled street of colonial houses with a Colombian flag in La Candelaria, Bogotá](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036689/Colombia_Bogota_streetviews1_70f3fa4ac2.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Colombia Medellin dog.mountain](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036656/Colombia_Medellin_dog_mountain_fc9b72b9c5.jpg",
+          "with": "![A dog looking out over Medellín from a wooden fence on a hillside](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036656/Colombia_Medellin_dog_mountain_fc9b72b9c5.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Colombia Minca.2](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036667/Colombia_Minca_2_c7c8fdaa51.jpg",
+          "with": "![Green mountains and jungle under a bright sky in Minca, Colombia](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036667/Colombia_Minca_2_c7c8fdaa51.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Colombia Minca.dog](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036666/Colombia_Minca_dog_6eddf8a39a.jpg",
+          "with": "![A white and brown dog stretched out asleep on the ground in Minca, Colombia](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036666/Colombia_Minca_dog_6eddf8a39a.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "ode-to-bogota": {
+      "coverAlt": "A huge colourful street art mural reading \"Música es vida\" on a building in Bogotá",
+      "replace": [
+        {
+          "find": "![Colombia Bogota City.View](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036682/Colombia_Bogota_City_View_5ef8c72611.jpg",
+          "with": "![Bogotá spreading across the plain under a cloudy sky, seen from the hills](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036682/Colombia_Bogota_City_View_5ef8c72611.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Colombia Bogota Monseratti](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769118520/Colombia_Bogota_Monseratti_1e287a34be.jpg",
+          "with": "![Visitors on the path at the top of Monserrate, with green mountains around Bogotá](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769118520/Colombia_Bogota_Monseratti_1e287a34be.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "nomad-middle-class-financial-trap": {
+      "coverAlt": "A small tourist boat on the water in front of a Gucci billboard and tall apartment towers",
+      "replace": [
+        {
+          "find": "![Bodrum, Muğla Province, Turkey](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Bodrum_Mugla_Province_Turkey_b0485b981f.jpg",
+          "with": "![A long infinity pool overlooking the sea at a resort in Bodrum, Turkey](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Bodrum_Mugla_Province_Turkey_b0485b981f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Monopoly](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Monopoly_3f9c3a8464.jpg",
+          "with": "![Hands holding Monopoly money over a Monopoly board](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Monopoly_3f9c3a8464.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![LV Singapore](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/LV_Singapore_71786f3c10.jpg",
+          "with": "![Singapore's skyscrapers rising behind the glass Louis Vuitton pavilion at Marina Bay](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/LV_Singapore_71786f3c10.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Singapore](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Singapore_4869947fca.jpg",
+          "with": "![Marina Bay Sands lit up at night behind a glowing pool in Singapore](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Singapore_4869947fca.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "is-colombia-dangerous-2026": {
+      "coverAlt": "Medellín's hillside neighbourhoods and colourful rooftops spreading across the valley",
+      "replace": [
+        {
+          "find": "![Dunny in La Candelaria](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769971673/Dunny_in_La_Candelaria_24bf12946b.jpg",
+          "with": "![Dunny walking up a busy cobbled lane of colourful houses in La Candelaria, Bogotá](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769971673/Dunny_in_La_Candelaria_24bf12946b.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Dunny & Moni Bogota.bar](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769970345/Dunny_and_Moni_Bogota_bar_bd5df46d79.jpg",
+          "with": "![Dunny and Moni pulling faces and laughing at a bar in Bogotá](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769970345/Dunny_and_Moni_Bogota_bar_bd5df46d79.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Dunny & Moni La.Candelaria.01](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769970345/Dunny_and_Moni_La_Candelaria_01_ca98802762.jpg",
+          "with": "![Dunny and Moni smiling in sunglasses on a sunny square in La Candelaria, Bogotá](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769970345/Dunny_and_Moni_La_Candelaria_01_ca98802762.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Colombia monica.soldier](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769970915/Colombia_monica_soldier_7cb89eaed4.jpg",
+          "with": "![Moni kneeling behind an old mounted machine gun on display in a museum courtyard in Colombia](https://res.cloudinary.com/jetlagchronicles/image/upload/v1769970915/Colombia_monica_soldier_7cb89eaed4.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "how-to-rent-an-apartment-in-vietnam-2026": {
+      "coverAlt": "Two people waving in front of giant blue and white \"Vietnam\" letters in a park",
+      "replace": [
+        {
+          "find": "![20260320 170023](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717351/20260320_170023_2bdf15b3e9.jpg",
+          "with": "![Ho Chi Minh City's Bitexco tower and downtown buildings across a park under a grey sky](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717351/20260320_170023_2bdf15b3e9.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 8509](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717246/IMG_8509_364ff1e223.jpg",
+          "with": "![A red \"Bing House apartment for rent\" sign above parked motorbikes in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717246/IMG_8509_364ff1e223.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 8372](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717009/IMG_8372_5b1d3b8590.jpg",
+          "with": "![A sign for a vegetarian restaurant and co-working space, with people working at tables outside, in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717009/IMG_8372_5b1d3b8590.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260325 105044](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776716994/20260325_105044_65d099a523.jpg",
+          "with": "![Dunny and Moni making peace signs in a selfie under red lanterns by the sea in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776716994/20260325_105044_65d099a523.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "leaving-your-country-2026": {
+      "coverAlt": "A signpost with arrows pointing to Sydney, Seoul, Kuala Lumpur, London and Beijing",
+      "replace": [
+        {
+          "find": "![Thailand monks](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770337393/Thailand_monks_00e1d8ae54.jpg",
+          "with": "![Two monks in orange robes looking out over a river from a railing in Thailand](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770337393/Thailand_monks_00e1d8ae54.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Japan](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770338589/Japan_29abc16a8c.jpg",
+          "with": "![A small Shinto shrine with a stone torii gate and stairs, among trees in Japan](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770338589/Japan_29abc16a8c.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Thailand feet](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770338380/Thailand_feet_cf29c5e93f.jpg",
+          "with": "![Legs in flip-flops dangling from a bench outside a small café in Thailand](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770338380/Thailand_feet_cf29c5e93f.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "why-you-shouldnt-live-work-and-bank-in-one-country": {
+      "coverAlt": "Aiko the cat peering over the shoulder of someone in headphones working on a laptop",
+      "replace": [
+        {
+          "find": "![global currency](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595421/global_currency_87cf8ae944.jpg",
+          "with": "![A fan of banknotes from different countries](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595421/global_currency_87cf8ae944.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![nomad.sky.watcher](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595421/nomad_sky_watcher_7ad8fa24be.jpg",
+          "with": "![Someone in a hat working on a laptop in a camping chair on a beach at dusk, next to a telescope](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595421/nomad_sky_watcher_7ad8fa24be.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![global office](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595421/global_office_67c69a1d96.jpg",
+          "with": "![A laptop on a small wooden desk under a cork world map on the wall](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595421/global_office_67c69a1d96.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![laptop.charts](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595422/laptop_charts_3a4eb1f937.jpg",
+          "with": "![A person at a laptop showing stock charts, with world clocks on the desk](https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595422/laptop_charts_3a4eb1f937.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "japan-digital-nomad-visa-guide-2026": {
+      "coverAlt": "Tokyo Skytree next to the Asahi building with its golden flame sculpture, under a blue sky",
+      "replace": [
+        {
+          "find": "![Japan zen](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213323/Japan_zen_8bce0bd8c0.jpg",
+          "with": "![A small Shinto shrine with a stone torii gate and stairs, among trees in Japan](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213323/Japan_zen_8bce0bd8c0.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Japan Fukuoka.art](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213321/Japan_Fukuoka_art_34cd95ef4d.jpg",
+          "with": "![A long wall painted with colourful cartoon characters in Fukuoka](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213321/Japan_Fukuoka_art_34cd95ef4d.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Japan Kyoto.City](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213321/Japan_Kyoto_City_50cfa0017f.jpg",
+          "with": "![Kyoto spreading across the valley to the mountains, seen from a hillside](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213321/Japan_Kyoto_City_50cfa0017f.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Japan Osaka Monica.Justin](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213320/Japan_Osaka_Monica_Justin_4546b39b9b.jpg",
+          "with": "![Moni and Dunny taking a selfie by the canal in Osaka](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213320/Japan_Osaka_Monica_Justin_4546b39b9b.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "2026-tax-arbitrage-execution-guide": {
+      "coverAlt": "A tropical beach at sunset with the title \"2026 Tax Arbitrage Execution Guide\"",
+      "replace": [
+        {
+          "find": "![20260323 173403](https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837583/20260323_173403_276ae77b77.jpg",
+          "with": "![Dunny and Moni taking a selfie at sunset by the river in Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837583/20260323_173403_276ae77b77.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260314 180328](https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837583/20260314_180328_b790771b50.jpg",
+          "with": "![Moni and Dunny taking a selfie in front of the Petronas Twin Towers](https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837583/20260314_180328_b790771b50.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260404 150721](https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837584/20260404_150721_f0c061e67e.jpg",
+          "with": "![Moni and Dunny taking a selfie by a stream running through a city](https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837584/20260404_150721_f0c061e67e.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 7596](https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837925/IMG_7596_a80970f4ff.jpg",
+          "with": "![The front of a property agency in Hua Hin, with listings in the window and scooters parked outside](https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837925/IMG_7596_a80970f4ff.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "2026-southeast-asia-index-rankings": {
+      "coverAlt": "Dunny and Moni crouching in front of a temple in Surat Thani, Thailand",
+      "replace": [
+        {
+          "find": "![Penang, Malaysia flags](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973092/Penang_Malaysia_flags_6ea98bf473.jpg",
+          "with": "![Malaysian flags and colourful pinwheels hanging under a covered walkway in Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973092/Penang_Malaysia_flags_6ea98bf473.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Hua Hin, Thailand bar front](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973069/Hua_Hin_Thailand_bar_front_f226501c9e.jpg",
+          "with": "![A small bar front in Hua Hin with bikes for rent, stools and hand-painted signs](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973069/Hua_Hin_Thailand_bar_front_f226501c9e.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Penang, Malaysia dunny&moni](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973095/Penang_Malaysia_dunny_and_moni_28dd51dd22.jpg",
+          "with": "![Moni and Dunny standing in front of an old shophouse doorway in Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973095/Penang_Malaysia_dunny_and_moni_28dd51dd22.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Siem Reap, Cambodia Angkor Wat](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973086/Siem_Reap_Cambodia_Angkor_Wat_79df7ba1f2.jpg",
+          "with": "![Two people sitting on the stone steps of Angkor Wat, Siem Reap](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973086/Siem_Reap_Cambodia_Angkor_Wat_79df7ba1f2.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Langkawi, Malaysia chenang beach](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973038/Langkawi_Malaysia_chenang_beach_4de6cbd16c.jpg",
+          "with": "![Someone walking along the water's edge on Chenang beach in Langkawi at dusk](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973038/Langkawi_Malaysia_chenang_beach_4de6cbd16c.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Da Nang, Vietnam](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973037/Da_Nang_Vietnam_7ff6e1a849.jpg",
+          "with": "![A rooftop infinity pool with Da Nang's beachfront towers and the sea behind](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973037/Da_Nang_Vietnam_7ff6e1a849.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Hua Hin, Thailand train station](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973072/Hua_Hin_Thailand_train_station_ccdbabf379.jpg",
+          "with": "![The platform and old wooden station building at Hua Hin railway station](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973072/Hua_Hin_Thailand_train_station_ccdbabf379.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Penang, Malaysia hindu temple](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973099/Penang_Malaysia_hindu_temple_db0c10d2fa.jpg",
+          "with": "![A colourful Hindu temple covered in carved figures next to a modern tower in Penang](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973099/Penang_Malaysia_hindu_temple_db0c10d2fa.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "cambodia-ordinary-visa-type-e-guide": {
+      "coverAlt": "Monks among ancient stone columns at Angkor, with the title \"The Type E strategy: securing your residency in Cambodia\"",
+      "replace": [
+        {
+          "find": "[arrival.gov.kh](arrival.gov.kh)",
+          "with": "[arrival.gov.kh](https://arrival.gov.kh)",
+          "why": "text"
+        },
+        {
+          "find": "![IMG 8289](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776646345/IMG_8289_3a4477c04a.jpg",
+          "with": "![Palm trees and a Khmer-style pavilion on the riverside in Phnom Penh, with pigeons on the grass](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776646345/IMG_8289_3a4477c04a.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260317 065647](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776645309/20260317_065647_033cc3e0ef.jpg",
+          "with": "![The sun rising over the jungle, seen from the stone galleries of a temple at Angkor](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776645309/20260317_065647_033cc3e0ef.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![IMG 8314](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776645327/IMG_8314_da1a2e3a2f.jpg",
+          "with": "![The back of a tuk-tuk with a \"Don't Thai to me\" cover on a busy city street](https://res.cloudinary.com/jetlagchronicles/image/upload/v1776645327/IMG_8314_da1a2e3a2f.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "wise-thailand-august-2026-tax-changes": {
+      "coverAlt": "Dunny pointing at a Wise card next to the title \"Thailand's new regulatory handcuffs: the Wise transition 2026\"",
+      "replace": [
+        {
+          "find": "you will want to do it here before the August sweep. Do yourself a favor and click here now to get that done.",
+          "with": "you will want to do it before the August sweep.",
+          "why": "text"
+        },
+        {
+          "find": "under the new Thai licenses, grab the app here.",
+          "with": "under the new Thai licenses, the Wise app still does the job.",
+          "why": "text"
+        },
+        {
+          "find": "Audit your account and get ahead of the August 3rd deadline. Sign up or log in to Wise.",
+          "with": "Audit your account and get ahead of the August 3rd deadline.",
+          "why": "text"
+        },
+        {
+          "find": "![Bangkok_Thailand.Chinese.New.Year.2026](https://res.cloudinary.com/jetlagchronicles/image/upload/v1778272590/Bangkok_Thailand_Chinese_New_Year_2026_200226fb17.jpg",
+          "with": "![A Chinese New Year display of red lanterns outside a building in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1778272590/Bangkok_Thailand_Chinese_New_Year_2026_200226fb17.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok.Thailand_Chinatown](https://res.cloudinary.com/jetlagchronicles/image/upload/v1778273092/Bangkok_Thailand_Chinatown_4320cd8fbf.jpg",
+          "with": "![Red lanterns, shop signs and traffic along Yaowarat Road in Bangkok's Chinatown](https://res.cloudinary.com/jetlagchronicles/image/upload/v1778273092/Bangkok_Thailand_Chinatown_4320cd8fbf.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok.Thailand.BTS.Train.Station](https://res.cloudinary.com/jetlagchronicles/image/upload/v1778272590/Bangkok_Thailand_BTS_Train_Station_388bb41366.jpg",
+          "with": "![Traffic and tuk-tuks under the elevated walkway at a BTS station in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1778272590/Bangkok_Thailand_BTS_Train_Station_388bb41366.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![Bangkok.Thailand.ElephantByChaoPhraya](https://res.cloudinary.com/jetlagchronicles/image/upload/v1778273091/Bangkok_Thailand_Elephant_By_Chao_Phraya_ba39247a3d.jpg",
+          "with": "![A painted elephant statue on the riverside by the Chao Phraya in Bangkok](https://res.cloudinary.com/jetlagchronicles/image/upload/v1778273091/Bangkok_Thailand_Elephant_By_Chao_Phraya_ba39247a3d.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "top-30-digital-nomad-questions-remote-work-guide": {
+      "coverAlt": "Dunny pointing at the title \"Top 30 FAQ digital nomads are asking in 2026\" over a world map",
+      "replace": [
+        {
+          "find": "![Princess.Cafe.Working](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779134099/Princess_Cafe_Working_73f59675af.png",
+          "with": "![Moni and Dunny each working on a laptop at a café](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779134099/Princess_Cafe_Working_73f59675af.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Aiko.Airport](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771557097/Aiko_Airport_10476cdd24.jpg",
+          "with": "![Aiko the cat curled up next to a Canadian passport and boarding pass at the airport](https://res.cloudinary.com/jetlagchronicles/image/upload/v1771557097/Aiko_Airport_10476cdd24.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260313 111438](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779135528/20260313_111438_aeed0495e3.jpg",
+          "with": "![A dessert shop front with giant novelty snack figures outside](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779135528/20260313_111438_aeed0495e3.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260314 193027](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779135771/20260314_193027_ba198d9800.jpg",
+          "with": "![Dunny and Moni pulling faces in a selfie under the Petronas Towers](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779135771/20260314_193027_ba198d9800.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260307 091942](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779135867/20260307_091942_2edbe76f55.jpg",
+          "with": "![Travellers with suitcases queueing in an airport departures hall](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779135867/20260307_091942_2edbe76f55.jpg",
+          "why": "alt"
+        },
+        {
+          "find": "![20260313 134733](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779136113/20260313_134733_a685c05e57.jpg",
+          "with": "![Someone hugging two fluffy white dogs in a bright living room](https://res.cloudinary.com/jetlagchronicles/image/upload/v1779136113/20260313_134733_a685c05e57.jpg",
+          "why": "alt"
+        }
+      ]
+    },
+    "interactive-brokers-digital-nomad-guide": {
+      "coverAlt": "A laptop showing the Interactive Brokers trading platform against a blue digital world map",
+      "replace": [
+        {
+          "find": "![Tax.Monkey](https://res.cloudinary.com/jetlagchronicles/image/upload/v1780413938/Tax_Monkey_ce3d0e2efa.png",
+          "with": "![A capuchin monkey typing on a laptop at a desk covered in tax forms, next to a \"Tax stress\" mug](https://res.cloudinary.com/jetlagchronicles/image/upload/v1780413938/Tax_Monkey_ce3d0e2efa.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Computer.Kid.Meme](https://res.cloudinary.com/jetlagchronicles/image/upload/v1780413803/Computer_Kid_Meme_0a987e4135.png",
+          "with": "![Meme of a boy at a computer giving a thumbs up in front of glowing stock charts](https://res.cloudinary.com/jetlagchronicles/image/upload/v1780413803/Computer_Kid_Meme_0a987e4135.png",
+          "why": "alt"
+        },
+        {
+          "find": "![IB.Justin.digital.](https://res.cloudinary.com/jetlagchronicles/image/upload/v1780438698/IB_Justin_digital_ac91db1a40.png",
+          "with": "![Dunny pointing at a laptop showing trading charts in front of a digital globe](https://res.cloudinary.com/jetlagchronicles/image/upload/v1780438698/IB_Justin_digital_ac91db1a40.png",
+          "why": "alt"
+        },
+        {
+          "find": "![Stock crash](https://res.cloudinary.com/jetlagchronicles/image/upload/v1780440689/Stock_crash_7def35065a.png",
+          "with": "![Dunny laughing with his hands up in front of a red crashing stock chart](https://res.cloudinary.com/jetlagchronicles/image/upload/v1780440689/Stock_crash_7def35065a.png",
+          "why": "alt"
+        }
+      ]
+    }
+  },
+  "files": [
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745702443/Bangkok_nightlife_man_and_tuktuk_6383b9be0e.jpg",
+      "alternativeText": "A tuk-tuk driver sits on a plastic chair beside his neon-lit tuk-tuk and a street food cart on a Bangkok street at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745702443/Bangkok_City_sky_view_aa0076be06.jpg",
+      "alternativeText": "Bangkok's skyline at dusk from high above, with the BTS Skytrain line cutting through the city"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745702443/Bangkok_Night_Market_01_0490b071dd.jpg",
+      "alternativeText": "Crowds walking between red-roofed stalls at a Bangkok night market"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1772942027/Thailand_Bangkok_monks_temple_681a7f8f1d.jpg",
+      "alternativeText": "Two monks in orange robes at a small temple shrine with golden Buddha statues in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775492/Bangkok_Street_Food_Vendor_76b40a4f5b.jpg",
+      "alternativeText": "Street food vendors cooking at lit-up stalls on a Bangkok street at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775494/Bangkok_friends_enjoying_food_de5079ced9.jpg",
+      "alternativeText": "Friends sharing a meal at a street table in Bangkok's Chinatown, surrounded by red lanterns and lucky charms"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1772954011/Thailand_Bangkok_Dior_156283a819.jpg",
+      "alternativeText": "A Dior store in Bangkok almost hidden behind a lush tropical garden"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770046131/Bangkok_Infinity_Pool_View_2_07e8aae965.jpg",
+      "alternativeText": "A swimmer in a rooftop infinity pool facing Bangkok skyscrapers, including the pixelated MahaNakhon tower"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775490/Bangkok_budtender_4a7ac9f7b4.jpg",
+      "alternativeText": "A neon \"Your Budtender\" sign above a cannabis stall at night in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112217/Bangkok_Train_Station_ae7a7451b8.jpg",
+      "alternativeText": "Late sun on the stairs and walkway of an elevated train station in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775477/Bangkok_Lumpini_Park_sky_view_e8d1e7bb92.jpg",
+      "alternativeText": "Lumpini Park's green lawns and lake seen from above, with the Bangkok skyline behind"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770044897/30_SCAMS_TO_AVOID_IN_THAILAND_77122e4a86.png",
+      "alternativeText": "A Thai man in a blue animal hat pulling a funny face at a market stall, under the words \"30 scams to avoid in Thailand\""
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1751925112/Leonardo_Kino_XL_People_uncomfortably_sleeping_in_the_small_ec_0_fb897f2dc0.jpg",
+      "alternativeText": "AI-generated image of passengers sleeping uncomfortably in cramped economy seats on a plane"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1751926185/Thailand_Songthaew_truck_a35482f75e.jpg",
+      "alternativeText": "A red songthaew pickup taxi driving past old shophouses on a Thai street"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1753638275/Thailand_Pattaya_Motorcycles_1811147f63.jpg",
+      "alternativeText": "Motorbikes parked in front of a small restaurant in Pattaya"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771559244/Fake_Brands_30_scams_bac58d5169.jpg",
+      "alternativeText": "Rows of fake brand-name sneakers in plastic bags hanging at a market stall"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1753639085/Thailand_Repair_Shop_6abf5b4614.jpg",
+      "alternativeText": "A cluttered electronics repair shop in Thailand at night, with fans and TVs stacked inside"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1751923998/Thailand_Bangkok_tuktuk_scam_0d8ffbd810.jpg",
+      "alternativeText": "View from the back seat of a tuk-tuk as the driver weaves through Bangkok traffic"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1753639858/Thailand_bus_98371f3a74.jpg",
+      "alternativeText": "Passengers boarding a red and cream city bus in Thailand"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1753641554/Thai_baht_cd5d71416f.jpg",
+      "alternativeText": "Close-up of a green Thai 20 baht banknote"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1753643291/Apple_phone_c4fbbba70b.jpg",
+      "alternativeText": "An iPhone lying face up on a wooden table"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1753640590/Job_Hostage_17f47f7f5f.jpg",
+      "alternativeText": "A man in a shirt and tie with his hands bound by rope"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1755902596/Thailand_Thai_girl_scammer_269dc5b1ca.jpg",
+      "alternativeText": "AI-generated image of a young woman in a white top on a neon-lit Bangkok street at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1753646713/Thailand_house_83822444e2.jpg",
+      "alternativeText": "A wooden Thai house on stilts by a pond under a cloudy evening sky"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882772/Thailand_Chiang_Mai_Monks_8d33bb62eb.jpg",
+      "alternativeText": "Two monks in saffron and maroon robes walking past a white temple wall in Chiang Mai"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1756497092/Expense_Category_Table_7f3d13bd27.jpg",
+      "alternativeText": "Table of monthly costs, Chiang Mai vs Bangkok: rent ฿11,300 vs ฿20,000 (43% less), utilities ฿1,700 vs ฿4,900 (65% less), internet ฿376 vs ฿395 (5% less), transport ฿1,057 vs ฿1,650 (36% less), a meal out ฿150 vs ฿250 (40% less)"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775477/Bangkok_High_Rise_Build_01_ceb05e2b30.jpg",
+      "alternativeText": "Looking up at Bangkok's glass skyscrapers against a blue sky"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882772/Thailand_power_lines_ff6299ce75.jpg",
+      "alternativeText": "A tangle of overhead power lines and cables on a Thai street pole"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882771/Thailand_Chiang_Mai_Painter_9e4c07355e.jpg",
+      "alternativeText": "A street artist painting a portrait at a busy Chiang Mai night market"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748889835/Bangkok_At_Night_0013e6f371.jpg",
+      "alternativeText": "Bangkok at night from above, with a glowing highway running through the city"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748890232/Thailand_Lighting_lantern_at_night_aaa44c7659.jpg",
+      "alternativeText": "People releasing a glowing paper lantern into the night sky in Thailand"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748890809/Thailand_Dog_waiting_for_train_5ff0ca6417.jpg",
+      "alternativeText": "A dog sitting on an empty railway platform in rural Thailand"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748891104/Thailand_Burn_Season_26465492ab.jpg",
+      "alternativeText": "Smoke rising from a burning field in northern Thailand during burning season"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748892293/Thailand_Food_outdoor_tables_651f2c4893.jpg",
+      "alternativeText": "People eating at plastic tables outside a shop in Bangkok's Chinatown"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745775476/Ayutthaya_temple_ruins_01_75a1495286.jpg",
+      "alternativeText": "The brick prang towers of a temple ruin in Ayutthaya"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758328561/Bangkok_vs_Chiang_Mai_6a4e637c69.png",
+      "alternativeText": "Chiang Mai vs Bangkok. Chiang Mai: lower cost of living, peaceful, tight-knit community, easy to get around, close to nature; but burning season, fewer luxury options, less international. Bangkok: endless food and nightlife, strong infrastructure, big expat scene, world-class medical care, international flights; but more expensive, traffic and noise, can feel isolating at first"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748882771/Thailand_Train_Market_f99408f8af.jpg",
+      "alternativeText": "A train arriving through the Maeklong railway market, with stalls of fruit and vegetables right beside the tracks"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1748895188/Thailand_Buddah_Statue_4a17cd3bc1.jpg",
+      "alternativeText": "The head of a golden Buddha statue against a clear blue sky"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1754254485/Thailand_Hua_Hin01_56452b260a.jpg",
+      "alternativeText": "Hua Hin's coastline and town seen from a hilltop"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1754254718/Empty_Wallet_7ca941a179.jpg",
+      "alternativeText": "Hands opening an empty leather wallet"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1754255362/Thailand_Dunny_and_Buddah_279423462d.jpg",
+      "alternativeText": "Dunny grinning and throwing a shaka next to a smiling golden child statue at a Thai temple"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1755385780/Thailand_Phuket_beach01_a756bc40e9.jpg",
+      "alternativeText": "Sun loungers and umbrellas on a quiet white-sand beach in Phuket, with a pier behind"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1755386216/Thailand_Phuket_maksim_romashkin_613073bc3a.jpg",
+      "alternativeText": "Devotees in colourful robes walking in a street procession during Phuket's vegetarian festival"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1756072797/Thailand_phuket_island_life_33ca56bf2a.jpg",
+      "alternativeText": "Turquoise water between steep green limestone cliffs off Phuket"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1756072196/Screenshot_2025_08_24_174845_3427068b1f.png",
+      "alternativeText": "Screenshot from the Tiger Muay Thai website: a fighter mid-kick in a ring under the words \"Fight professional Muay Thai while training at Tiger Muay Thai\""
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1755386896/Thailand_sukhothai_buddah1_d930e7e491.jpg",
+      "alternativeText": "A large stone Buddha seated between ancient brick walls in Sukhothai"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764802749/Thailand_Bangkok_croc_food_bc4e6e15fb.jpg",
+      "alternativeText": "A vendor at a night market stall in Bangkok with a whole grilled crocodile on display"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764802748/Thailand_Bangkok_Veggie_Market_0f0474bfad.jpg",
+      "alternativeText": "A cook at a lit-up vegetable and noodle stall at a Bangkok night market, with a price board above"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718555/IMG_7671_3063cc993e.jpg",
+      "alternativeText": "Small fishing boats anchored in shallow water off a Thai beach, with a Thai flag on a pole"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718564/IMG_7835_e5d6f9761b.jpg",
+      "alternativeText": "An empty platform at Surat Thani railway station at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718580/IMG_7563_6915b41df4.jpg",
+      "alternativeText": "A cartoon mascot statue on a station platform in front of an old black steam locomotive in Thailand"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718554/IMG_7419_afce349d9e.jpg",
+      "alternativeText": "A man walking alone along a long covered walkway at a station at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776718578/IMG_7632_cf9e01e5f9.jpg",
+      "alternativeText": "A man walking past a hardware shop crammed with baskets, brooms and hammocks in Thailand"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696503/IMG_7543_83962c67c7.jpg",
+      "alternativeText": "A tuk-tuk with \"Thailand\" on its back in traffic on a busy Bangkok street"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696502/IMG_7338_6882a0f87e.jpg",
+      "alternativeText": "The elevated BTS Skytrain track above trees and condo towers in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696488/20260220_180623_f786ad12ab.jpg",
+      "alternativeText": "A quiet car park between low-rise apartment buildings in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776696489/20260220_154726_73529334b7.jpg",
+      "alternativeText": "A billboard for a new condo development, Baan 365 Sukhumvit by LPN, above rooftops in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1756067119/Thailand_dog_01_3370576ab8.jpg",
+      "alternativeText": "A small black and white dog looking up at the camera on a Bangkok street"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717655/IMG_7337_87c4d93841.jpg",
+      "alternativeText": "Stairs up to On Nut BTS Skytrain station in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699224/IMG_8463_9a63043372.jpg",
+      "alternativeText": "A person in a conical hat standing with arms out at the edge of the sea on a Vietnamese beach"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776700080/20260326_172106_15e8e5fcb1.jpg",
+      "alternativeText": "The sun setting over a Vietnamese city skyline seen from a rooftop"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758661063/Vietnam_Tan_Binh_Ho_Chi_Minh_2665d44e2b.jpg",
+      "alternativeText": "Ho Chi Minh City's skyline lit up at night across the Saigon River, with the Bitexco tower on the left"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656390/Vietnam_Monica_c8af2a038a.jpg",
+      "alternativeText": "Moni with her arms raised at the foot of a waterfall between dark rock walls in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656365/Vietnam_little_boat_b8e396f6c5.jpg",
+      "alternativeText": "A fisherman paddling a round basket boat in calm water off the coast of Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699212/20260326_172043_814ddb904e.jpg",
+      "alternativeText": "A rooftop infinity pool looking out over the sea and hotel towers in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758660881/Vietnam_ubrella_in_rain_b52f123cd8.jpg",
+      "alternativeText": "People sitting on a lakeside bench under an umbrella in the rain in Hanoi"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656389/Vietnam_Beach01_b4c1df31fd.jpg",
+      "alternativeText": "Swimmers on a wide sandy beach in Vietnam on a sunny day"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656389/Vietnam_Beach_Scene_b50f3db25f.jpg",
+      "alternativeText": "A striped deck chair under palm leaves on a quiet beach with green hills behind, Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699211/20260323_173403_3386401378.jpg",
+      "alternativeText": "Dunny and Moni taking a selfie at sunset by the river in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776699225/IMG_8358_94e495964e.jpg",
+      "alternativeText": "A small dog sitting on a tiled pavement next to a parked scooter in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656389/Vietnam_kids_e7522d1d4f.jpg",
+      "alternativeText": "A group of smiling children making peace signs inside a wooden house in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_Little_Chairs_7666065a20.jpg",
+      "alternativeText": "People eating at low plastic stools and tables outside a street food shop in Vietnam at dusk"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_HCMC_1_0763f6884a.jpg",
+      "alternativeText": "Crowds on a street packed with neon signs at night in Ho Chi Minh City"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758661753/Vietnam_hoi_an_781bb8b9bc.jpg",
+      "alternativeText": "Visitors inside the gate of a Chinese assembly hall with carved red pillars in Hoi An"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_HCMC_4_c61a8ded7d.jpg",
+      "alternativeText": "Ho Chi Minh City's skyline at night, with the Landmark 81 tower lit in rainbow colours and searchlights"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1760388650/Vietnam_Hoi_An_1_392191e30a.jpg",
+      "alternativeText": "A woman and two girls in conical hats lighting paper lantern boats by the river in Hoi An at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1760392740/Vietnam_HCMC_Motorcycles_e35a8361b9.jpg",
+      "alternativeText": "Motorbike riders in face masks filling a wet street in Ho Chi Minh City"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1760392740/Vietnam_Kids_2_45ca9abb62.jpg",
+      "alternativeText": "Three children leaning on a railing outside an old apartment block in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758656388/Vietnam_Beach_Legs_a503760b4c.jpg",
+      "alternativeText": "Someone's legs stretched out on a white-sand beach looking out at the sea in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031297/Malayasia_KL_I_Love_KL_c20ca2a407.jpg",
+      "alternativeText": "An \"I love KL\" sign on a street corner in Kuala Lumpur, with a woman walking past"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031919/Malaysia_KL_Local_on_balcony_328e38634c.jpg",
+      "alternativeText": "A man relaxing on the balcony of an old shophouse above a restaurant sign in Kuala Lumpur"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758032099/Malaysia_KL_Scooter_Rides_a7ac116d41.jpg",
+      "alternativeText": "Two people riding electric scooters down a street in Kuala Lumpur"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758030794/Malaysia_KL_Bukit_Bintang_d440b52303.jpg",
+      "alternativeText": "Bukit Bintang junction in Kuala Lumpur at dusk, with giant video screens and traffic"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031912/Malaysia_KL_infinity_Pool_80240863ef.jpg",
+      "alternativeText": "Sun loungers beside a rooftop infinity pool looking out at the Petronas Towers at dusk"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1760561933/Malaysia_KL_chinese_rooftops_03fef5fe1c.jpg",
+      "alternativeText": "The ornate golden roofs of a Chinese temple with Kuala Lumpur's towers behind under a cloudy sky"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031298/Malayasia_KL_Opium_224e78ccd3.jpg",
+      "alternativeText": "Vintage Chinese advertising posters in red frames along a wall in Kuala Lumpur"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758031295/Malayasia_KL_We_Love_Cats_bdfedb32a0.jpg",
+      "alternativeText": "A tattooed hand reaching out to a calico kitten on the pavement in Kuala Lumpur"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763564372/Malaysia_Georgetown_blue_wall_e2794ffd26.jpg",
+      "alternativeText": "A trishaw parked in front of the bright blue walls of a Chinese mansion in George Town, Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763564372/Malaysia_Georgetown_Streetview1_b4c861e22f.jpg",
+      "alternativeText": "Tourists outside an old shophouse café with a hawker cart in George Town, Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583779/Malaysia_Georgetown_Condo_View_5774abde5a.jpg",
+      "alternativeText": "Sea view between condo towers and palm trees from a balcony in Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583037/Ringgit_bd158ed4e2.png",
+      "alternativeText": "A spread of purple Malaysian 100 ringgit banknotes"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763566757/Malaysia_Georgetown_City_View_e157b9c0ee.jpg",
+      "alternativeText": "George Town's rooftops and the coastline seen from above, Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763583780/Malaysia_Penang_temple3_46aa31ff0b.jpg",
+      "alternativeText": "The richly carved and lantern-lit interior of a Chinese clan temple in Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763585478/Malaysia_Penang_monkeys_88b829858c.jpg",
+      "alternativeText": "Two macaque monkeys grooming each other on a stone path in Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202631/20260314_194229_4756a6b37c.jpg",
+      "alternativeText": "The Petronas Twin Towers lit up at night in Kuala Lumpur"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776482789/20260304_191430_8108e1006c.jpg",
+      "alternativeText": "A street in George Town hung with red lanterns, with motorbikes and trishaws passing"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202628/20260314_182212_ee418c0de5.jpg",
+      "alternativeText": "The big KLCC letters by the lake in front of Suria KLCC mall in Kuala Lumpur"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763587884/KL_vs_Penang_cost_of_living_826147a398.png",
+      "alternativeText": "Table of monthly costs, Kuala Lumpur vs Penang: rent RM2,800 vs RM1,900, utilities and internet RM300 vs RM250, food RM1,200 vs RM1,000, transport RM300 vs RM200, coworking RM500 vs RM400; total RM5,100 vs RM3,750"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763564371/Malaysia_Georgetown_Waterfront_At_Night_14b16edb3e.jpg",
+      "alternativeText": "Yachts moored along a lit-up marina boardwalk in George Town at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763568077/Malaysia_KL_Jalon_Alors_At_Night_7502bf0bc6.jpg",
+      "alternativeText": "Crowds under strings of red lanterns on Jalan Alor food street in Kuala Lumpur at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763568077/Malaysia_Mall_View_801d9e492c.jpg",
+      "alternativeText": "Several floors of shops around the atrium of a Kuala Lumpur shopping mall"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763568077/Malaysia_Georgetown_Catbutt_Art_9c65c4ccaf.jpg",
+      "alternativeText": "A red metal cat sculpture on a white wall in George Town, Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764091626/Malaysia_KL_infinity_pool2_906dffca6a.jpg",
+      "alternativeText": "A rooftop infinity pool with sun loungers facing the Petronas Towers at sunset"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202629/20260314_182254_d341eeadb5.jpg",
+      "alternativeText": "Looking up at the Petronas Twin Towers across the lake in KLCC Park"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764091480/MM_2h_chart_7fd909286f.png",
+      "alternativeText": "MM2H tiers table. Silver: RM500,000 deposit (about $120,000), 50% can be withdrawn after 12 months, 5-year minimum. Gold: RM1,000,000 (about $240,000), 50% after 12 months, 15-year minimum. Platinum: RM4.5–5 million (about $1 million), withdrawal negotiable up to 20%, 20-year minimum"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764093193/Gold_Tier_expenses_47a4e5aff2.png",
+      "alternativeText": "Gold tier start-up costs: fixed deposit RM1,000,000 ($240,000), minimum property RM1,000,000 ($240,000), government fees RM3,000 ($720), agent fees RM50,000 ($12,000), legal, banking and travel RM20,000 ($4,800); total about RM2,073,000 ($497,000)"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941374/Penang_Jetty_Views_305813296a.jpg",
+      "alternativeText": "A colourful Chinese temple on stilts over the water at the clan jetties in Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770253711/Bangkok_V_Skl_57d9a5e57d.png",
+      "alternativeText": "Bangkok's MahaNakhon tower next to Kuala Lumpur's Petronas Towers, labelled Bangkok and Kuala Lumpur"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1773204882/Thailand_Song_Wat_2640aa98ad.jpg",
+      "alternativeText": "Cartoon figures painted on a café wall above colourful stools at Song Wat Road in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1758030793/Malaysia_KL_Food_Court_85a845d292.jpg",
+      "alternativeText": "The glowing entrance of a food court in Kuala Lumpur with \"Malaysia\" spelled out in big letters"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1773205097/Thailand_Bangkok_Views_from_Nana_station_19c2a5a8a4.jpg",
+      "alternativeText": "Looking down on traffic and tuk-tuks at a junction from Nana BTS station in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764110569/Thailand_Bangkok_Chinatown1_38ebfc427f.jpg",
+      "alternativeText": "Cars, motorbikes and street vendors on a busy road in Bangkok's Chinatown at dusk"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112358/Malaysia_Kuala_Lumpur_Food_Court_34eef460e9.jpg",
+      "alternativeText": "A shiny temple hall with tables under a ceiling covered in red lanterns in Kuala Lumpur"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764112359/Malaysia_Kuala_Lumpur_Jalan_Petaling_3e504170eb.jpg",
+      "alternativeText": "The Petaling Street gate in Kuala Lumpur's Chinatown, with market stalls and shoppers below"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764113296/Thailand_Traintrack_bird_eeb5501e79.jpg",
+      "alternativeText": "A green and yellow parrot on a perch next to railway tracks, with people walking past"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770254470/Vietnam_HCMC_skyline_9f5926c8d9.jpg",
+      "alternativeText": "Ho Chi Minh City's skyline lit up blue at night across the Saigon River"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764205978/Vietnam_Da_Nang_at_night_e2bdc01b33.jpg",
+      "alternativeText": "Da Nang's bridges and city lights along the river under a fiery sunset"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764206305/Vietnam_HCMC_bike_hawker_cae344c87a.jpg",
+      "alternativeText": "A street vendor pushing a lit-up food cart on a cobbled street in Ho Chi Minh City at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764206306/Vietnam_Hanoit_street_view_950d913dcd.jpg",
+      "alternativeText": "Old shopfronts and a flowering tree on a quiet street in Hanoi"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764208659/Vietnam_Nha_Trang_c36fe1ac2d.png",
+      "alternativeText": "Palm trees and thatched umbrellas on a sunny beach in Nha Trang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764208961/Vietnam_Vung_Tau_ec27e80837.png",
+      "alternativeText": "Vung Tau's city and long curving beach seen from a hilltop"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764200332/Vietnam_City_Costs_af7d08ef00.png",
+      "alternativeText": "Vietnam cities compared (cost, internet, air quality, safety, expat community). Da Nang: $$, excellent, good, high, medium. Saigon: $$$, excellent, poor, medium, high. Hanoi: $$, good, poor, medium, medium. Nha Trang: $, fair, moderate, medium, niche. Vung Tau: $, fair, fair, high, low"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763580608/GAME_OVER_4a2b62de3f.png",
+      "alternativeText": "The words \"Game over\" over a mountain lake surrounded by pine forest in Canada"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578028/Air_Canada_Plane_b7892e39b9.jpg",
+      "alternativeText": "An Air Canada plane on a snowy runway"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578360/Ireland_Dublin_Nightlife1_f65976b3be.jpg",
+      "alternativeText": "Crowds outside the Temple Bar pub in Dublin at night"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578694/Greece_Santorini_ocean_view_e9996348d2.jpg",
+      "alternativeText": "Whitewashed houses and a small pool above the deep blue sea in Santorini"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763579519/pexels_zlataky_cz_61823415_8442318_b20bd00f42.jpg",
+      "alternativeText": "A pile of gold bars"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578028/Airport_Departure_432b704737.jpg",
+      "alternativeText": "A traveller with a suitcase looking out of the window at an airport departure gate"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763578028/Departure_List_f2f89ff66d.jpg",
+      "alternativeText": "An airport departures board listing flights across Asia"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941374/Penang_Dunny_Not_Polite_c882e26037.jpg",
+      "alternativeText": "Dunny smiling in a cap in front of a green wall that says \"Not polite. Not boring. Not toned down.\" in Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764707151/Vietnam_HCMC_man_tennis_85983555e8.jpg",
+      "alternativeText": "A shirtless older man swinging a tennis racket on a quiet court in Ho Chi Minh City"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764708712/Minca_Hammock_5d4ea40016.jpg",
+      "alternativeText": "Hammocks on a wooden deck surrounded by jungle in Minca, Colombia"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941326/Thailand_Suratthani_9c10ee91ba.jpg",
+      "alternativeText": "A motorbike parked in front of a wall with \"Suratthani\" in big orange letters"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764801420/Vietnam_Da_Nang_Handbridge_c782fc20b3.png",
+      "alternativeText": "The Golden Bridge held up by giant stone hands above the mountains near Da Nang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1764707150/Vietnam_Dalat_Streetview_man_headphones_f873165da3.jpg",
+      "alternativeText": "An older man in headphones waiting to cross a busy street in Da Lat"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1765381492/Vietnam_Kon_Tum_1140229980.jpg",
+      "alternativeText": "Motorbikes and shoppers on a tree-lined street with clothes stalls in Kon Tum, Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1765379696/Vietnam_nhat_minh_luong_ca0eaf3e1d.jpg",
+      "alternativeText": "Light trails from boats on a river at night in Vietnam, with a hotel lit up behind"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1765379696/Vietnam_Dalat_Market_Street_b8e234758f.jpg",
+      "alternativeText": "A crowded night market street in Da Lat seen from above"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1765379696/Vietnam_flag_ef91ca0574.jpg",
+      "alternativeText": "The Vietnamese flag flying from the Hanoi Flag Tower"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202626/20260314_193027_3375aa2afb.jpg",
+      "alternativeText": "Dunny and Moni pulling faces in a selfie under the Petronas Towers"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776202615/20260313_190044_5f7ec129c2.jpg",
+      "alternativeText": "Colourful letters on the waterfront at the tourist jetty in Kuah, Langkawi, with hills behind"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1772941374/Penang_Georgetown_Armenia_917266a115.jpg",
+      "alternativeText": "Tourists and motorbikes on Armenian Street under red lanterns in George Town, Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1767033621/DTV_vs_DE_Rantau_skyline_990e191f24.png",
+      "alternativeText": "Bangkok's skyline at sunset beside Kuala Lumpur's skyline with the Petronas Towers"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1763419333/Digital_Nomad_Passport_1_159fa0d5a3.jpg",
+      "alternativeText": "A hand holding open a passport full of visa stamps"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771557097/Aiko_Airport_10476cdd24.jpg",
+      "alternativeText": "Aiko the cat curled up next to a Canadian passport and boarding pass at the airport"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771556816/Dunny_Hitch_Hiking_01_67253e9900.jpg",
+      "alternativeText": "Black and white photo of Dunny hitchhiking by a highway with a cardboard sign that says \"Montreal\""
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771556819/Bangkok_Botero_e089bf8c4b.jpg",
+      "alternativeText": "A big black Botero horse sculpture outside a Prada store in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771556818/Vietnam_Monica_beach_d63baf2ad3.jpg",
+      "alternativeText": "Moni jumping with her arms up on a beach in Vietnam at dusk"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697711/IMG_7514_99eef4ef4c.jpg",
+      "alternativeText": "A huge golden reclining Buddha inside a temple in Thailand"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697706/IMG_7495_10a34d88b3.jpg",
+      "alternativeText": "A tuk-tuk passing a construction hoarding that says \"For a better living\" in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697707/IMG_7532_10f6b8957f.jpg",
+      "alternativeText": "A family with a small electric scooter outside a shophouse in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776697712/IMG_7548_ee09e05e1d.jpg",
+      "alternativeText": "A tuk-tuk and a cyclist on Yaowarat Road in Bangkok's Chinatown"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717807/20260218_172135_9295757ff2.jpg",
+      "alternativeText": "A Dior store in Bangkok almost hidden behind a lush tropical garden"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1767400715/Sand_Lady_0f4f5afeeb.jpg",
+      "alternativeText": "A woman sitting cross-legged on a wide sandy beach, talking on the phone with a laptop on her lap"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399659/Tbilisi_Georgia_ab2fb201f9.png",
+      "alternativeText": "A cable car above Tbilisi's old town and river, Georgia"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399651/Costa_Rica_cac72cc4e2.jpg",
+      "alternativeText": "Trees leaning over a quiet beach in Costa Rica"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399658/Dominica_cd41021ef4.png",
+      "alternativeText": "Colourful houses along the harbour in Roseau, Dominica, with green mountains behind"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399658/Barbados_fcb2767b46.png",
+      "alternativeText": "A boardwalk with old lamp posts along the water in Bridgetown, Barbados"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1767399658/Albania_e8c1a52f47.png",
+      "alternativeText": "A pedestrian street with cafés and Christmas lights in Tirana, Albania, at dusk"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1767400987/nomad_visas_table_428bb733a1.png",
+      "alternativeText": "Top 5 easiest digital nomad visas (2026). Georgia: 10 days, free, $2,000 a month, online, 1 year. Costa Rica: 14 days, $125, $3,000, online, 1 year. Dominica: 14–28 days, $900, $4,167, online, 18 months. Barbados: 7 days, $2,000, $4,167, online, 12 months. Albania: 12 weeks, $50, $490, online and by post, 1 year, renewable"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776208004/20260314_185806_24fa5f12eb.jpg",
+      "alternativeText": "Fountains and palm trees in KLCC Park with Kuala Lumpur's towers behind"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478084/dog_watching_Tokyo_371ca4ed73.jpg",
+      "alternativeText": "People and a small dog on a bench at a neighbourhood playground in Tokyo at dusk"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478083/Communa_13_art_cc0795320f.jpg",
+      "alternativeText": "Colourful murals of faces on a wall in Comuna 13, Medellín"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478555/Thailand_bangkok_dunny_On_Nut_Stattion_fd7883ef0c.jpg",
+      "alternativeText": "Dunny on the platform at On Nut BTS station in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478084/Tokyo_Pull_ups_2de3a1ebb6.jpg",
+      "alternativeText": "Someone doing pull-ups on an outdoor bar in a small park in Tokyo"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771478555/Bangkok_Lumpini_Park_Tai_Chi_284a310752.jpg",
+      "alternativeText": "A woman practising tai chi on the grass in Lumpini Park, Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719742/IMG_8623_b5a2685638.jpg",
+      "alternativeText": "Two people walking down a narrow side street lined with shops and parked cars"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719742/IMG_8630_4b26aed3d1.jpg",
+      "alternativeText": "Small green parrots perched on a bicycle handlebar on a city street"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719643/IMG_8102_e779b09a11.jpg",
+      "alternativeText": "Two people sitting on yellow benches in front of a wall covered in graffiti"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776720009/IMG_8021_3c4ab0a1e8.jpg",
+      "alternativeText": "Two people posing by the big Chenang letters on the beach in Langkawi"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719735/IMG_8056_8d138dbd43.jpg",
+      "alternativeText": "Brightly painted murals covering the walls of tall apartment buildings along a lane"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776719734/IMG_8625_126a6b6b9a.jpg",
+      "alternativeText": "An empty street lined with low buildings, with a white arrow painted on the road"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769120678/Medellin_vs_Bogota_vs_Cartagena_e0c879aaae.png",
+      "alternativeText": "Medellín's skyline, Bogotá's cathedral and a colourful Cartagena street side by side"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769121621/Colombia_Main_City_Comparion_Chart_7a9cdd488e.png",
+      "alternativeText": "Medellín vs Bogotá vs Cartagena. Best for: balanced lifestyle; work and stability; climate and coastal living. Rent (1-bed): medium; medium–high; high (seasonal). Internet: good; very good; inconsistent. Noise and density: medium; high; variable. Climate: mild; cool; hot and humid. Walkability: depends on neighbourhood; high; limited. Long-stay comfort: high; high; moderate"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769118519/Colombia_Cartagena_flag_a51bf1fd6d.jpg",
+      "alternativeText": "The Colombian flag flying above the old city walls in Cartagena"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036689/Colombia_La_Chorrera_2_953ababc71.jpg",
+      "alternativeText": "Green cliffs and forest under low cloud at La Chorrera, Colombia"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036689/Colombia_Bogota_streetviews1_70f3fa4ac2.jpg",
+      "alternativeText": "A cobbled street of colonial houses with a Colombian flag in La Candelaria, Bogotá"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036656/Colombia_Medellin_dog_mountain_fc9b72b9c5.jpg",
+      "alternativeText": "A dog looking out over Medellín from a wooden fence on a hillside"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036667/Colombia_Minca_2_c7c8fdaa51.jpg",
+      "alternativeText": "Green mountains and jungle under a bright sky in Minca, Colombia"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036666/Colombia_Minca_dog_6eddf8a39a.jpg",
+      "alternativeText": "A white and brown dog stretched out asleep on the ground in Minca, Colombia"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036688/Colombia_Bogota_streetart_musica_83574579f6.jpg",
+      "alternativeText": "A huge colourful street art mural reading \"Música es vida\" on a building in Bogotá"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769036682/Colombia_Bogota_City_View_5ef8c72611.jpg",
+      "alternativeText": "Bogotá spreading across the plain under a cloudy sky, seen from the hills"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769118520/Colombia_Bogota_Monseratti_1e287a34be.jpg",
+      "alternativeText": "Visitors on the path at the top of Monserrate, with green mountains around Bogotá"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Gucci_sign_a70905d5d4.jpg",
+      "alternativeText": "A small tourist boat on the water in front of a Gucci billboard and tall apartment towers"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Bodrum_Mugla_Province_Turkey_b0485b981f.jpg",
+      "alternativeText": "A long infinity pool overlooking the sea at a resort in Bodrum, Turkey"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Monopoly_3f9c3a8464.jpg",
+      "alternativeText": "Hands holding Monopoly money over a Monopoly board"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/LV_Singapore_71786f3c10.jpg",
+      "alternativeText": "Singapore's skyscrapers rising behind the glass Louis Vuitton pavilion at Marina Bay"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769455925/Singapore_4869947fca.jpg",
+      "alternativeText": "Marina Bay Sands lit up at night behind a glowing pool in Singapore"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769118519/Colombia_Medellin_2_f784015171.jpg",
+      "alternativeText": "Medellín's hillside neighbourhoods and colourful rooftops spreading across the valley"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769971673/Dunny_in_La_Candelaria_24bf12946b.jpg",
+      "alternativeText": "Dunny walking up a busy cobbled lane of colourful houses in La Candelaria, Bogotá"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769970345/Dunny_and_Moni_Bogota_bar_bd5df46d79.jpg",
+      "alternativeText": "Dunny and Moni pulling faces and laughing at a bar in Bogotá"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769970345/Dunny_and_Moni_La_Candelaria_01_ca98802762.jpg",
+      "alternativeText": "Dunny and Moni smiling in sunglasses on a sunny square in La Candelaria, Bogotá"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1769970915/Colombia_monica_soldier_7cb89eaed4.jpg",
+      "alternativeText": "Moni kneeling behind an old mounted machine gun on display in a museum courtyard in Colombia"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776716999/20260328_144655_7729738018.jpg",
+      "alternativeText": "Two people waving in front of giant blue and white \"Vietnam\" letters in a park"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717351/20260320_170023_2bdf15b3e9.jpg",
+      "alternativeText": "Ho Chi Minh City's Bitexco tower and downtown buildings across a park under a grey sky"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717246/IMG_8509_364ff1e223.jpg",
+      "alternativeText": "A red \"Bing House apartment for rent\" sign above parked motorbikes in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776717009/IMG_8372_5b1d3b8590.jpg",
+      "alternativeText": "A sign for a vegetarian restaurant and co-working space, with people working at tables outside, in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776716994/20260325_105044_65d099a523.jpg",
+      "alternativeText": "Dunny and Moni making peace signs in a selfie under red lanterns by the sea in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770335161/Arrows_1f9efe2e95.jpg",
+      "alternativeText": "A signpost with arrows pointing to Sydney, Seoul, Kuala Lumpur, London and Beijing"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770337393/Thailand_monks_00e1d8ae54.jpg",
+      "alternativeText": "Two monks in orange robes looking out over a river from a railing in Thailand"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770338589/Japan_29abc16a8c.jpg",
+      "alternativeText": "A small Shinto shrine with a stone torii gate and stairs, among trees in Japan"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770338380/Thailand_feet_cf29c5e93f.jpg",
+      "alternativeText": "Legs in flip-flops dangling from a bench outside a small café in Thailand"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770646763/Aiko_Supervisor_306c5623ba.jpg",
+      "alternativeText": "Aiko the cat peering over the shoulder of someone in headphones working on a laptop"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595421/global_currency_87cf8ae944.jpg",
+      "alternativeText": "A fan of banknotes from different countries"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595421/nomad_sky_watcher_7ad8fa24be.jpg",
+      "alternativeText": "Someone in a hat working on a laptop in a camping chair on a beach at dusk, next to a telescope"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595421/global_office_67c69a1d96.jpg",
+      "alternativeText": "A laptop on a small wooden desk under a cork world map on the wall"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1770595422/laptop_charts_3a4eb1f937.jpg",
+      "alternativeText": "A person at a laptop showing stock charts, with world clocks on the desk"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213320/Japan_Tokyo_skytree_golden_turd_57a6202eac.jpg",
+      "alternativeText": "Tokyo Skytree next to the Asahi building with its golden flame sculpture, under a blue sky"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213323/Japan_zen_8bce0bd8c0.jpg",
+      "alternativeText": "A small Shinto shrine with a stone torii gate and stairs, among trees in Japan"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213321/Japan_Fukuoka_art_34cd95ef4d.jpg",
+      "alternativeText": "A long wall painted with colourful cartoon characters in Fukuoka"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213321/Japan_Kyoto_City_50cfa0017f.jpg",
+      "alternativeText": "Kyoto spreading across the valley to the mountains, seen from a hillside"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1771213320/Japan_Osaka_Monica_Justin_4546b39b9b.jpg",
+      "alternativeText": "Moni and Dunny taking a selfie by the canal in Osaka"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1775834298/2026_Tax_Arbitrage_Execution_Guide_63eb1c84ea.png",
+      "alternativeText": "A tropical beach at sunset with the title \"2026 Tax Arbitrage Execution Guide\""
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837583/20260323_173403_276ae77b77.jpg",
+      "alternativeText": "Dunny and Moni taking a selfie at sunset by the river in Vietnam"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837583/20260314_180328_b790771b50.jpg",
+      "alternativeText": "Moni and Dunny taking a selfie in front of the Petronas Twin Towers"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837584/20260404_150721_f0c061e67e.jpg",
+      "alternativeText": "Moni and Dunny taking a selfie by a stream running through a city"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1775837925/IMG_7596_a80970f4ff.jpg",
+      "alternativeText": "The front of a property agency in Hua Hin, with listings in the window and scooters parked outside"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973093/Surat_Thani_Thailand_temple_selfie_4a5c17d967.jpg",
+      "alternativeText": "Dunny and Moni crouching in front of a temple in Surat Thani, Thailand"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973092/Penang_Malaysia_flags_6ea98bf473.jpg",
+      "alternativeText": "Malaysian flags and colourful pinwheels hanging under a covered walkway in Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973069/Hua_Hin_Thailand_bar_front_f226501c9e.jpg",
+      "alternativeText": "A small bar front in Hua Hin with bikes for rent, stools and hand-painted signs"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973095/Penang_Malaysia_dunny_and_moni_28dd51dd22.jpg",
+      "alternativeText": "Moni and Dunny standing in front of an old shophouse doorway in Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973086/Siem_Reap_Cambodia_Angkor_Wat_79df7ba1f2.jpg",
+      "alternativeText": "Two people sitting on the stone steps of Angkor Wat, Siem Reap"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973038/Langkawi_Malaysia_chenang_beach_4de6cbd16c.jpg",
+      "alternativeText": "Someone walking along the water's edge on Chenang beach in Langkawi at dusk"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973037/Da_Nang_Vietnam_7ff6e1a849.jpg",
+      "alternativeText": "A rooftop infinity pool with Da Nang's beachfront towers and the sea behind"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973072/Hua_Hin_Thailand_train_station_ccdbabf379.jpg",
+      "alternativeText": "The platform and old wooden station building at Hua Hin railway station"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776973099/Penang_Malaysia_hindu_temple_db0c10d2fa.jpg",
+      "alternativeText": "A colourful Hindu temple covered in carved figures next to a modern tower in Penang"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776645051/Securing_Your_Residency_in_Cambodia_306f870e18.png",
+      "alternativeText": "Monks among ancient stone columns at Angkor, with the title \"The Type E strategy: securing your residency in Cambodia\""
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776646345/IMG_8289_3a4477c04a.jpg",
+      "alternativeText": "Palm trees and a Khmer-style pavilion on the riverside in Phnom Penh, with pigeons on the grass"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776645309/20260317_065647_033cc3e0ef.jpg",
+      "alternativeText": "The sun rising over the jungle, seen from the stone galleries of a temple at Angkor"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1776645327/IMG_8314_da1a2e3a2f.jpg",
+      "alternativeText": "The back of a tuk-tuk with a \"Don't Thai to me\" cover on a busy city street"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1779131062/THAILANDS_S_NEW_REGULATORY_HANDCUFFS_The_Wise_Transition_2026_36500e78b6.png",
+      "alternativeText": "Dunny pointing at a Wise card next to the title \"Thailand's new regulatory handcuffs: the Wise transition 2026\""
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1778272590/Bangkok_Thailand_Chinese_New_Year_2026_200226fb17.jpg",
+      "alternativeText": "A Chinese New Year display of red lanterns outside a building in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1778273092/Bangkok_Thailand_Chinatown_4320cd8fbf.jpg",
+      "alternativeText": "Red lanterns, shop signs and traffic along Yaowarat Road in Bangkok's Chinatown"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1778272590/Bangkok_Thailand_BTS_Train_Station_388bb41366.jpg",
+      "alternativeText": "Traffic and tuk-tuks under the elevated walkway at a BTS station in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1778273091/Bangkok_Thailand_Elephant_By_Chao_Phraya_ba39247a3d.jpg",
+      "alternativeText": "A painted elephant statue on the riverside by the Chao Phraya in Bangkok"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1779487598/The_TOP_30_FAQ_digital_nomads_are_asking_in_2026_56bb8b1fbb.png",
+      "alternativeText": "Dunny pointing at the title \"Top 30 FAQ digital nomads are asking in 2026\" over a world map"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1779134099/Princess_Cafe_Working_73f59675af.png",
+      "alternativeText": "Moni and Dunny each working on a laptop at a café"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1779135528/20260313_111438_aeed0495e3.jpg",
+      "alternativeText": "A dessert shop front with giant novelty snack figures outside"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1779135771/20260314_193027_ba198d9800.jpg",
+      "alternativeText": "Dunny and Moni pulling faces in a selfie under the Petronas Towers"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1779135867/20260307_091942_2edbe76f55.jpg",
+      "alternativeText": "Travellers with suitcases queueing in an airport departures hall"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1779136113/20260313_134733_a685c05e57.jpg",
+      "alternativeText": "Someone hugging two fluffy white dogs in a bright living room"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1780413096/Interactive_brokers_01_eeeeea6f97.png",
+      "alternativeText": "A laptop showing the Interactive Brokers trading platform against a blue digital world map"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1780413938/Tax_Monkey_ce3d0e2efa.png",
+      "alternativeText": "A capuchin monkey typing on a laptop at a desk covered in tax forms, next to a \"Tax stress\" mug"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1780413803/Computer_Kid_Meme_0a987e4135.png",
+      "alternativeText": "Meme of a boy at a computer giving a thumbs up in front of glowing stock charts"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1780438698/IB_Justin_digital_ac91db1a40.png",
+      "alternativeText": "Dunny pointing at a laptop showing trading charts in front of a digital globe"
+    },
+    {
+      "url": "https://res.cloudinary.com/jetlagchronicles/image/upload/v1780440689/Stock_crash_7def35065a.png",
+      "alternativeText": "Dunny laughing with his hands up in front of a red crashing stock chart"
+    }
+  ]
+}

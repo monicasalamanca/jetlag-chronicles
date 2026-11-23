@@ -25,7 +25,7 @@ export function buildReport(input: ReportInput): string {
 
   const out: string[] = [];
   out.push("# Migration report", "");
-  out.push(`Generated ${input.generatedAt} from ${input.source} by \`scripts/migrate\`. Re-running the script rewrites this file.`, "");
+  out.push(`Generated ${input.generatedAt} from ${input.source} by \`scripts/migrate\`. Re-running the script rewrites this file.`, "", "**Decisions taken (issue 06) are recorded in `docs/migration-decisions.md`** and applied by `cms/scripts/apply-fixes.js`.", "");
   out.push("## Summary", "");
   out.push(`- **${posts.length} posts** ready to import (${posts.filter((p) => p.post.section === "place").length} place, ${posts.filter((p) => p.post.section === "life_abroad").length} Life Abroad), all credited to Moni & Dunny, original publish dates kept.`);
   out.push(`- **Countries:** ${input.countries.join(", ")}.`);
