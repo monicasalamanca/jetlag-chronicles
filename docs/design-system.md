@@ -551,8 +551,8 @@ Page designs for plan.md section 7, each at 1280px and 390px, with light and dar
 - Any photo, `object-fit: cover`, centred. A bottom-weighted scrim: `rgb(18 22 28 / .86)` at the bottom, `.64` at 55% of the height, `0` at the top.
 - White logo top-left, 230px wide. Safe area 64px on all sides.
 - Eyebrow (country · city, or "Life Abroad"), Sans 600, 22px, tracked, uppercase. Title Serif 600, 64px, line-height 1.08, max about 960px wide, balanced.
-- Titles longer than about 90 characters: drop to 56px. Never more than three lines.
-- Examples and the HTML template are in `social/`. Export PNG. If generating at build time, render the same template with Playwright, or with Satori using ttf fonts, and serve photos through the Cloudinary recipe `c_fill,g_auto,w_1200,h_630,f_jpg`.
+- Titles longer than about 90 characters: drop to 56px; longer than about 105: 48px. Never more than three lines.
+- Built per story by `web/src/app/[place]/[slug]/opengraph-image.tsx` (Satori with ttf copies of the fonts, saved as JPEG so previews stay small). Examples and the HTML template are in `social/`. If generating at build time, render the same template with Playwright, or with Satori using ttf fonts, and serve photos through the Cloudinary recipe `c_fill,g_auto,w_1200,h_630,f_jpg`.
 
 ## 10. Extending the system
 

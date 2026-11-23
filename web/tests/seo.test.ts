@@ -38,15 +38,16 @@ describe("story metadata", () => {
     expect(m.description).toBe("How we did it.");
   });
 
-  it("shares a 1200×630 Cloudinary crop of the cover", () => {
+  it("leaves the share image to opengraph-image.tsx (a config image would override nothing and confuse)", () => {
     const m = storyMetadata(post);
-    const images = m.openGraph?.images as { url: string; width: number; height: number; alt: string }[];
-    expect(images[0]).toEqual({
-      url: "https://res.cloudinary.com/demo/image/upload/c_fill,g_auto,w_1200,h_630,f_jpg,q_auto/v1/leaving.jpg",
-      width: 1200,
-      height: 630,
-      alt: "Suitcases by a door",
-    });
+    expect(m.openGraph).not.toHaveProperty("images");
+    expect(m.twitter).toEqual({ card: "summary_large_image", title: "Leaving Your Country", description: "We left. Here is what we learned." });
+  });
+
+  it("crops photos for sharing only when they are on Cloudinary", () => {
+    expect(shareImageUrl("https://res.cloudinary.com/demo/image/upload/v1/leaving.jpg")).toBe(
+      "https://res.cloudinary.com/demo/image/upload/c_fill,g_auto,w_1200,h_630,f_jpg,q_auto/v1/leaving.jpg",
+    );
     expect(shareImageUrl("https://example.com/x.jpg")).toBe("https://example.com/x.jpg");
   });
 });
