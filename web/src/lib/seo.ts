@@ -11,9 +11,8 @@ export function storyDescription(post: Pick<Post, "seoDescription" | "summary">)
 export function storyMetadata(post: Post): Metadata {
   const path = storyPath(post) ?? undefined;
   const description = storyDescription(post);
-  const images = post.coverPhoto
-    ? [{ url: shareImageUrl(post.coverPhoto.url), width: 1200, height: 630, alt: post.coverAlt }]
-    : undefined;
+  // The share image comes from app/[place]/[slug]/opengraph-image.tsx: Next adds og:image itself, and X falls
+  // back to it (no twitter:image needed).
   return {
     // The layout adds " | The Jet Lag Chronicles"; seoTitle is the full ≤60-character title when set.
     title: post.seoTitle?.trim() ? { absolute: post.seoTitle.trim() } : post.title,
@@ -28,9 +27,8 @@ export function storyMetadata(post: Post): Metadata {
       publishedTime: post.publishedDate,
       modifiedTime: post.updatedDate ?? post.publishedDate,
       authors: post.author ? [post.author.name] : undefined,
-      images,
     },
-    twitter: { card: "summary_large_image", title: post.title, description, images: images?.map((i) => i.url) },
+    twitter: { card: "summary_large_image", title: post.title, description },
   };
 }
 

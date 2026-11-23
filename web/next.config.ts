@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     loader: "custom",
     loaderFile: "./src/lib/cloudinary-loader.ts",
   },
+  // The share images read these fonts at runtime too (when a story is refreshed), so ship them with that route.
+  outputFileTracingIncludes: {
+    "/[place]/[slug]/opengraph-image": ["./src/fonts/og/*.ttf"],
+  },
   trailingSlash: false,
   poweredByHeader: false,
 };
