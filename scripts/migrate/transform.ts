@@ -345,3 +345,66 @@ export function migratePost(old: OldPost, knownPaths: ReadonlySet<string>): Migr
     },
   };
 }
+
+/* ---------- Body photos ----------
+ * Only covers were linked to posts on the old site; photos inside the text were pasted in as Markdown.
+ * The new site reads photo sizes from the media library (no layout jump, wide/portrait figures), so each
+ * body photo gets a media-library record pointing at its existing Cloudinary URL. Sizes come from
+ * Cloudinary's public fl_getinfo, which needs no credentials.
+ */
+
+export type PhotoInfo = { width: number; height: number; bytes: number; format: string };
+
+export type BodyPhoto = {
+  url: string;
+  name: string;
+  alternativeText: string | null;
+  width: number;
+  height: number;
+  hash: string;
+  ext: string;
+  mime: string;
+  /** In KB, as Strapi stores it. */
+  size: number;
+  provider: "cloudinary";
+  provider_metadata: { public_id: string; resource_type: "image" };
+};
+
+/** Every photo in a Markdown body, first alt text wins. */
+export function bodyPhotoUrls(markdown: string): { url: string; alt: string }[] {
+  const seen = new Map<string, string>();
+  for (const m of markdown.matchAll(IMAGE)) if (!seen.has(m[2])) seen.set(m[2], m[1].trim());
+  return [...seen].map(([url, alt]) => ({ url, alt }));
+}
+
+const CLOUDINARY_UPLOAD = /^(https:\/\/res\.cloudinary\.com\/[^/]+\/image\/upload\/)(.+)$/;
+
+/** Cloudinary's JSON size report for a photo, or null when the photo isn't on Cloudinary. */
+export function cloudinaryInfoUrl(url: string): string | null {
+  const m = CLOUDINARY_UPLOAD.exec(url);
+  return m ? `${m[1]}fl_getinfo/${m[2]}` : null;
+}
+
+const MIME: Record<string, string> = { jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp", gif: "image/gif", avif: "image/avif" };
+
+/** A media-library record for a body photo that already lives on Cloudinary. */
+export function bodyPhotoRecord(url: string, alt: string, info: PhotoInfo): BodyPhoto {
+  const file = decodeURIComponent(url.split("/").pop() ?? url);
+  const dot = file.lastIndexOf(".");
+  const hash = dot > 0 ? file.slice(0, dot) : file;
+  const ext = (dot > 0 ? file.slice(dot) : `.${info.format}`).toLowerCase();
+  const publicId = (CLOUDINARY_UPLOAD.exec(url)?.[2] ?? file).replace(/^v\d+\//, "").replace(/\.[a-z0-9]+$/i, "");
+  return {
+    url,
+    name: file,
+    alternativeText: alt || null,
+    width: info.width,
+    height: info.height,
+    hash,
+    ext,
+    mime: MIME[ext.slice(1)] ?? `image/${info.format}`,
+    size: Math.round(info.bytes / 10.24) / 100,
+    provider: "cloudinary",
+    provider_metadata: { public_id: publicId, resource_type: "image" },
+  };
+}

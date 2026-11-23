@@ -4,8 +4,12 @@
  *   npm run import-posts -- ../scripts/migrate/out/import.json --dry-run   # show what would happen
  *   npm run import-posts -- ../scripts/migrate/out/import.json             # local database (.env)
  *
+ *   npm run import-posts -- ../scripts/migrate/out/import.json --photos-only  # only add body-photo records
+ *
  * Against Railway: set DATABASE_CLIENT=postgres and DATABASE_URL to the Postgres *public* URL, and add --confirm.
  *
+ * - Body photos first: a media-library record per photo inside a story (found by URL, or created), so the site
+ *   knows its size. Adding these never changes a post; --photos-only stops there.
  * - Upserts by slug: countries, the "Moni & Dunny" author, then every post, then publishes them. Re-runnable.
  *   Re-running overwrites a post's migrated fields, so use --only-new once editing has started.
  * - Photos are not re-uploaded: cover photos get media-library records pointing at the existing Cloudinary URLs.
@@ -23,6 +27,7 @@ const file = args.find((a) => !a.startsWith('--'));
 const dryRun = args.includes('--dry-run');
 const onlyNew = args.includes('--only-new');
 const confirmed = args.includes('--confirm');
+const photosOnly = args.includes('--photos-only');
 
 const TEAM = { name: 'Moni & Dunny', slug: 'moni-and-dunny', type: 'team' };
 
@@ -38,9 +43,19 @@ async function main() {
   const app = await createStrapi(await compileStrapi()).load();
   app.log.level = 'warn';
   const docs = (uid) => app.documents(uid);
-  const summary = { countries: 0, posts: { created: 0, updated: 0, skipped: 0 }, photos: 0, failed: [] };
+  const summary = { countries: 0, posts: { created: 0, updated: 0, skipped: 0 }, photos: 0, bodyPhotos: 0, failed: [] };
 
   try {
+    // Body photos: media-library records so the site knows their sizes. Adds records only, never changes a post.
+    for (const photo of data.photos ?? []) {
+      const existing = await docs('plugin::upload.file').findFirst({ filters: { url: photo.url } });
+      if (existing) continue;
+      if (!dryRun) await docs('plugin::upload.file').create({ data: { ...photo, folderPath: '/' } });
+      summary.bodyPhotos += 1;
+    }
+    console.log(`body photos: ${summary.bodyPhotos} to add${dryRun ? ' (dry run)' : ''}, ${(data.photos ?? []).length - summary.bodyPhotos} already there`);
+    if (photosOnly) return;
+
     // Countries
     const countryIds = {};
     for (const c of data.countries) {
@@ -105,9 +120,9 @@ async function main() {
     }
   } finally {
     await app.destroy();
+    console.log(JSON.stringify(summary, null, 2));
   }
 
-  console.log(JSON.stringify(summary, null, 2));
   if (summary.failed.length > 0) process.exitCode = 1;
 }
 

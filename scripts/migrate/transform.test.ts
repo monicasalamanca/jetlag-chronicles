@@ -4,6 +4,9 @@ import { describe, it } from "node:test";
 import { buildReport } from "./report.ts";
 import {
   altFromFilename,
+  bodyPhotoRecord,
+  bodyPhotoUrls,
+  cloudinaryInfoUrl,
   findCtaLines,
   findLinkProblems,
   fixImageAlts,
@@ -200,5 +203,41 @@ describe("a whole post", () => {
     assert.ok(report.includes("### /thailand/30-thailand-scams"));
     assert.ok(report.includes("  - before: `You’re tired"));
     assert.ok(report.includes("`/colombia/ode-to-bogota`"));
+  });
+});
+
+describe("body photos", () => {
+  const SKY = "https://res.cloudinary.com/jetlagchronicles/image/upload/v1745702443/Bangkok_City_sky_view_aa0076be06.jpg";
+
+  it("lists each photo in a body once, with its alt text", () => {
+    const md = `![Sky](${SKY})\n\nText ![](https://x/y.png "Cap")\n\n![Again](${SKY})\n\n[not a photo](https://x/z.jpg)`;
+    assert.deepEqual(bodyPhotoUrls(md), [
+      { url: SKY, alt: "Sky" },
+      { url: "https://x/y.png", alt: "" },
+    ]);
+  });
+
+  it("asks Cloudinary for the size, and skips photos hosted elsewhere", () => {
+    assert.equal(
+      cloudinaryInfoUrl(SKY),
+      "https://res.cloudinary.com/jetlagchronicles/image/upload/fl_getinfo/v1745702443/Bangkok_City_sky_view_aa0076be06.jpg",
+    );
+    assert.equal(cloudinaryInfoUrl("https://example.com/a.jpg"), null);
+  });
+
+  it("builds a media-library record pointing at the existing photo", () => {
+    assert.deepEqual(bodyPhotoRecord(SKY, "Bangkok, City sky view", { width: 640, height: 427, bytes: 60162, format: "jpg" }), {
+      url: SKY,
+      name: "Bangkok_City_sky_view_aa0076be06.jpg",
+      alternativeText: "Bangkok, City sky view",
+      width: 640,
+      height: 427,
+      hash: "Bangkok_City_sky_view_aa0076be06",
+      ext: ".jpg",
+      mime: "image/jpeg",
+      size: 58.75,
+      provider: "cloudinary",
+      provider_metadata: { public_id: "Bangkok_City_sky_view_aa0076be06", resource_type: "image" },
+    });
   });
 });

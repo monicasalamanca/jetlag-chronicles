@@ -41,6 +41,8 @@ export type RenderedStory = {
 /** A table of contents only helps once a story has this many sections. */
 export const TOC_MIN_SECTIONS = 4;
 export const WORDS_PER_MINUTE = 220;
+/** A landscape photo needs this many pixels across to fill the wide track (--container-figure) without stretching. */
+export const WIDE_PHOTO_MIN_WIDTH = 1200;
 
 const PHOTO_WIDTHS = [480, 800, 1200, 1600];
 const PHOTO_SIZES = "(min-width: 56rem) 56rem, 100vw";
@@ -107,7 +109,14 @@ function rehypeStory(options: RenderOptions, out: Omit<RenderedStory, "html">) {
   const figure = (img: HastNode): HastNode => {
     const { size, title } = image(img);
     const { caption, credit } = title ? splitCaption(title) : { caption: null, credit: null };
-    const shape = size ? (size.height > size.width ? "portrait" : "wide") : undefined;
+    // Only photos big enough to fill the wide track go wide; smaller ones stay in the text column, never stretched.
+    const shape = !size
+      ? undefined
+      : size.height > size.width
+        ? "portrait"
+        : size.width >= WIDE_PHOTO_MIN_WIDTH
+          ? "wide"
+          : undefined;
     const captionChildren: HastNode[] = [];
     if (caption) captionChildren.push({ type: "text", value: caption });
     if (credit) {
