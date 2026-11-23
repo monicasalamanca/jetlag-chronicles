@@ -4,7 +4,7 @@ Calm, editorial and photo-led. Built from Board A and the logo. This file is the
 
 ## 1. Principles
 
-1. **Photos lead, words follow.** Layouts give photos room and keep text to a 44rem reading column.
+1. **Photos lead, words follow.** Layouts give photos room and keep text to a centred reading column (about 66 characters).
 2. **Blue means you can click.** Link Blue marks links, the current page and focus. Route Blue is decoration only. Eyebrows and the drop cap are ink.
 3. **One clay accent, one job.** Warm clay appears only for Reader Stories (chip, banner, guest author).
 4. **Quiet by default.** No share buttons, comments, newsletter boxes, pop-ups, carousels, sidebars, star ratings or ads. One "Write to us" line replaces comments.
@@ -48,7 +48,7 @@ Calm, editorial and photo-led. Built from Board A and the logo. This file is the
 
 Roles: `page` is the canvas; `surface` is cards and panels; `surface-sunken` is code chips, table headers and the footer; `surface-tint` is the TOC and the "Lesson learned" callout; `border-strong` is for control outlines that need 3:1.
 
-The scrim over photos is `rgb(18 22 28 / 0.64)`. White text on it measures 5.44:1 over a pure-white photo, the worst case.
+The scrim token (`--color-scrim`, `rgb(18 22 28 / 0.64)`) is used only where text must sit on a photo, such as the share image. White text on it measures 5.44:1 over a pure-white photo, the worst case. Cards and covers keep text off the photo.
 
 ### Contrast, light mode
 
@@ -279,7 +279,7 @@ See `components.html` for the light and dark renderings and the HTML and CSS ske
 
 ### 6. Country card
 
-Portrait 4:5 photo with the country name in a scrim band at the bottom and a story count. One link. Cards group under a continent heading (Asia, later Europe and so on).
+Portrait 4:5 photo with the country name and story count below it (no text over the photo). One link. Cards group under a continent heading (Asia, later Europe and so on).
 
 **States and behaviour**
 
@@ -290,9 +290,9 @@ Portrait 4:5 photo with the country name in a scrim band at the bottom and a sto
 **Accessibility**
 
 - Name + count read as “Thailand, 11 stories”.
-- Scrim is 64% over the photo; white text measures 5.44:1 even on a pure-white photo.
+- Text sits on the page colour, so it passes contrast in both modes without a scrim.
 
-**Tokens:** ratio-country, color-scrim, color-on-scrim, radius-card
+**Tokens:** ratio-country, color-text, color-text-muted, radius-card
 
 See `components.html` for the light and dark renderings and the HTML and CSS sketch.
 
@@ -544,6 +544,8 @@ Page designs for plan.md section 7, each at 1280px and 390px, with light and dar
 | Reader Stories | section intro, reader chip cards, how to send us one |
 | Reader story | reader banner, story body, guest author box |
 
+**Story layout (round 2).** The cover photo runs the full width of the page with its caption under it, right-aligned. Everything you read sits in one centred column, 66 characters wide: eyebrow, title, summary, byline, table of contents, story text, author box and “Write to us”. Wide photos and tables extend equally on both sides of that column, up to `--container-figure`. “More from [country]” uses the full width. Plain pages (About, Privacy) use the same centred column.
+
 ## 9. Social share image (1200×630)
 
 - Any photo, `object-fit: cover`, centred. A bottom-weighted scrim: `rgb(18 22 28 / .86)` at the bottom, `.64` at 55% of the height, `0` at the top.
@@ -570,7 +572,7 @@ Page designs for plan.md section 7, each at 1280px and 390px, with light and dar
 - Lead with a real photo, then the title.
 - Use ink for eyebrows, Link Blue only for things you can click.
 - Keep one link per card, with the title as its name.
-- Keep text in the 44rem column; let figures go wider on desktop.
+- Keep story text in the centred reading column; let figures go wider on desktop.
 - Add alt text, captions and, where known, a credit.
 - Use tokens for every colour, size, space and radius.
 - Test at 320px, in dark mode and with the keyboard.
@@ -827,16 +829,18 @@ Notes for the build: placeholder photos come from the mood board; dates, bios an
 /* story.css: styles for story body content. Tokens only. */
 .story-grid {
   display: grid;
-  /* Text column is 66ch, left-aligned with the title. Photos may use the wide track (up to --container-figure). */
+  justify-content: center;
+  /* Text column is 66ch and centred in the page. Photos may use the wide tracks either side (up to --container-figure). */
   grid-template-columns:
+    [wide-start] minmax(0, calc((var(--container-figure) - var(--measure-prose)) / 2))
     [text-start] min(var(--measure-prose), 100%) [text-end]
-    minmax(0, calc(var(--container-figure) - var(--measure-prose))) [wide-end];
+    minmax(0, calc((var(--container-figure) - var(--measure-prose)) / 2)) [wide-end];
   font: var(--weight-regular) var(--text-body) / var(--leading-body) var(--font-sans);
   color: var(--color-text);
 }
 .story-grid > * { grid-column: text-start / text-end; margin-block: 0; }
 .story-grid > * + * { margin-block-start: var(--space-5); }
-.story-grid > .wide { grid-column: text-start / wide-end; }
+.story-grid > .wide { grid-column: wide-start / wide-end; }
 
 .story-grid h2, .story-grid h3, .story-grid h4 {
   font-family: var(--font-serif); font-weight: var(--weight-semibold);

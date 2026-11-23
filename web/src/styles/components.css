@@ -239,17 +239,17 @@
 .figcap { margin-block-start: var(--space-2); font-size: var(--text-caption); line-height: var(--leading-ui); color: var(--color-text-muted); }
 .figcap .credit { display: block; font-style: italic; color: var(--color-text-subtle); }
 
-/* ---------- Story cover (photo with title block that overlaps it) ---------- */
+/* ---------- Story cover (full-width photo, then the title block in the centred reading column) ---------- */
 .cover { display: grid; grid-template-columns: minmax(0, 1fr); }
 .cover__media { aspect-ratio: var(--ratio-hero); overflow: hidden; border-radius: var(--radius-card); background: var(--color-surface-sunken); }
 .cover__media img { width: 100%; height: 100%; object-fit: cover; }
 .cover__body { display: grid; gap: var(--space-3); padding-block-start: var(--space-5); }
-.cover__body .t-h1 { max-width: var(--container-text); }
+.cover__body .t-h1 { max-width: none; }
 @container ctx (min-width: 48rem) {
-  .cover { grid-template-columns: minmax(0, var(--container-text)) minmax(0, 1fr); }
-  .cover__media { grid-column: 1 / -1; aspect-ratio: var(--ratio-hero-wide); }
-  .cover__caption { grid-column: 2; grid-row: 2; align-self: start; text-align: end; margin-block-start: var(--space-2); }
-  .cover__body { grid-column: 1; grid-row: 2; position: relative; margin-block-start: calc(var(--space-7) * -1); padding: var(--space-5) var(--space-6) 0 0; background: var(--color-page); border-start-end-radius: var(--radius-card); }
+  .cover__media { aspect-ratio: var(--ratio-hero-wide); }
+  .cover__caption { text-align: end; margin-block-start: var(--space-2); }
+  /* Title block sits in the same centred reading column as the story text */
+  .cover__body { width: min(100%, var(--measure-prose)); margin-inline: auto; padding-block-start: var(--space-6); }
 }
 
 /* ---------- Toolkit ---------- */
@@ -283,8 +283,9 @@
 .story-head { display: grid; gap: var(--space-4); }
 .story-head__summary { max-width: var(--container-text); }
 .story-tail { display: grid; gap: var(--space-6); margin-block-start: var(--space-8); }
-.story-tail > * { max-width: var(--measure-prose); }
+.story-tail > * { max-width: var(--measure-prose); margin-inline: auto; width: 100%; }
 .story-tail > .full { max-width: none; }
-.plain-page { max-width: var(--measure-prose); }
+.plain-page { max-width: var(--measure-prose); margin-inline: auto; }
+.prose-block { display: grid; gap: var(--space-4); max-width: var(--measure-prose); }
 
 .ctx main:focus { outline: none; }
