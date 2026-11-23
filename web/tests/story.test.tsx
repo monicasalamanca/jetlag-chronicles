@@ -76,6 +76,13 @@ describe("story Markdown", () => {
     );
   });
 
+  it("keeps small landscape photos in the text column so they are never stretched", async () => {
+    const url = "https://res.cloudinary.com/demo/image/upload/v1/sky.jpg";
+    const { html } = await renderStory(`![Sky](${url})`, { imageSizes: new Map([[url, { width: 640, height: 427 }]]) });
+    expect(html).toMatch(/^<figure><img /);
+    expect(html).toContain('width="640" height="427"');
+  });
+
   it("counts photos without alt text (the build fails on them)", async () => {
     expect((await renderStory("![](a.jpg)\n\n![ ](b.jpg)\n\n![ok](c.jpg)")).imagesWithoutAlt).toBe(2);
     expect((await renderStory("![ok](c.jpg)")).imagesWithoutAlt).toBe(0);

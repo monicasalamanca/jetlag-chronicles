@@ -9,7 +9,20 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { buildReport } from "./report.ts";
-import { mapCountry, migratePost, type MigratedPost, type OldCountry, type OldPost, postPath, SITE_PAGES } from "./transform.ts";
+import {
+  type BodyPhoto,
+  bodyPhotoRecord,
+  bodyPhotoUrls,
+  cloudinaryInfoUrl,
+  mapCountry,
+  migratePost,
+  type MigratedPost,
+  type OldCountry,
+  type OldPost,
+  type PhotoInfo,
+  postPath,
+  SITE_PAGES,
+} from "./transform.ts";
 
 const ROOT = path.resolve(import.meta.dirname, "../..");
 const SOURCE = (process.env.OLD_STRAPI_URL ?? "https://jetlag-be-production.up.railway.app").replace(/\/$/, "");
@@ -76,8 +89,37 @@ const report = buildReport({
   countries: countries.map((c) => c.name),
 });
 
+// Body photos (not covers): sizes from Cloudinary, so the new site gets a media-library record for each.
+const coverUrls = new Set(posts.map((p) => p.post.cover.url));
+const wanted = new Map<string, string>();
+for (const p of posts) for (const { url, alt } of bodyPhotoUrls(p.post.body)) if (!coverUrls.has(url) && !wanted.has(url)) wanted.set(url, alt);
+const photos: BodyPhoto[] = [];
+const photoProblems: string[] = [];
+const queue = [...wanted];
+await Promise.all(
+  Array.from({ length: 6 }, async () => {
+    for (let next = queue.shift(); next; next = queue.shift()) {
+      const [url, alt] = next;
+      const info = cloudinaryInfoUrl(url);
+      if (!info) {
+        photoProblems.push(`not on Cloudinary: ${url}`);
+        continue;
+      }
+      const res = await fetch(info);
+      if (!res.ok) {
+        photoProblems.push(`${res.status} from Cloudinary: ${url}`);
+        continue;
+      }
+      const { input, output } = (await res.json()) as { input: PhotoInfo; output: { format: string } };
+      photos.push(bodyPhotoRecord(url, alt, { ...input, format: output.format }));
+    }
+  }),
+);
+photos.sort((a, b) => a.url.localeCompare(b.url));
+
 mkdirSync(OUT, { recursive: true });
 writeFileSync(path.join(ROOT, "docs/migration-report.md"), report);
-writeFileSync(path.join(OUT, "import.json"), JSON.stringify({ countries, posts: posts.map((p) => p.post) }, null, 2));
-console.log(`${posts.length} posts, ${countries.length} countries, ${skipped.length} skipped.`);
+writeFileSync(path.join(OUT, "import.json"), JSON.stringify({ countries, posts: posts.map((p) => p.post), photos }, null, 2));
+console.log(`${posts.length} posts, ${countries.length} countries, ${photos.length} body photos, ${skipped.length} skipped.`);
+for (const problem of photoProblems) console.warn(`photo skipped (${problem})`);
 console.log(`Report: docs/migration-report.md · Import file: scripts/migrate/out/import.json`);
