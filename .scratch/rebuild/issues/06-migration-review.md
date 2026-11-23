@@ -16,4 +16,4 @@ Moni & Dunny read `docs/migration-report.md`, check the reworded affiliate sente
 
 ## Blocked by
 
-- [05 — Migration script: import the 33 posts and write the report](05-migration-script.md)
+- [05 — Migration script: import the posts and write the report](05-migration-script.md)

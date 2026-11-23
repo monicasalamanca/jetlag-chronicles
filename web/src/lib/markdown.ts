@@ -1,5 +1,6 @@
 import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
+import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -194,6 +195,8 @@ export async function renderStory(markdown: string, options: RenderOptions = {})
   const file = await unified()
     .use(remarkParse)
     .use(remarkGfm)
+    // A single line break is a line break, as on the old site and as people expect when typing in Strapi.
+    .use(remarkBreaks)
     .use(remarkRehype)
     .use(rehypeSanitize)
     .use(rehypeStory(options, out))

@@ -23,7 +23,7 @@ Run the launch checklist in plan §15, point the domain at the new site, and do 
 - [02 — Put it online: Railway Strapi + password-protected Vercel preview](02-deploy-preview.md)
 - [03 — Design system in code: tokens, fonts, logo, header and footer](03-design-system-code.md)
 - [04 — Full story page with complete content model and SEO](04-story-page.md)
-- [05 — Migration script: import the 33 posts and write the report](05-migration-script.md)
+- [05 — Migration script: import the posts and write the report](05-migration-script.md)
 - [06 — Review the migration report](06-migration-review.md)
 - [07 — Places, country pages and Life Abroad](07-section-pages.md)
 - [08 — Homepage](08-homepage.md)
