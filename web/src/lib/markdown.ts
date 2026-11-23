@@ -41,8 +41,6 @@ export type RenderedStory = {
 /** A table of contents only helps once a story has this many sections. */
 export const TOC_MIN_SECTIONS = 4;
 export const WORDS_PER_MINUTE = 220;
-/** A landscape photo needs this many pixels across to fill the wide track (--container-figure) without stretching. */
-export const WIDE_PHOTO_MIN_WIDTH = 1200;
 
 const PHOTO_WIDTHS = [480, 800, 1200, 1600];
 const PHOTO_SIZES = "(min-width: 56rem) 56rem, 100vw";
@@ -64,6 +62,66 @@ function slugify(text: string): string {
 }
 
 const isBlank = (n: HastNode) => n.type === "text" && !(n.value ?? "").trim();
+const isElement = (n: HastNode | undefined, tag: string): n is HastNode => n?.type === "element" && n.tagName === tag;
+
+/** The one element on a line (ignoring whitespace), when it is a `tag`. */
+function only(line: HastNode[] | undefined, tag: string): HastNode | null {
+  const content = (line ?? []).filter((n) => !isBlank(n));
+  return content.length === 1 && isElement(content[0], tag) ? content[0] : null;
+}
+
+function paragraph(lines: HastNode[][]): HastNode | null {
+  const children = lines.flatMap((line, i) => (i === 0 ? line : [{ type: "element", tagName: "br", properties: {}, children: [] }, ...line]));
+  const first = children[0];
+  const last = children.at(-1);
+  if (first?.type === "text") first.value = (first.value ?? "").trimStart();
+  if (last?.type === "text") last.value = (last.value ?? "").trimEnd();
+  return children.some((n) => !isBlank(n)) ? { type: "element", tagName: "p", properties: {}, children } : null;
+}
+
+/**
+ * Photos on their own line always become figures, however the line was written. Old posts (and people typing in
+ * Strapi) often put a photo straight under or over text without a blank line, add an italic caption line right
+ * under it, or a `---` under it (which Markdown reads as a heading). Each photo line becomes its own paragraph
+ * (→ a figure below), and an italic line right under a photo becomes its caption.
+ */
+function unpackPhotos(node: HastNode): HastNode[] {
+  if (/^h[1-6]$/.test(node.tagName ?? "")) {
+    const img = only(node.children, "img");
+    return img ? [{ type: "element", tagName: "p", properties: {}, children: [img] }] : [node];
+  }
+  if (node.tagName !== "p") return [node];
+  const lines: HastNode[][] = [[]];
+  for (const child of node.children ?? []) {
+    if (isElement(child, "br")) lines.push([]);
+    else lines.at(-1)!.push(child);
+  }
+  if (lines.length < 2 || !lines.some((line) => only(line, "img"))) return [node];
+
+  const out: HastNode[] = [];
+  let text: HastNode[][] = [];
+  const flush = () => {
+    const p = paragraph(text);
+    if (p) out.push(p);
+    text = [];
+  };
+  for (let i = 0; i < lines.length; i++) {
+    const img = only(lines[i], "img");
+    if (!img) {
+      text.push(lines[i]);
+      continue;
+    }
+    flush();
+    const caption = only(lines[i + 1], "em");
+    if (caption && typeof img.properties?.title !== "string") {
+      img.properties = { ...img.properties, title: textOf(caption).trim() };
+      i++;
+    }
+    out.push({ type: "element", tagName: "p", properties: {}, children: [img] });
+  }
+  flush();
+  return out;
+}
 
 /** "The night market | Photo: Dunny" → caption + credit. A title of only "Photo: …" is just a credit. */
 export function splitCaption(title: string): { caption: string | null; credit: string | null } {
@@ -109,14 +167,8 @@ function rehypeStory(options: RenderOptions, out: Omit<RenderedStory, "html">) {
   const figure = (img: HastNode): HastNode => {
     const { size, title } = image(img);
     const { caption, credit } = title ? splitCaption(title) : { caption: null, credit: null };
-    // Only photos big enough to fill the wide track go wide; smaller ones stay in the text column, never stretched.
-    const shape = !size
-      ? undefined
-      : size.height > size.width
-        ? "portrait"
-        : size.width >= WIDE_PHOTO_MIN_WIDTH
-          ? "wide"
-          : undefined;
+    // As in the design: every landscape photo goes wide, portraits stay narrow.
+    const shape = size ? (size.height > size.width ? "portrait" : "wide") : undefined;
     const captionChildren: HastNode[] = [];
     if (caption) captionChildren.push({ type: "text", value: caption });
     if (credit) {
@@ -174,7 +226,7 @@ function rehypeStory(options: RenderOptions, out: Omit<RenderedStory, "html">) {
       node.properties = { ...node.properties, href: path ?? href, ...(rel && { rel: rel.split(" ") }) };
     }
 
-    node.children = (node.children ?? []).map(visit);
+    node.children = (node.children ?? []).flatMap(unpackPhotos).map(visit);
 
     // A wide table scrolls inside its own focusable region, never the page.
     if (node.tagName === "table") {

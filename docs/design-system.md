@@ -354,7 +354,7 @@ Photos keep their own orientation; portraits are capped at 80svh and 28rem so th
 
 **States and behaviour**
 
-- Wide figure: extends past the text column on desktop (landscape photos at least 1200px wide; smaller ones stay in the text column so they are never stretched)
+- Wide figure: every landscape photo extends past the text column on desktop. Upload photos at least 1200px wide so they stay sharp at that size.
 - Text-width figure
 - With credit
 - Portrait: capped height

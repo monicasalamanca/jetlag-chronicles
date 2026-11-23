@@ -76,11 +76,42 @@ describe("story Markdown", () => {
     );
   });
 
-  it("keeps small landscape photos in the text column so they are never stretched", async () => {
+  it("makes every landscape photo wide, small ones too, so all photos line up", async () => {
     const url = "https://res.cloudinary.com/demo/image/upload/v1/sky.jpg";
     const { html } = await renderStory(`![Sky](${url})`, { imageSizes: new Map([[url, { width: 640, height: 427 }]]) });
-    expect(html).toMatch(/^<figure><img /);
+    expect(html).toMatch(/^<figure class="wide"><img /);
     expect(html).toContain('width="640" height="427"');
+  });
+
+  describe("photos written the old site's way", () => {
+    const cat = "https://res.cloudinary.com/demo/image/upload/v1/cat.jpg";
+    const sizes = new Map([[cat, { width: 1600, height: 900 }]]);
+    const render = async (md: string) => (await renderStory(md, { imageSizes: sizes })).html;
+
+    it("turns an italic line right under a photo into its caption", async () => {
+      const html = await render(`![A cat](${cat})\n_Still here? Look at this cute cat._`);
+      expect(html).toMatch(/^<figure class="wide"><img [^>]*alt="A cat"[^>]*><figcaption>Still here\? Look at this cute cat\.<\/figcaption><\/figure>$/);
+    });
+
+    it("keeps an italic line that is not under a photo as text", async () => {
+      expect(await render("Hello\n_just italic_")).toBe("<p>Hello<br>\n<em>just italic</em></p>");
+    });
+
+    it("splits a photo out of the text before or after it", async () => {
+      const html = await render(`Well, here it is.\n![A cat](${cat})\nAnd more text with [a link](https://x.example).`);
+      expect(html).toMatch(/^<p>Well, here it is\.<\/p><figure class="wide"><img [^>]*><\/figure><p>And more text with <a href="https:\/\/x\.example"[^>]*>a link<\/a>\.<\/p>$/);
+    });
+
+    it("keeps a photo with a rule under it as a photo, not a heading in the contents", async () => {
+      const { html, headings } = await renderStory(`![A cat](${cat})\n---\n\nText.`, { imageSizes: sizes });
+      expect(headings).toEqual([]);
+      expect(html).toMatch(/^<figure class="wide"><img [^>]*><\/figure>\n<p>Text\.<\/p>$/);
+    });
+
+    it("leaves photos inside a sentence alone", async () => {
+      const html = await render(`Look ![a tiny icon](${cat}) here.`);
+      expect(html).toMatch(/^<p>Look <img [^>]*> here\.<\/p>$/);
+    });
   });
 
   it("counts photos without alt text (the build fails on them)", async () => {
