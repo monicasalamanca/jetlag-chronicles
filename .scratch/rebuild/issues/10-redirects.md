@@ -17,5 +17,5 @@ Add every 301 in plan §11 (including legacy slug redirects from `jetlag-fe/next
 
 ## Blocked by
 
-- [05 — Migration script: import the 33 posts and write the report](05-migration-script.md)
+- [05 — Migration script: import the posts and write the report](05-migration-script.md)
 - [07 — Places, country pages and Life Abroad](07-section-pages.md)

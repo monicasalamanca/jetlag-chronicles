@@ -111,6 +111,10 @@ describe("story Markdown", () => {
     expect(html).not.toContain("align=");
   });
 
+  it("keeps single line breaks (posts list costs one per line)", async () => {
+    expect(await renderMarkdown("**Rent:** 10,000\n**Food:** 8,000")).toBe("<p><strong>Rent:</strong> 10,000<br>\n<strong>Food:</strong> 8,000</p>");
+  });
+
   it("splits captions and credits", () => {
     expect(splitCaption("Dusk | Photo: Moni")).toEqual({ caption: "Dusk", credit: "Photo: Moni" });
     expect(splitCaption("Photo: Moni")).toEqual({ caption: null, credit: "Photo: Moni" });

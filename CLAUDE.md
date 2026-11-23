@@ -1,9 +1,10 @@
 # CLAUDE.md — The Jet Lag Chronicles
 
-Non-monetized travel-story blog by Moni & Dunny (thejetlagchronicles.com). Rebuild of `../jetlag-fe` + `../jetlag-be`, keeping the 33 posts at their current URLs.
+Non-monetized travel-story blog by Moni & Dunny (thejetlagchronicles.com). Rebuild of `../jetlag-fe` + `../jetlag-be`, keeping all 41 live posts at their current URLs.
 
 - Plan and every locked decision: `docs/plan.md` (read it before changing routes, the content model, SEO or redirects)
 - Design: `docs/design-system.md` (rules, components, extending the system) with mockups in `docs/design/` (`pages-gallery.html`, `components.html`). Read it before building any page or component.
+- Migration: `scripts/migrate/` (old API → report + import file, `node --test 'scripts/migrate/*.test.ts'`) then `cms/scripts/import-posts.js`. Report: `docs/migration-report.md`.
 - Work items: `.scratch/rebuild/issues/` (local markdown tracker, see `docs/agents/issue-tracker.md`)
 
 ## Layout

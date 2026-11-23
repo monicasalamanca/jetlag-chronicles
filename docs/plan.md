@@ -13,7 +13,7 @@ This file is the source of truth. If a build choice contradicts it, update this 
 Rebuild thejetlagchronicles.com from scratch as a **nice, simple, non-monetized travel-story blog**: our own stories, with the real-life lessons in them.
 
 Non-negotiables:
-- **Keep all 33 existing posts at their current URLs** (the SEO we've built). Everything else (look, UX, copy, structure, features) is new.
+- **Keep all existing posts at their current URLs** (41 live; the list below had 33) (the SEO we've built). Everything else (look, UX, copy, structure, features) is new.
 - **Very strong SEO**, **WCAG 2.2 AA accessibility**, **fast** (targets in §9).
 - Simple to run: publish in Strapi, live in seconds, no maintenance chores.
 
@@ -52,14 +52,16 @@ Comments · newsletter / Kit · ads / AdSense · reCAPTCHA · guides / free down
 
 Hidden = not in menu, footer, lists, sitemap or RSS; returns 404 until switched on by a single flag per section.
 
-## 5. The 33 posts (migrate, same URLs)
+## 5. The posts (migrate, same URLs)
+
+> **Update 2026-11-22 (issue 05):** the live old API has **41** published posts. The 8 not listed below are live and indexable (200, `index, follow`), only missing from the old sitemap: `/colombia/medellin-bogota-cartagena-comparison`, `/colombia/colombia-digital-nomad-visa-requirements-2026`, `/colombia/ode-to-bogota`, `/colombia/is-colombia-dangerous-2026`, `/vietnam/how-to-rent-an-apartment-in-vietnam-2026`, `/japan/japan-digital-nomad-visa-guide-2026`, `/cambodia/cambodia-ordinary-visa-type-e-guide`, `/thailand/wise-thailand-august-2026-tax-changes`. They are migrated too (decision confirmed or changed in issue 06). Countries: Thailand, Malaysia, Vietnam, Colombia, Japan, Cambodia.
 
 - **Thailand (11):** 30-thailand-scams, bangkok-condo-rental-guide, bangkok-vs-kuala-lumpur-digital-nomads-guide, chiang-mai-vs-bangkok-expat-guide, cost-of-living-thailand, dtv-visa-for-remote-workers, is-thailand-still-worth-it, ode-to-bangkok-love-letter-to-the-city, phuket-expat-digital-nomad-guide, thailand-dtv-vs-malaysia-de-rantau, thailand-visa-border-run-guide
 - **Malaysia (5):** de-rantau-malaysia-remote-work-visa, kuala-lumpur-digital-nomad-city-guide, mm2h-visa-guide-malaysia, penang-digital-nomad-guide, penang-vs-kuala-lumpur
 - **Vietnam (4):** vietnam-cost-of-living-2026, vietnam-digital-nomad-hotspot-2026, vietnam-visa-reality-for-digital-nomads-the-90-day-hack-border-runs-and-what-s-actually-legal, where-to-live-in-vietnam
 - **Life Abroad (13):** 2026-southeast-asia-index-rankings, 2026-tax-arbitrage-execution-guide, canadians-second-passports-exit-strategies, digital-nomad-plateau-year-two, easiest-digital-nomad-visas-2026, first-90-days-abroad-expat-field-manual, interactive-brokers-digital-nomad-guide, leaving-your-country-2026, lifestyle-design-done-waiting, nomad-middle-class-financial-trap, top-30-digital-nomad-questions-remote-work-guide, why-digital-nomads-need-multiple-hubs, why-you-shouldnt-live-work-and-bank-in-one-country
 
-All 33 are credited to **"Moni & Dunny"**. Original publish dates are kept.
+All are credited to **"Moni & Dunny"**. Original publish dates are kept.
 
 ## 6. Content model (Strapi 5, i18n on, English only for now)
 
@@ -190,7 +192,7 @@ A photo on its own line becomes a figure; its Markdown title is the caption, wit
 | `/guides/thailand-playbook-guide` | `/thailand/is-thailand-still-worth-it` |
 | all other `/guides/*` | `/thailand` |
 | `/free/*`, `/thank-you`, `/confirm-subscription` | `/` |
-| `/japan`, `/colombia`, `/cambodia` (no stories yet) | `/places` (removed once they have a story) |
+| ~~`/japan`, `/colombia`, `/cambodia` → `/places`~~ | Not needed: all three have live stories (see §5 update), so they are real country pages. |
 | `/home` | `/` |
 | `/chronicles` | `/stories` |
 | existing legacy slug redirects in `jetlag-fe/next.config.ts` (e.g. `thailand-scams-2025`) | carried over, pointing straight at the final URL (no chains) |
@@ -216,7 +218,7 @@ Claude drafts all new copy as **Strapi drafts**; we edit later: home intro, "who
 
 ## 14. Migration (one-time script)
 
-1. Pull all 33 posts from the **live** old Strapi API (not the stale `jetlag_prod.sql`).
+1. Pull all posts from the **live** old Strapi API (not the stale `jetlag_prod.sql`).
 2. Map fields: title, slug, description → summary, content → body, `images[0]` → cover (alt from the image's alt/caption or flagged), country → Country relation, `lifestyle` → section `life_abroad`, seoTitle / seoDescription, original `publishedAt` → publishedDate. Author = "Moni & Dunny".
 3. Keep Cloudinary image URLs unchanged (no re-upload).
 4. **Remove the 22 affiliate links** (17 Klook, 5 Wise) in 8 posts; keep the sentence, reword lightly where it reads oddly.
@@ -233,7 +235,7 @@ Posts with affiliate links: `/thailand/ode-to-bangkok-love-letter-to-the-city`, 
 **Build:** behind the password gate on a Vercel preview, `noindex`.
 
 **Launch checklist**
-- [ ] All 33 posts migrated, migration report reviewed
+- [ ] All posts migrated (41), migration report reviewed
 - [ ] Every old sitemap URL returns 200 or a single 301
 - [ ] Lighthouse + axe targets met in CI (§9)
 - [ ] Copy edited, bios + photos in
