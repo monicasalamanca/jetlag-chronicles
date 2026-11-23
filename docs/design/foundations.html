@@ -266,16 +266,18 @@
 }</style><style>/* story.css: styles for story body content. Tokens only. */
 .story-grid {
   display: grid;
-  /* Text column is 66ch, left-aligned with the title. Photos may use the wide track (up to --container-figure). */
+  justify-content: center;
+  /* Text column is 66ch and centred in the page. Photos may use the wide tracks either side (up to --container-figure). */
   grid-template-columns:
+    [wide-start] minmax(0, calc((var(--container-figure) - var(--measure-prose)) / 2))
     [text-start] min(var(--measure-prose), 100%) [text-end]
-    minmax(0, calc(var(--container-figure) - var(--measure-prose))) [wide-end];
+    minmax(0, calc((var(--container-figure) - var(--measure-prose)) / 2)) [wide-end];
   font: var(--weight-regular) var(--text-body) / var(--leading-body) var(--font-sans);
   color: var(--color-text);
 }
 .story-grid > * { grid-column: text-start / text-end; margin-block: 0; }
 .story-grid > * + * { margin-block-start: var(--space-5); }
-.story-grid > .wide { grid-column: text-start / wide-end; }
+.story-grid > .wide { grid-column: wide-start / wide-end; }
 
 .story-grid h2, .story-grid h3, .story-grid h4 {
   font-family: var(--font-serif); font-weight: var(--weight-semibold);
@@ -600,16 +602,18 @@ footer.doc-foot { margin-block-start: var(--space-9); padding-block: var(--space
 <h3 class="sub">story.css</h3><pre class="codeblock" tabindex="0" aria-label="story.css"><code style="all:unset">/* story.css: styles for story body content. Tokens only. */
 .story-grid {
   display: grid;
-  /* Text column is 66ch, left-aligned with the title. Photos may use the wide track (up to --container-figure). */
+  justify-content: center;
+  /* Text column is 66ch and centred in the page. Photos may use the wide tracks either side (up to --container-figure). */
   grid-template-columns:
+    [wide-start] minmax(0, calc((var(--container-figure) - var(--measure-prose)) / 2))
     [text-start] min(var(--measure-prose), 100%) [text-end]
-    minmax(0, calc(var(--container-figure) - var(--measure-prose))) [wide-end];
+    minmax(0, calc((var(--container-figure) - var(--measure-prose)) / 2)) [wide-end];
   font: var(--weight-regular) var(--text-body) / var(--leading-body) var(--font-sans);
   color: var(--color-text);
 }
 .story-grid &gt; * { grid-column: text-start / text-end; margin-block: 0; }
 .story-grid &gt; * + * { margin-block-start: var(--space-5); }
-.story-grid &gt; .wide { grid-column: text-start / wide-end; }
+.story-grid &gt; .wide { grid-column: wide-start / wide-end; }
 
 .story-grid h2, .story-grid h3, .story-grid h4 {
   font-family: var(--font-serif); font-weight: var(--weight-semibold);
