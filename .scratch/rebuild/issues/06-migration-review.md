@@ -1,6 +1,6 @@
 # 06 — Review the migration report
 
-Status: decided; fixes ready (docs/migration-decisions.md), production run pending
+Status: done (decisions in docs/migration-decisions.md; fixes applied to production 2026-11-22)
 Type: HITL
 Source: `docs/plan.md`
 
@@ -12,7 +12,7 @@ Moni & Dunny read `docs/migration-report.md`, check the reworded affiliate sente
 
 - [x] Every flagged item has a decision recorded in the report
 - [x] Reworded sentences approved or edited in Strapi
-- [ ] Any post-level fixes made in Strapi (or the script re-run)
+- [x] Any post-level fixes made in Strapi (or the script re-run)
 
 ## Blocked by
 
