@@ -2,6 +2,8 @@
 
 Generated 2026-11-23 from https://jetlag-be-production.up.railway.app by `scripts/migrate`. Re-running the script rewrites this file.
 
+**Decisions taken (issue 06) are recorded in `docs/migration-decisions.md`** and applied by `cms/scripts/apply-fixes.js`.
+
 ## Summary
 
 - **41 posts** ready to import (28 place, 13 Life Abroad), all credited to Moni & Dunny, original publish dates kept.

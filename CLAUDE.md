@@ -4,7 +4,7 @@ Non-monetized travel-story blog by Moni & Dunny (thejetlagchronicles.com). Rebui
 
 - Plan and every locked decision: `docs/plan.md` (read it before changing routes, the content model, SEO or redirects)
 - Design: `docs/design-system.md` (rules, components, extending the system) with mockups in `docs/design/` (`pages-gallery.html`, `components.html`). Read it before building any page or component.
-- Migration: `scripts/migrate/` (old API → report + import file, `node --test 'scripts/migrate/*.test.ts'`) then `cms/scripts/import-posts.js`. Report: `docs/migration-report.md`.
+- Migration: `scripts/migrate/` (old API → report + import file, `node --test 'scripts/migrate/*.test.ts'`) then `cms/scripts/import-posts.js`. Report: `docs/migration-report.md`; decisions and fixes: `docs/migration-decisions.md`, `scripts/migrate/fixes.json`, `cms/scripts/apply-fixes.js`.
 - Work items: `.scratch/rebuild/issues/` (local markdown tracker, see `docs/agents/issue-tracker.md`)
 
 ## Layout
