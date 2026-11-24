@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "life_abroads",
+  "info": {
+    "singularName": "life-abroad",
+    "pluralName": "life-abroads",
+    "displayName": "Life Abroad page",
+    "description": "The intro at the top of /lifestyle. The stories below it are every published Life Abroad post."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "intro": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "seoTitle": {
+      "type": "string",
+      "maxLength": 60,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "seoDescription": {
+      "type": "text",
+      "maxLength": 160,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
