@@ -1,6 +1,6 @@
 # 08 — Homepage
 
-Status: ready-for-agent
+Status: done
 Type: AFK
 Source: `docs/plan.md`
 
@@ -10,11 +10,11 @@ Build the homepage per plan §7.1: featured newest story, "Who we are" + photo, 
 
 ## Acceptance criteria
 
-- [ ] Sections appear in the order in plan §7.1; featured story is not repeated in the latest 6
-- [ ] Hidden sections (Reader Stories) never appear
-- [ ] `WebSite` + `Person` JSON-LD
-- [ ] Featured image is the LCP element and is prioritized; no layout shift
-- [ ] Component test covers section composition
+- [x] Sections appear in the order in plan §7.1; featured story is not repeated in the latest 6
+- [x] Hidden sections (Reader Stories) never appear
+- [x] `WebSite` + `Person` JSON-LD
+- [x] Featured image is the LCP element and is prioritized; no layout shift
+- [x] Component test covers section composition
 
 ## Blocked by
 

@@ -152,3 +152,30 @@ export function collectionJsonLd({
     },
   ];
 }
+
+/**
+ * The homepage: WebSite, plus a Person for each of us (plan §10). The site is by both of us, so the WebSite
+ * names us as authors by @id.
+ */
+export function homeJsonLd(description: string): JsonLd[] {
+  const people = teamPeople.map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${siteUrl}/about#${p.name.toLowerCase()}`,
+    name: p.name,
+    url: p.url,
+  }));
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: siteName,
+      url: `${siteUrl}/`,
+      description,
+      inLanguage: "en",
+      author: people.map((p) => ({ "@id": p["@id"] })),
+    },
+    ...people,
+  ];
+}

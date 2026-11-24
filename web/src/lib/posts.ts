@@ -182,3 +182,29 @@ export function lifeAbroadQuery(): URLSearchParams {
   setFields(q, "", ["intro", "seoTitle", "seoDescription"]);
   return q;
 }
+
+/** The newest stories for the homepage: every listed section (place + Life Abroad, never Reader Stories), or Life Abroad only. */
+export function latestStoriesQuery(limit: number, section?: "life_abroad"): URLSearchParams {
+  const q = new URLSearchParams();
+  if (section) {
+    q.set("filters[section][$eq]", section);
+  } else {
+    q.set("filters[section][$in][0]", "place");
+    q.set("filters[section][$in][1]", "life_abroad");
+  }
+  setFields(q, "", CARD_FIELDS);
+  setFields(q, "populate[country]", ["name", "slug"]);
+  setFields(q, "populate[coverPhoto]", MEDIA_FIELDS);
+  q.set("sort[0]", "publishedDate:desc");
+  q.set("sort[1]", "title:asc");
+  q.set("pagination[pageSize]", String(limit));
+  return q;
+}
+
+/** The Home page single type, with its photo. */
+export function homeQuery(): URLSearchParams {
+  const q = new URLSearchParams();
+  setFields(q, "", ["whoWeAre", "photoAlt", "lifeAbroadIntro", "seoTitle", "seoDescription"]);
+  setFields(q, "populate[photo]", MEDIA_FIELDS);
+  return q;
+}
