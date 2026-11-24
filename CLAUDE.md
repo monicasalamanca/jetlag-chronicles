@@ -46,4 +46,5 @@ web/   Next.js 16 App Router (pnpm). Based on the-bio-hive setup.
 - **Markdown is sanitized**; raw HTML in post bodies is never rendered.
 - **Pre-launch:** `SITE_LIVE` unset = noindex + robots disallow; `SITE_USER` + `SITE_PASSWORD` = password gate (`src/proxy.ts`).
 - **Strapi versions move together.** Every `@strapi/*` package and the `overrides` block in `cms/package.json` must be the same exact version (mixed versions break the admin panel, e.g. API Tokens). Upgrade them all at once.
+- **CMS schema changes ship first, in their own PR.** Vercel builds read the live Strapi on Railway, so a web change that asks for new fields fails (400) until Railway has deployed them. Merge the `cms/` PR, wait for the Railway deploy, then merge the web PR.
 - Strapi secrets and tokens live only in `.env` files and the host's env vars. Never commit them.
