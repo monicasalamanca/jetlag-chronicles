@@ -1,10 +1,16 @@
 import "server-only";
 import { type ImageSize, markdownImageUrls } from "@/lib/markdown";
+import { type ContinentGroup, type Country, type PlaceStoryRef, placesByContinent } from "@/lib/places";
 import {
   allStoriesQuery,
+  countriesQuery,
+  LIFE_ABROAD_PREFIX,
+  lifeAbroadQuery,
   type Media,
   moreStoriesQuery,
+  placeStoryRefsQuery,
   type Post,
+  storyCardsQuery,
   storyPath,
   storyQuery,
   type StoryCardPost,
@@ -14,6 +20,9 @@ import { ALL_TAG, modelTag } from "@/lib/strapi/tags";
 
 // A story shows its country and author, so it depends on all three types.
 const STORY_TAGS = [ALL_TAG, modelTag("post"), modelTag("country"), modelTag("author")];
+// Section pages list stories and show countries; Life Abroad also has its own single type.
+const SECTION_TAGS = [ALL_TAG, modelTag("post"), modelTag("country")];
+const LIFE_ABROAD_TAGS = [ALL_TAG, modelTag("post"), modelTag("life-abroad")];
 
 type Collection<T> = { data: T[]; meta: { pagination: { page: number; pageCount: number } } };
 
@@ -38,10 +47,71 @@ export async function getStory(place: string, slug: string): Promise<Post | null
   };
 }
 
+/** Every page of a paginated Strapi collection. */
+async function allPages<T>(path: string, query: (page: number) => URLSearchParams, tags: string[]): Promise<T[]> {
+  const items: T[] = [];
+  for (let page = 1; ; page++) {
+    const result = await strapiGet<Collection<T>>(path, query(page), tags);
+    items.push(...result.data);
+    if (page >= result.meta.pagination.pageCount) return items;
+  }
+}
+
+const withCover = <T extends { coverPhoto: Media | null }>(p: T): T => ({ ...p, coverPhoto: media(p.coverPhoto) });
+const withHero = (c: Country): Country => ({ ...c, heroPhoto: media(c.heroPhoto) });
+
 /** Up to 3 other stories from the same country (or Life Abroad), newest first. */
 export async function getMoreStories(post: Post): Promise<StoryCardPost[]> {
   const result = await strapiGet<Collection<StoryCardPost>>("posts", moreStoriesQuery(post), STORY_TAGS);
-  return result.data.map((p) => ({ ...p, coverPhoto: media(p.coverPhoto) }));
+  return result.data.map(withCover);
+}
+
+/** /places: countries with at least one story, grouped by continent. Empty when no CMS is configured (CI). */
+export async function getPlaces(): Promise<ContinentGroup[]> {
+  // CI builds without a CMS: /places is then built empty (the deployed site always has STRAPI_URL).
+  if (!strapiConfigured()) return [];
+  const [countries, stories] = await Promise.all([
+    strapiGet<Collection<Country>>("countries", countriesQuery(), SECTION_TAGS),
+    allPages<PlaceStoryRef>("posts", placeStoryRefsQuery, SECTION_TAGS),
+  ]);
+  return placesByContinent(countries.data.map(withHero), stories.map(withCover));
+}
+
+/** A country page: the country and its stories, newest first. Null (→ 404) when it has no published story. */
+export async function getCountryPage(slug: string): Promise<{ country: Country; stories: StoryCardPost[] } | null> {
+  const [countries, stories] = await Promise.all([
+    strapiGet<Collection<Country>>("countries", countriesQuery(slug), SECTION_TAGS),
+    allPages<StoryCardPost>("posts", (page) => storyCardsQuery({ country: slug }, page), SECTION_TAGS),
+  ]);
+  const country = countries.data[0];
+  if (!country || stories.length === 0) return null;
+  return { country: withHero(country), stories: stories.map(withCover) };
+}
+
+export type LifeAbroadPage = { intro: string | null; seoTitle: string | null; seoDescription: string | null };
+
+/** /lifestyle: its intro (empty until the single type is published) and every Life Abroad story, newest first. */
+export async function getLifeAbroadPage(): Promise<LifeAbroadPage & { stories: StoryCardPost[] }> {
+  const [page, stories] = await Promise.all([
+    strapiGet<{ data: LifeAbroadPage | null }>("life-abroad", lifeAbroadQuery(), LIFE_ABROAD_TAGS).catch((error) => {
+      if (error instanceof StrapiError && error.status === 404) return { data: null }; // not published yet
+      throw error;
+    }),
+    allPages<StoryCardPost>("posts", (p) => storyCardsQuery({ section: "life_abroad" }, p), LIFE_ABROAD_TAGS),
+  ]);
+  return {
+    intro: page.data?.intro ?? null,
+    seoTitle: page.data?.seoTitle ?? null,
+    seoDescription: page.data?.seoDescription ?? null,
+    stories: stories.map(withCover),
+  };
+}
+
+/** Every /<place> page for generateStaticParams: countries with a story, and Life Abroad. */
+export async function getSectionParams(): Promise<{ place: string }[]> {
+  if (!strapiConfigured()) return [];
+  const groups = await getPlaces();
+  return [...groups.flatMap((g) => g.countries.map((c) => ({ place: c.href.slice(1) }))), { place: LIFE_ABROAD_PREFIX }];
 }
 
 /**

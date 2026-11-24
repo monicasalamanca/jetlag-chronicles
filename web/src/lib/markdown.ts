@@ -275,3 +275,10 @@ export async function renderMarkdown(markdown: string, options: RenderOptions = 
 export function markdownImageUrls(markdown: string): string[] {
   return [...new Set([...markdown.matchAll(/!\[[^\]]*\]\(\s*<?([^)\s>]+)/g)].map((m) => m[1]))];
 }
+
+/** A section intro (a country, Life Abroad): sanitized HTML whose first paragraph is styled as the lead. */
+export async function renderIntro(markdown: string | null | undefined, fallback = ""): Promise<string> {
+  const source = markdown?.trim() || fallback;
+  if (!source) return "";
+  return (await renderMarkdown(source)).replace(/^<p>/, '<p class="t-lead">');
+}

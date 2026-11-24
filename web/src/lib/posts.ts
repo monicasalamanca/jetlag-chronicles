@@ -45,7 +45,7 @@ export type Post = {
 /** What a story card needs (body only for the reading time). */
 export type StoryCardPost = Pick<
   Post,
-  "documentId" | "title" | "slug" | "section" | "summary" | "body" | "country" | "city" | "coverPhoto" | "publishedDate"
+  "documentId" | "title" | "slug" | "section" | "summary" | "body" | "country" | "city" | "coverPhoto" | "coverAlt" | "publishedDate"
 >;
 
 export const LIFE_ABROAD_PREFIX = "lifestyle";
@@ -77,6 +77,7 @@ export function storyEyebrow(post: Pick<Post, "section" | "country" | "city">): 
 }
 
 const MEDIA_FIELDS = ["url", "width", "height"];
+const CARD_FIELDS = ["title", "slug", "section", "summary", "body", "city", "coverAlt", "publishedDate"];
 
 /** fields[0]=… at the top level, or <prefix>[fields][0]=… for a populated relation. */
 function setFields(q: URLSearchParams, prefix: string, fields: string[]) {
@@ -108,7 +109,7 @@ export function moreStoriesQuery(post: Pick<Post, "documentId" | "section" | "co
   q.set("filters[section][$eq]", post.section);
   if (post.section === "place" && post.country) q.set("filters[country][slug][$eq]", post.country.slug);
   q.set("filters[documentId][$ne]", post.documentId);
-  setFields(q, "", ["title", "slug", "section", "summary", "body", "city", "publishedDate"]);
+  setFields(q, "", CARD_FIELDS);
   setFields(q, "populate[country]", ["name", "slug"]);
   setFields(q, "populate[coverPhoto]", MEDIA_FIELDS);
   q.set("sort[0]", "publishedDate:desc");
@@ -127,5 +128,57 @@ export function allStoriesQuery(page: number): URLSearchParams {
   q.set("pagination[page]", String(page));
   q.set("pagination[pageSize]", "100");
   q.set("sort[0]", "slug:asc");
+  return q;
+}
+
+/** One page of story cards, newest first: a country's stories, or every Life Abroad story. */
+export function storyCardsQuery(filter: { country: string } | { section: "life_abroad" }, page: number): URLSearchParams {
+  const q = new URLSearchParams();
+  if ("country" in filter) {
+    q.set("filters[section][$eq]", "place");
+    q.set("filters[country][slug][$eq]", filter.country);
+  } else {
+    q.set("filters[section][$eq]", filter.section);
+  }
+  setFields(q, "", CARD_FIELDS);
+  setFields(q, "populate[country]", ["name", "slug"]);
+  setFields(q, "populate[coverPhoto]", MEDIA_FIELDS);
+  q.set("sort[0]", "publishedDate:desc");
+  q.set("sort[1]", "title:asc");
+  q.set("pagination[page]", String(page));
+  q.set("pagination[pageSize]", "100");
+  return q;
+}
+
+/** One page of every place story (country + cover only), newest first: counts and card photos for Places. */
+export function placeStoryRefsQuery(page: number): URLSearchParams {
+  const q = new URLSearchParams();
+  q.set("filters[section][$eq]", "place");
+  setFields(q, "", ["coverAlt", "publishedDate"]);
+  setFields(q, "populate[country]", ["slug"]);
+  setFields(q, "populate[coverPhoto]", MEDIA_FIELDS);
+  q.set("sort[0]", "publishedDate:desc");
+  q.set("pagination[page]", String(page));
+  q.set("pagination[pageSize]", "100");
+  return q;
+}
+
+const COUNTRY_FIELDS = ["name", "slug", "continent", "intro", "heroAlt", "heroCaption", "heroCredit", "seoTitle", "seoDescription"];
+
+/** Countries (one by slug, or all), with their hero photo. */
+export function countriesQuery(slug?: string): URLSearchParams {
+  const q = new URLSearchParams();
+  if (slug) q.set("filters[slug][$eq]", slug);
+  setFields(q, "", COUNTRY_FIELDS);
+  setFields(q, "populate[heroPhoto]", MEDIA_FIELDS);
+  q.set("sort[0]", "name:asc");
+  q.set("pagination[pageSize]", "100");
+  return q;
+}
+
+/** The Life Abroad single type. */
+export function lifeAbroadQuery(): URLSearchParams {
+  const q = new URLSearchParams();
+  setFields(q, "", ["intro", "seoTitle", "seoDescription"]);
   return q;
 }

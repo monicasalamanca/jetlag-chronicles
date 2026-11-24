@@ -1,7 +1,14 @@
 import "server-only";
 
 /** Thrown when the CMS can't be reached or answers with an error. */
-export class StrapiError extends Error {}
+export class StrapiError extends Error {
+  /** The HTTP status Strapi answered with (undefined when it could not be reached or is not configured). */
+  readonly status: number | undefined;
+  constructor(message: string, status?: number) {
+    super(message);
+    this.status = status;
+  }
+}
 
 export function strapiConfigured(): boolean {
   return Boolean(process.env.STRAPI_URL);
@@ -21,6 +28,6 @@ export async function strapiGet<T>(path: string, query: URLSearchParams, tags: s
     cache: "force-cache",
     next: { tags },
   });
-  if (!response.ok) throw new StrapiError(`Strapi ${response.status} for /api/${path}`);
+  if (!response.ok) throw new StrapiError(`Strapi ${response.status} for /api/${path}`, response.status);
   return (await response.json()) as T;
 }

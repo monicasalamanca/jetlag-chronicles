@@ -77,3 +77,78 @@ export function storyJsonLd(post: Post): JsonLd[] {
 export function jsonLdScript(data: JsonLd | JsonLd[]): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
+
+/** A meta description from Markdown (an intro): its first paragraph as plain text, cut at a word to ≤ max. */
+export function descriptionFromMarkdown(markdown: string | null | undefined, max = 160): string | null {
+  const first = (markdown ?? "").split(/\n\s*\n/).find((p) => p.trim()) ?? "";
+  const text = first
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/[*_`#>]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!text) return null;
+  if (text.length <= max) return text;
+  return `${text.slice(0, max - 1).replace(/\s+\S*$/, "").replace(/[,;:–—-]$/, "")}…`;
+}
+
+export type SectionSeo = {
+  /** The page name (h1), used for the title unless seoTitle is set. */
+  name: string;
+  seoTitle?: string | null;
+  description: string;
+  path: string;
+  /** Share image: a photo from the page (Cloudinary crop applied here). */
+  image?: { url: string; alt: string } | null;
+};
+
+/** Metadata for Places, a country page and Life Abroad. */
+export function sectionMetadata({ name, seoTitle, description, path, image }: SectionSeo): Metadata {
+  const images = image ? [{ url: shareImageUrl(image.url), width: 1200, height: 630, alt: image.alt }] : undefined;
+  return {
+    title: seoTitle?.trim() ? { absolute: seoTitle.trim() } : name,
+    description,
+    alternates: { canonical: path },
+    openGraph: { type: "website", siteName, title: name, description, url: path, images },
+    twitter: { card: images ? "summary_large_image" : "summary", title: name, description, images: images?.map((i) => i.url) },
+  };
+}
+
+/** CollectionPage (with its stories as an ItemList) + BreadcrumbList for a section page. */
+export function collectionJsonLd({
+  name,
+  description,
+  path,
+  breadcrumb,
+  stories,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  /** Pages above this one (Home is added first). */
+  breadcrumb: { name: string; path: string }[];
+  stories: { title: string; href: string }[];
+}): JsonLd[] {
+  const url = `${siteUrl}${path}`;
+  const crumbs = [{ name: "Home", item: `${siteUrl}/` }, ...breadcrumb.map((c) => ({ name: c.name, item: `${siteUrl}${c.path}` })), { name, item: url }];
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name,
+      description,
+      url,
+      inLanguage: "en",
+      isPartOf: { "@type": "WebSite", name: siteName, url: siteUrl },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: stories.map((s, i) => ({ "@type": "ListItem", position: i + 1, url: `${siteUrl}${s.href}`, name: s.title })),
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: c.item })),
+    },
+  ];
+}

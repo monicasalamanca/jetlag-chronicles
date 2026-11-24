@@ -45,6 +45,12 @@ describe("navCurrent", () => {
     ["/stories", "/stories/2", "true"],
     ["/lifestyle", "/lifestyles", undefined],
     ["/about", "/", undefined],
+    // Country pages and their stories sit under Places.
+    ["/places", "/thailand", "true"],
+    ["/places", "/thailand/ode-to-bangkok-love-letter-to-the-city", "true"],
+    ["/places", "/lifestyle/leaving-your-country-2026", undefined],
+    ["/places", "/about", undefined],
+    ["/places", "/", undefined],
   ])("%s at %s", (href, path, expected) => {
     expect(navCurrent(href, path)).toBe(expected);
   });
