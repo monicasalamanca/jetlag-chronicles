@@ -9,3 +9,11 @@
 /* Places, country pages, Life Abroad (docs/design/pages/places.html, thailand.html, life-abroad.html) */
 .section-page__crumbs { padding-block-start: var(--space-4); }
 .places-page__note { margin-block-start: var(--space-6); max-width: var(--measure-intro); }
+
+/* Homepage (docs/design/pages/home.html) */
+.home__featured { padding-block-start: var(--space-6); }
+.home__who { display: grid; gap: var(--space-4); max-width: var(--container-text); }
+.home__photo { aspect-ratio: var(--ratio-card); overflow: hidden; border-radius: var(--radius-card); background: var(--color-surface-sunken); }
+.home__photo img { width: 100%; height: 100%; object-fit: cover; }
+.home__head-inner { margin: 0; }
+.home__life-intro { margin-block-end: var(--space-4); }

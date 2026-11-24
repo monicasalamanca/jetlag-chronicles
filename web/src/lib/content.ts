@@ -1,9 +1,12 @@
 import "server-only";
+import { EMPTY_HOME, type HomeContent, LATEST_COUNT, LIFE_ABROAD_COUNT } from "@/lib/home";
 import { type ImageSize, markdownImageUrls } from "@/lib/markdown";
 import { type ContinentGroup, type Country, type PlaceStoryRef, placesByContinent } from "@/lib/places";
 import {
   allStoriesQuery,
   countriesQuery,
+  homeQuery,
+  latestStoriesQuery,
   LIFE_ABROAD_PREFIX,
   lifeAbroadQuery,
   type Media,
@@ -23,6 +26,7 @@ const STORY_TAGS = [ALL_TAG, modelTag("post"), modelTag("country"), modelTag("au
 // Section pages list stories and show countries; Life Abroad also has its own single type.
 const SECTION_TAGS = [ALL_TAG, modelTag("post"), modelTag("country")];
 const LIFE_ABROAD_TAGS = [ALL_TAG, modelTag("post"), modelTag("life-abroad")];
+const HOME_TAGS = [ALL_TAG, modelTag("post"), modelTag("country"), modelTag("home")];
 
 type Collection<T> = { data: T[]; meta: { pagination: { page: number; pageCount: number } } };
 
@@ -93,17 +97,46 @@ export type LifeAbroadPage = { intro: string | null; seoTitle: string | null; se
 /** /lifestyle: its intro (empty until the single type is published) and every Life Abroad story, newest first. */
 export async function getLifeAbroadPage(): Promise<LifeAbroadPage & { stories: StoryCardPost[] }> {
   const [page, stories] = await Promise.all([
-    strapiGet<{ data: LifeAbroadPage | null }>("life-abroad", lifeAbroadQuery(), LIFE_ABROAD_TAGS).catch((error) => {
-      if (error instanceof StrapiError && error.status === 404) return { data: null }; // not published yet
-      throw error;
-    }),
+    singleType<LifeAbroadPage>("life-abroad", lifeAbroadQuery(), LIFE_ABROAD_TAGS),
     allPages<StoryCardPost>("posts", (p) => storyCardsQuery({ section: "life_abroad" }, p), LIFE_ABROAD_TAGS),
   ]);
   return {
-    intro: page.data?.intro ?? null,
-    seoTitle: page.data?.seoTitle ?? null,
-    seoDescription: page.data?.seoDescription ?? null,
+    intro: page?.intro ?? null,
+    seoTitle: page?.seoTitle ?? null,
+    seoDescription: page?.seoDescription ?? null,
     stories: stories.map(withCover),
+  };
+}
+
+/** A single type, or null while it is not published yet (Strapi answers 404). */
+async function singleType<T>(path: string, query: URLSearchParams, tags: string[]): Promise<T | null> {
+  try {
+    return (await strapiGet<{ data: T | null }>(path, query, tags)).data;
+  } catch (error) {
+    if (error instanceof StrapiError && error.status === 404) return null;
+    throw error;
+  }
+}
+
+export type HomeData = { home: HomeContent; newest: StoryCardPost[]; lifeAbroad: StoryCardPost[]; places: ContinentGroup[] };
+
+/**
+ * The homepage: the Home single type, the newest stories (featured + latest 6), recent Life Abroad stories
+ * (enough to skip any already in the latest) and the countries. Empty when no CMS is configured (CI).
+ */
+export async function getHome(): Promise<HomeData> {
+  if (!strapiConfigured()) return { home: EMPTY_HOME, newest: [], lifeAbroad: [], places: [] };
+  const [home, newest, lifeAbroad, places] = await Promise.all([
+    singleType<HomeContent>("home", homeQuery(), HOME_TAGS),
+    strapiGet<Collection<StoryCardPost>>("posts", latestStoriesQuery(1 + LATEST_COUNT), HOME_TAGS),
+    strapiGet<Collection<StoryCardPost>>("posts", latestStoriesQuery(1 + LATEST_COUNT + LIFE_ABROAD_COUNT, "life_abroad"), HOME_TAGS),
+    getPlaces(),
+  ]);
+  return {
+    home: home ? { ...EMPTY_HOME, ...home, photo: media(home.photo) } : EMPTY_HOME,
+    newest: newest.data.map(withCover),
+    lifeAbroad: lifeAbroad.data.map(withCover),
+    places,
   };
 }
 

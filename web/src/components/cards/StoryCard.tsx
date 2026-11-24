@@ -12,8 +12,10 @@ export type StoryCardProps = {
   publishedDate: string;
   readingMinutes: number;
   variant?: "standard" | "featured" | "compact";
-  /** Heading level inside its section (h3 under a section h2 by default). */
-  headingLevel?: 2 | 3;
+  /** Heading level inside its section (h3 under a section h2 by default; h1 for the homepage's featured story). */
+  headingLevel?: 1 | 2 | 3;
+  /** The page's largest image (LCP): preloaded and fetched first instead of lazy-loaded. */
+  preload?: boolean;
 };
 
 const IMAGE_SIZES = {
@@ -33,13 +35,21 @@ export function StoryCard({
   readingMinutes,
   variant = "standard",
   headingLevel = 3,
+  preload = false,
 }: StoryCardProps) {
   const Heading = `h${headingLevel}` as const;
   return (
     <article className={variant === "standard" ? "story-card" : `story-card story-card--${variant}`}>
       <span className="story-card__media" aria-hidden="true">
         {image && (
-          <Image src={image.url} alt="" width={image.width ?? 1200} height={image.height ?? 900} sizes={IMAGE_SIZES[variant]} />
+          <Image
+            src={image.url}
+            alt=""
+            width={image.width ?? 1200}
+            height={image.height ?? 900}
+            sizes={IMAGE_SIZES[variant]}
+            {...(preload && { preload: true, fetchPriority: "high" as const })}
+          />
         )}
       </span>
       <div className="story-card__body">

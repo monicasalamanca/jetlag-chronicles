@@ -13,6 +13,7 @@ Non-monetized travel-story blog by Moni & Dunny (thejetlagchronicles.com). Rebui
 cms/   Strapi 5 (npm). Content types in src/api/<type>/content-types/<type>/schema.json. Public API is read-only (find/findOne).
   src/post-rules.ts        what a post needs before Strapi lets it publish (wired in src/index.ts)
 web/   Next.js 16 App Router (pnpm). Based on the-bio-hive setup.
+  src/app/page.tsx         the homepage (src/lib/home.ts picks its stories; Home page single type in Strapi)
   src/app/places           /places: countries by continent (src/lib/places.ts groups them)
   src/app/[place]          a country page (/<country>, only with ≥1 story) or /lifestyle; they share the segment with their stories
   src/app/[place]/[slug]   every story: /<country>/<slug> and /lifestyle/<slug>
