@@ -66,8 +66,10 @@ export async function getMoreStories(post: Post): Promise<StoryCardPost[]> {
   return result.data.map(withCover);
 }
 
-/** /places: countries with at least one story, grouped by continent. */
+/** /places: countries with at least one story, grouped by continent. Empty when no CMS is configured (CI). */
 export async function getPlaces(): Promise<ContinentGroup[]> {
+  // CI builds without a CMS: /places is then built empty (the deployed site always has STRAPI_URL).
+  if (!strapiConfigured()) return [];
   const [countries, stories] = await Promise.all([
     strapiGet<Collection<Country>>("countries", countriesQuery(), SECTION_TAGS),
     allPages<PlaceStoryRef>("posts", placeStoryRefsQuery, SECTION_TAGS),
